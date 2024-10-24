@@ -93,7 +93,7 @@ A Maven wrapper is used in the project so that all necessary components are alre
 Add your BWS gRPC clientID and secret key to the `/resources/application.properties` file to enable communication with our BWS. Refer to the instructions above to obtain these credentials. Set the `clientId` under `grpcApi.clientId` and the `secret` key under `grpcApi.secret`. You can also configure the port on which the application runs by setting your port under `server.port=your port`.
 
 > [!IMPORTANT]
-> The BWS endpoint must be entered without **http://** under `grpcApi.endpoint` in application.properties.
+> The BWS endpoint must be entered without **https://**  under `grpcApi.endpoint` in application.properties.
 
 #### 4. Launch the application
 

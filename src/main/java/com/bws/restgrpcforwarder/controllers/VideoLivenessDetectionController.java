@@ -10,11 +10,7 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import java.util.concurrent.CompletableFuture;
-import com.bioid.services.Bws.ImageData;
-import com.bioid.services.Bws.LivenessDetectionRequest;
-import com.bioid.services.Bws.PhotoVerifyRequest;
 import com.bioid.services.Bws.VideoLivenessDetectionRequest;
-import com.bws.restgrpcforwarder.datatypes.LivenessDetectionRequestJson;
 import com.bws.restgrpcforwarder.datatypes.VideoLivenessDetectionRequestJson;
 import com.bws.restgrpcforwarder.grpc.GrpcClientService;
 import com.bws.restgrpcforwarder.grpc.GrpcMetadataConverter;
@@ -43,7 +39,7 @@ public class VideoLivenessDetectionController {
             byte[] video = new byte[0];
 
             // Extract the optional request header 'Reference-Number'.
-            var referenceHeaderValue = headers.getFirst("referencenumber");
+            var referenceHeaderValue = headers.getFirst("Reference-Number");
 
             // Extract video file from request.
             if (!videoLivenessDetectionRequest.getVideo().isEmpty())

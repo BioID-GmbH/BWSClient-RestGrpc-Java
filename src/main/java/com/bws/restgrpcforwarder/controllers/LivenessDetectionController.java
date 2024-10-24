@@ -6,7 +6,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
@@ -32,13 +31,6 @@ public class LivenessDetectionController {
         grpcClient = bwsGrpcClient;
     }
 
-    @GetMapping
-    public ResponseEntity<String> onGet()
-    {
-        logger.info("passsttsts");
-        return ResponseEntity.ok("Test rest get Request");
-    }
-
     @PostMapping()
     public CompletableFuture<ResponseEntity<?>> onPost(@RequestHeader HttpHeaders headers,
             @RequestBody LivenessDetectionRequestJson livenessDetectionRequest)
@@ -48,7 +40,7 @@ public class LivenessDetectionController {
         {
             byte[] image1 = new byte[0], image2 = new byte[0];
             // Extract the optional request header 'Reference-Number'.
-            var referenceHeaderValue = headers.getFirst("referencenumber");
+            var referenceHeaderValue = headers.getFirst("Reference-Number");
 
             // Verify whether the first live image has been transmitted.
             if (livenessDetectionRequest.getLiveImages().size() > 0)
@@ -57,7 +49,7 @@ public class LivenessDetectionController {
                 image1 = Base64.getDecoder().decode(livenessDetectionRequest.getLiveImages().get(0).getImage());
             } else
             {
-                logger.error("ANo live images transmitted.");
+                logger.error("Nno live images transmitted.");
                 return CompletableFuture.completedFuture(ResponseEntity.badRequest().body("No live images transmitted."));
             }
 

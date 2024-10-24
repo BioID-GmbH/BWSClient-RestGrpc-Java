@@ -40,7 +40,7 @@ public class PhotoVerifyController {
             byte[] photo = new byte[0], image1 = new byte[0], image2 = new byte[0];
 
             // Extract the optional request header 'Reference-Number'.
-            var referenceHeaderValue = headers.getFirst("referencenumber");
+            var referenceHeaderValue = headers.getFirst("Reference-Number");
 
             // Retrieve live images and id photo from rest request
             // Verify whether the id photo has been transmitted.
