@@ -48,7 +48,7 @@ public class LivenessDetectionController {
         {
             byte[] image1 = new byte[0], image2 = new byte[0];
             // Extract the optional request header 'Reference-Number'.
-            var referenceHeaderValue = headers.getFirst("referencenumber");
+            var referenceHeaderValue = headers.getFirst("Reference-Number");
 
             // Verify whether the first live image has been transmitted.
             if (livenessDetectionRequest.getLiveImages().size() > 0)
