@@ -18,6 +18,7 @@ import com.bws.restgrpcforwarder.datatypes.PhotoVerifyResult;
 import com.bws.restgrpcforwarder.security.JwtCallCredetials;
 import com.bws.restgrpcforwarder.security.JwtTokenProvider;
 import io.grpc.CallCredentials;
+import io.grpc.CallOptions;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.Metadata;
@@ -50,7 +51,6 @@ public class GrpcClientService {
                     appConfig.tokenExpirationTime);
 
             channel = ManagedChannelBuilder.forTarget(appConfig.serviceEndpoint).useTransportSecurity().build();
-
             CallCredentials jwtCallCredentials = new JwtCallCredetials(jwtToken);
             bwsClientAsync = BioIDWebServiceGrpc.newStub(channel).withCallCredentials(jwtCallCredentials);
 
@@ -76,12 +76,10 @@ public class GrpcClientService {
             AtomicReference<Metadata> responseHeaders = new AtomicReference<>();
             AtomicReference<Metadata> responseTrailers = new AtomicReference<>();
 
-            // Add an additional header to the grpc request.
-            bwsClientAsync = bwsClientAsync.withInterceptors(MetadataUtils.newAttachHeadersInterceptor(headers),
+            bwsClientAsync = bwsClientAsync.withInterceptors(new HeaderClientInterceptor(headers),
                     MetadataUtils.newCaptureMetadataInterceptor(responseHeaders, responseTrailers));
-
+                    
             CompletableFuture<LivenessDetectionResult> livenessResult = new CompletableFuture<>();
-
             bwsClientAsync.livenessDetection(livenessRequest, new StreamObserver<LivenessDetectionResponse>() {
                 @Override
                 public void onNext(LivenessDetectionResponse value)
@@ -126,7 +124,7 @@ public class GrpcClientService {
             AtomicReference<Metadata> responseTrailers = new AtomicReference<>();
 
             // Add an additional header to the grpc request.
-            bwsClientAsync = bwsClientAsync.withInterceptors(MetadataUtils.newAttachHeadersInterceptor(headers),
+            bwsClientAsync = bwsClientAsync.withInterceptors(new HeaderClientInterceptor(headers),
                     MetadataUtils.newCaptureMetadataInterceptor(responseHeaders, responseTrailers));
 
             CompletableFuture<PhotoVerifyResult> photoVerifyResult = new CompletableFuture<>();
@@ -174,7 +172,7 @@ public class GrpcClientService {
             AtomicReference<Metadata> responseTrailers = new AtomicReference<>();
 
             // Add an additional header to the grpc request.
-            bwsClientAsync = bwsClientAsync.withInterceptors(MetadataUtils.newAttachHeadersInterceptor(headers),
+            bwsClientAsync = bwsClientAsync.withInterceptors(new HeaderClientInterceptor(headers),
                     MetadataUtils.newCaptureMetadataInterceptor(responseHeaders, responseTrailers));
 
             CompletableFuture<LivenessDetectionResult> videoLivenessResult = new CompletableFuture<>();

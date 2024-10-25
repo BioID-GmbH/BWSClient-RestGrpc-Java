@@ -25,7 +25,7 @@ This is the standard project structure in a Spring Boot application.
   - `SecurityConfig` - It handles API key based authentication for the rest controller in the application. Currently set up for [LivenessDetection][liveness], [PhotoVerify][photoverify], and [VideoLivenessDetection][videoliveness].
 - `controllers/` - Contains the controllers for the REST API endpoints.
 - `datatypes/` - Data types represent the data structures with which the application works.
-- `grpc/` - Includes the configured gRPC clients with methods for communicating with the BWS API via gRPC, as well as a converter      for transforming gRPC metadata into HTTP headers.
+- `grpc/` - Includes the configured gRPC clients with methods for communicating with the BWS API via gRPC, as well as a converter for transforming  gRPC metadata into HTTP headers, along with a gRPC interceptor.
 - `security/` - Contains a utility class that generates JWT tokens with specified claims and expiration time, and applies these tokens to gRPC request metadata for authentication.
 - `RestGrpcApplication.java` - This is the main entry point of the application.
 - `/proto/` - Contains Protobuf definitions used for defining the data structures and bws service interfaces for gRPC communication.
@@ -56,7 +56,8 @@ This service can handle conversions in both directions.Any other service can als
 
 ### Installation
 
-It is assumed that Java is already installed. You can verify this by typing `java --version` in the command line.
+It is assumed that Java Development Kit (JDK) is already installed. You can verify this by typing `java --version` in the command line.
+If not, you can download the [JDK][jdk] for your platform. Please use at least JDK version 22 or newer.
 A Maven wrapper is used in the project so that all necessary components are already included in the project.
 
 #### 1. Clone the repository
@@ -93,7 +94,10 @@ A Maven wrapper is used in the project so that all necessary components are alre
 Add your BWS gRPC clientID and secret key to the `/resources/application.properties` file to enable communication with our BWS. Refer to the instructions above to obtain these credentials. Set the `clientId` under `grpcApi.clientId` and the `secret` key under `grpcApi.secret`. You can also configure the port on which the application runs by setting your port under `server.port=your port`.
 
 > [!IMPORTANT]
-> The BWS endpoint must be entered without **https://**  under `grpcApi.endpoint` in application.properties.
+> The BWS endpoint must be entered without **http://**  under `grpcApi.endpoint` in application.properties.
+> Like: grpcApi.endpoint=localhost:5226
+
+This application runs under HTTP.
 
 #### 4. Launch the application
 
@@ -124,3 +128,4 @@ and [VideoLivenessDetection][videoliveness].*
 [photoverify]: https://developer.bioid.com/bws/grpc/photoverify/ "PhotoVerify"
 [videoliveness]: https://developer.bioid.com/bws/grpc/videolivenessdetection/ "Presentation attack detection in videos."
 [playground]: https://playground.bioid.com "BioID Playground"
+[jdk]: https://www.oracle.com/java/technologies/downloads/?er=221886#javasejdk "Java Development Kit"

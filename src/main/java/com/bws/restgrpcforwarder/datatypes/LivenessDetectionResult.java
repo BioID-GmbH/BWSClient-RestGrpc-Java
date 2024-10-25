@@ -25,6 +25,10 @@ public class LivenessDetectionResult {
         this.response = response;
         this.metadata = metadata;
     }
+    public LivenessDetectionResult(LivenessDetectionResponse response) {
+        this.response = response;
+
+    }
 
     // Getter und Setter
     public LivenessDetectionResponse getResponse()
