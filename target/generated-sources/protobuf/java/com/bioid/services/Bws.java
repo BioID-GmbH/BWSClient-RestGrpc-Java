@@ -4629,7 +4629,7 @@ public final class Bws {
       LEVEL_1(1),
       /**
        * <pre>
-       * Bad accuracy level that correlates with a FAR of 0.25%
+       * Bad accuracy level that correlates with a FAR of 0.1%
        * </pre>
        *
        * <code>LEVEL_2 = 2;</code>
@@ -4637,7 +4637,7 @@ public final class Bws {
       LEVEL_2(2),
       /**
        * <pre>
-       * Not so good accuracy level that correlates with a FAR of 0.1%
+       * Not so good accuracy level that correlates with a FAR of 0.01%
        * </pre>
        *
        * <code>LEVEL_3 = 3;</code>
@@ -4645,7 +4645,7 @@ public final class Bws {
       LEVEL_3(3),
       /**
        * <pre>
-       * Good accuracy level that correlates with a FAR of 0.01%
+       * Good accuracy level that correlates with a FAR of 0.001%
        * </pre>
        *
        * <code>LEVEL_4 = 4;</code>
@@ -4653,7 +4653,7 @@ public final class Bws {
       LEVEL_4(4),
       /**
        * <pre>
-       * Best accuracy level that correlates with a FAR of 0.001%
+       * Best accuracy level that correlates with a FAR of 0.0001%
        * </pre>
        *
        * <code>LEVEL_5 = 5;</code>
@@ -4680,7 +4680,7 @@ public final class Bws {
       public static final int LEVEL_1_VALUE = 1;
       /**
        * <pre>
-       * Bad accuracy level that correlates with a FAR of 0.25%
+       * Bad accuracy level that correlates with a FAR of 0.1%
        * </pre>
        *
        * <code>LEVEL_2 = 2;</code>
@@ -4688,7 +4688,7 @@ public final class Bws {
       public static final int LEVEL_2_VALUE = 2;
       /**
        * <pre>
-       * Not so good accuracy level that correlates with a FAR of 0.1%
+       * Not so good accuracy level that correlates with a FAR of 0.01%
        * </pre>
        *
        * <code>LEVEL_3 = 3;</code>
@@ -4696,7 +4696,7 @@ public final class Bws {
       public static final int LEVEL_3_VALUE = 3;
       /**
        * <pre>
-       * Good accuracy level that correlates with a FAR of 0.01%
+       * Good accuracy level that correlates with a FAR of 0.001%
        * </pre>
        *
        * <code>LEVEL_4 = 4;</code>
@@ -4704,7 +4704,7 @@ public final class Bws {
       public static final int LEVEL_4_VALUE = 4;
       /**
        * <pre>
-       * Best accuracy level that correlates with a FAR of 0.001%
+       * Best accuracy level that correlates with a FAR of 0.0001%
        * </pre>
        *
        * <code>LEVEL_5 = 5;</code>
@@ -10053,8 +10053,8 @@ public final class Bws {
 
     /**
      * <pre>
-     * The outcome of the quality check. A score in the range [0.0, 1.0].
-     * The higher the value, the better the check was passed.
+     * The outcome of the quality check. A score int the range [0.0, 1.0].
+     * The higher the value, the better the check was passed. 
      * </pre>
      *
      * <code>double score = 2;</code>
@@ -10174,8 +10174,8 @@ public final class Bws {
     private double score_ = 0D;
     /**
      * <pre>
-     * The outcome of the quality check. A score in the range [0.0, 1.0].
-     * The higher the value, the better the check was passed.
+     * The outcome of the quality check. A score int the range [0.0, 1.0].
+     * The higher the value, the better the check was passed. 
      * </pre>
      *
      * <code>double score = 2;</code>
@@ -10707,8 +10707,8 @@ public final class Bws {
       private double score_ ;
       /**
        * <pre>
-       * The outcome of the quality check. A score in the range [0.0, 1.0].
-       * The higher the value, the better the check was passed.
+       * The outcome of the quality check. A score int the range [0.0, 1.0].
+       * The higher the value, the better the check was passed. 
        * </pre>
        *
        * <code>double score = 2;</code>
@@ -10720,8 +10720,8 @@ public final class Bws {
       }
       /**
        * <pre>
-       * The outcome of the quality check. A score in the range [0.0, 1.0].
-       * The higher the value, the better the check was passed.
+       * The outcome of the quality check. A score int the range [0.0, 1.0].
+       * The higher the value, the better the check was passed. 
        * </pre>
        *
        * <code>double score = 2;</code>
@@ -10737,8 +10737,8 @@ public final class Bws {
       }
       /**
        * <pre>
-       * The outcome of the quality check. A score in the range [0.0, 1.0].
-       * The higher the value, the better the check was passed.
+       * The outcome of the quality check. A score int the range [0.0, 1.0].
+       * The higher the value, the better the check was passed. 
        * </pre>
        *
        * <code>double score = 2;</code>
