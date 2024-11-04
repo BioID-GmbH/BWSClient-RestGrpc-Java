@@ -25,7 +25,7 @@ public class GrpcClientConfig {
     /**
      * The access key (secret) for the gRPC API.
      */
-    @Value("${grpcApi.secret}")
+    @Value("${grpcApi.accessKey}")
     public String accessKey;
 
     /**

@@ -18,7 +18,6 @@ import com.bws.restgrpcforwarder.datatypes.PhotoVerifyResult;
 import com.bws.restgrpcforwarder.security.JwtCallCredetials;
 import com.bws.restgrpcforwarder.security.JwtTokenProvider;
 import io.grpc.CallCredentials;
-import io.grpc.CallOptions;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.Metadata;
