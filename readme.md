@@ -2,7 +2,7 @@
 
 ## Overview
 
-The **BioID RestGrpcForwarder** project is a Java Spring Boot application that receives REST calls and forwards these calls 
+The **BioID RestGrpcForwarder** project is a Java Spring Boot application that receives RESTful calls and forwards these calls 
 to the gRPC endpoint of the BioID Web Service 3. 
 
 This approach allows you to utilize the advantages of gRPC (e.g. low latency and protocol buffer) while providing a 
@@ -36,9 +36,9 @@ This is the standard project structure in a Spring Boot application.
 
 ## Get Started
 
-This application works as a service and accepts REST requests, extracts e.g. input images (encoded as Base64 strings) from these requests,
+This application works as a service and accepts RESTful requests, extracts e.g. input images (encoded as Base64 strings) from these requests,
 and converts them into byte arrays. These images as byte arrays are then sent to the BioID Web Service (BWS) gRPC endpoint using a gRPC client.
-The response from the BWS is returned to this service via gRPC and then used as the response for the REST call.
+The response from the BWS is returned to this service via gRPC and then used as the response for the RESTful call.
 
 Depending on which gRPC API is used, additional parameters can also be transferred.
 
@@ -50,7 +50,7 @@ This service can handle conversions in both directions. Any other service can al
 
 > #### Before starting the service, follow these steps
 >
-> - You need a **BioID Account** with a **confirmed** email address. If you don’t have one, [create a BioID account][bioidaccountregister].
+> - You need a **BioID Account** with a **confirmed** email address. If you donâ€™t have one, [create a BioID account][bioidaccountregister].
 > - You can create a free [trial subscription][trial] of the BioID Web Service (BWS) once you've created your BioID account.
 > - After you have signed in to the BWS Portal and created the trial subscription with the help of a wizard, you still need to create a BWS 3 client.
 > - The client can be created with the help of a creation wizard.
@@ -69,13 +69,13 @@ A Maven wrapper is used in the project so that all necessary components are alre
 - **Linux:**
 
   ```bash
-  git clone https://github.com/BioID-GmbH/RestGrpcForwarder.git
+  git clone https://github.com/BioID-GmbH/BWSClient-RestGrpc-Java.git
   ```
 
 - **Windows:**
 
   ```cmd
-  git clone https://github.com/BioID-GmbH/RestGrpcForwarder.git
+  git clone https://github.com/BioID-GmbH/BWSClient-RestGrpc-Java.git
   ```
 
 #### 2. Navigate to the project folder and build the java spring app
@@ -98,7 +98,7 @@ A Maven wrapper is used in the project so that all necessary components are alre
 Add your BWS gRPC clientId and key to the `/resources/application.properties` file to enable communication with our BWS. Refer to the instructions above to obtain these credentials. Set the `clientId` under `grpcApi.clientId` and the `access` key under `grpcApi.accessKey`. You can also configure the port on which the application runs by setting your port under `server.port=your port`.
 
 > [!IMPORTANT]
-> The BWS endpoint must be entered without **http://** under `grpcApi.endpoint` in application.properties.
+> The BWS endpoint must be entered without **https://** under `grpcApi.endpoint` in application.properties.
 
 #### 4. Launch the application
 
