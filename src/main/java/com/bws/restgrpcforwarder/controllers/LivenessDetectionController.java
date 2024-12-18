@@ -33,47 +33,43 @@ public class LivenessDetectionController {
 
     @PostMapping()
     public CompletableFuture<ResponseEntity<?>> onPost(@RequestHeader HttpHeaders headers,
-            @RequestBody LivenessDetectionRequestJson livenessDetectionRequest)
-    {
+            @RequestBody LivenessDetectionRequestJson livenessDetectionRequest) {
         // In this example, the input images are encoded in base64strings.
-        try
-        {
+        try {
             byte[] image1 = new byte[0], image2 = new byte[0];
+
             // Extract the optional request header 'Reference-Number'.
-            var referenceHeaderValue = headers.getFirst("Reference-Number");
+            var referenceValue = headers.getFirst("Reference-Number"); 
+            var referenceHeaderValue = (referenceValue == null )? "" : referenceValue;
 
             // Verify whether the first live image has been transmitted.
-            if (livenessDetectionRequest.getLiveImages().size() > 0)
-            {
+            if (livenessDetectionRequest.getLiveImages().size() > 0) {
                 // Convert image from base64string.
                 image1 = Base64.getDecoder().decode(livenessDetectionRequest.getLiveImages().get(0).getImage());
-            } else
-            {
-                logger.error("Nno live images transmitted.");
-                return CompletableFuture.completedFuture(ResponseEntity.badRequest().body("No live images transmitted."));
+            } else {
+                logger.error("No live images transmitted.");
+                return CompletableFuture
+                        .completedFuture(ResponseEntity.badRequest().body("No live images transmitted."));
             }
 
             // Verify whether the second live image has been transmitted.
-            if (livenessDetectionRequest.getLiveImages().size() > 1)
-            {
+            if (livenessDetectionRequest.getLiveImages().size() > 1) {
                 // Convert image from base64string.
                 image2 = Base64.getDecoder().decode(livenessDetectionRequest.getLiveImages().get(1).getImage());
             }
             // Convert image byte array in ImageData object.
             ImageData imageData1 = ImageData.newBuilder().setImage(ByteString.copyFrom(image1)).build();
-            
+
             // Create livenessDetection request.
-            LivenessDetectionRequest livenessRequest = LivenessDetectionRequest.newBuilder().addLiveImages(imageData1).build();
-            if (image2.length > 0)
-            {
+            LivenessDetectionRequest livenessRequest = LivenessDetectionRequest.newBuilder().addLiveImages(imageData1)
+                    .build();
+            if (image2.length > 0) {
                 ImageData imageData2 = ImageData.newBuilder().setImage(ByteString.copyFrom(image2)).build();
                 String secondImageTag = "";
-                if(!livenessDetectionRequest.getLiveImages().get(1).getTags().isEmpty())
-                {
+                if (!livenessDetectionRequest.getLiveImages().get(1).getTags().isEmpty()) {
                     secondImageTag = livenessDetectionRequest.getLiveImages().get(1).getTags().getFirst();
                 }
-                if (!secondImageTag.isEmpty())
-                {
+                if (!secondImageTag.isEmpty()) {
                     // Add a tag to the request for challenge response
                     imageData2 = imageData2.toBuilder().addTags(secondImageTag).build();
                 }
@@ -82,7 +78,8 @@ public class LivenessDetectionController {
 
             // Add optional reference number header
             Metadata referenceHeader = new Metadata();
-            Metadata.Key<String> customHeaderKey = Metadata.Key.of("Reference-Number", Metadata.ASCII_STRING_MARSHALLER);
+            Metadata.Key<String> customHeaderKey = Metadata.Key.of("Reference-Number",
+                    Metadata.ASCII_STRING_MARSHALLER);
             referenceHeader.put(customHeaderKey, referenceHeaderValue);
 
             // Call to bws livenessdetetction api via grpc client.
@@ -90,19 +87,21 @@ public class LivenessDetectionController {
             // Read out the livenessdetection api response.
             var livenessDetecionResponse = call.get();
 
-            logger.info("Call to livedetection API returned " + livenessDetecionResponse.getResponse().getStatus() + " .");
+            logger.info(
+                    "Call to livedetection API returned " + livenessDetecionResponse.getResponse().getStatus() + " .");
 
             // Convert grpc metadata from the API response to
             // {@link org.springframework.http.HttpHeaders}.
-            var httpresponseHeaders = GrpcMetadataConverter.convertMetadataToHttpHeaders(livenessDetecionResponse.getMetadata());
+            var httpresponseHeaders = GrpcMetadataConverter
+                    .convertMetadataToHttpHeaders(livenessDetecionResponse.getMetadata());
             var responseBody = JsonFormat.printer().print(livenessDetecionResponse.getResponse());
 
             return CompletableFuture.completedFuture(ResponseEntity.ok().headers(httpresponseHeaders).body(responseBody));
 
-        } catch (Exception ex)
-        {
+        } catch (Exception ex) {
             logger.error("An error has occurred:", ex);
-            return CompletableFuture.completedFuture(ResponseEntity.badRequest().body("Error processing images: " + ex.getMessage()));
+            return CompletableFuture
+                    .completedFuture(ResponseEntity.badRequest().body("Error processing images: " + ex.getMessage()));
         }
     }
 

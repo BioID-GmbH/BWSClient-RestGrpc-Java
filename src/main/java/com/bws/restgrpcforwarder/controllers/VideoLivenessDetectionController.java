@@ -39,7 +39,8 @@ public class VideoLivenessDetectionController {
             byte[] video = new byte[0];
 
             // Extract the optional request header 'Reference-Number'.
-            var referenceHeaderValue = headers.getFirst("Reference-Number");
+            var referenceValue = headers.getFirst("Reference-Number");
+            var referenceHeaderValue = (referenceValue == null )? "" : referenceValue;
 
             // Extract video file from request.
             if (!videoLivenessDetectionRequest.getVideo().isEmpty())
