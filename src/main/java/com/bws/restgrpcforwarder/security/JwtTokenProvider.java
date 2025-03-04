@@ -1,7 +1,6 @@
 package com.bws.restgrpcforwarder.security;
 
 import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
 import java.util.Date;
 import javax.crypto.SecretKey;
@@ -21,12 +20,12 @@ public class JwtTokenProvider {
         Date expiryDate = new Date(now.getTime() + expirationTimeInMinutes * 60 * 1000);
 
         return Jwts.builder()
-                .setSubject(clientId)
-                .setIssuer(clientId)
-                .setAudience(audience)
-                .setIssuedAt(now)
-                .setExpiration(expiryDate)
-                .signWith(securityKey, SignatureAlgorithm.HS512)
+                .subject(clientId)
+                .issuer(clientId)
+                .audience().add(audience).and()
+                .issuedAt(now)
+                .expiration(expiryDate)
+                .signWith(securityKey, Jwts.SIG.HS512)
                 .compact();
     }
 }

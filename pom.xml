@@ -14,7 +14,7 @@
 	<properties>
 		<java.version>22</java.version>
 		<protobuf.version>3.25.3</protobuf.version>
-		<grpc.version>1.69.0</grpc.version>
+		<grpc.version>1.70.0</grpc.version>
 		<jwt.version>0.12.6</jwt.version>
 	</properties>
 	<dependencies>
@@ -50,7 +50,7 @@
 		<dependency>
     		<groupId>com.google.protobuf</groupId>
     		<artifactId>protobuf-java-util</artifactId>
-    		<version>4.29.2</version>
+    		<version>4.29.3</version>
 		</dependency>
 		<dependency>
 			<groupId>javax.annotation</groupId>

@@ -8,7 +8,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * </pre>
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.69.0)",
+    value = "by gRPC proto compiler (version 1.70.0)",
     comments = "Source: bws.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class BioIDWebServiceGrpc {
@@ -123,6 +123,21 @@ public final class BioIDWebServiceGrpc {
         }
       };
     return BioIDWebServiceStub.newStub(factory, channel);
+  }
+
+  /**
+   * Creates a new blocking-style stub that supports all types of calls on the service
+   */
+  public static BioIDWebServiceBlockingV2Stub newBlockingV2Stub(
+      io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<BioIDWebServiceBlockingV2Stub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<BioIDWebServiceBlockingV2Stub>() {
+        @java.lang.Override
+        public BioIDWebServiceBlockingV2Stub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new BioIDWebServiceBlockingV2Stub(channel, callOptions);
+        }
+      };
+    return BioIDWebServiceBlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -268,6 +283,59 @@ public final class BioIDWebServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service BioIDWebService.
+   * <pre>
+   * BioID Web Service definition.
+   * </pre>
+   */
+  public static final class BioIDWebServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<BioIDWebServiceBlockingV2Stub> {
+    private BioIDWebServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected BioIDWebServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new BioIDWebServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     * <pre>
+     * Liveness-detection API
+     * - 1 image: passive liveness detection only
+     * - 2 images: passive and active liveness detection
+     * - 2 images and tags: active liveness detection with challenge response
+     * </pre>
+     */
+    public com.bioid.services.Bws.LivenessDetectionResponse livenessDetection(com.bioid.services.Bws.LivenessDetectionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getLivenessDetectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Video liveness-detection API
+     * </pre>
+     */
+    public com.bioid.services.Bws.LivenessDetectionResponse videoLivenessDetection(com.bioid.services.Bws.VideoLivenessDetectionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getVideoLivenessDetectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Photo-verification API
+     * </pre>
+     */
+    public com.bioid.services.Bws.PhotoVerifyResponse photoVerify(com.bioid.services.Bws.PhotoVerifyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPhotoVerifyMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service BioIDWebService.
    * <pre>
    * BioID Web Service definition.
    * </pre>
