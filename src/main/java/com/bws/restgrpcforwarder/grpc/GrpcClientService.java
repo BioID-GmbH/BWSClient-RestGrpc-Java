@@ -34,6 +34,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class GrpcClientService {
 
     private BioIDWebServiceGrpc.BioIDWebServiceStub bwsClientAsync;
+
     private ManagedChannel channel;
     private static final Logger logger = LoggerFactory.getLogger(GrpcClientService.class);
 

@@ -15,151 +15,6 @@ public final class Bws {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
-  /**
-   * <pre>
-   * Possible returned job status values.
-   * </pre>
-   *
-   * Protobuf enum {@code bioid.services.v1.JobStatus}
-   */
-  public enum JobStatus
-      implements com.google.protobuf.ProtocolMessageEnum {
-    /**
-     * <pre>
-     * The job finished successfully.
-     * </pre>
-     *
-     * <code>SUCCEEDED = 0;</code>
-     */
-    SUCCEEDED(0),
-    /**
-     * <pre>
-     * The job has been aborted due to one or more errors.
-     * </pre>
-     *
-     * <code>FAULTED = 1;</code>
-     */
-    FAULTED(1),
-    /**
-     * <pre>
-     * The job has been cancelled.
-     * </pre>
-     *
-     * <code>CANCELLED = 2;</code>
-     */
-    CANCELLED(2),
-    UNRECOGNIZED(-1),
-    ;
-
-    /**
-     * <pre>
-     * The job finished successfully.
-     * </pre>
-     *
-     * <code>SUCCEEDED = 0;</code>
-     */
-    public static final int SUCCEEDED_VALUE = 0;
-    /**
-     * <pre>
-     * The job has been aborted due to one or more errors.
-     * </pre>
-     *
-     * <code>FAULTED = 1;</code>
-     */
-    public static final int FAULTED_VALUE = 1;
-    /**
-     * <pre>
-     * The job has been cancelled.
-     * </pre>
-     *
-     * <code>CANCELLED = 2;</code>
-     */
-    public static final int CANCELLED_VALUE = 2;
-
-
-    public final int getNumber() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
-            "Can't get the number of an unknown enum value.");
-      }
-      return value;
-    }
-
-    /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
-    @java.lang.Deprecated
-    public static JobStatus valueOf(int value) {
-      return forNumber(value);
-    }
-
-    /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
-     */
-    public static JobStatus forNumber(int value) {
-      switch (value) {
-        case 0: return SUCCEEDED;
-        case 1: return FAULTED;
-        case 2: return CANCELLED;
-        default: return null;
-      }
-    }
-
-    public static com.google.protobuf.Internal.EnumLiteMap<JobStatus>
-        internalGetValueMap() {
-      return internalValueMap;
-    }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        JobStatus> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<JobStatus>() {
-            public JobStatus findValueByNumber(int number) {
-              return JobStatus.forNumber(number);
-            }
-          };
-
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalStateException(
-            "Can't get the descriptor of an unrecognized enum value.");
-      }
-      return getDescriptor().getValues().get(ordinal());
-    }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
-      return getDescriptor();
-    }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
-      return com.bioid.services.Bws.getDescriptor().getEnumTypes().get(0);
-    }
-
-    private static final JobStatus[] VALUES = values();
-
-    public static JobStatus valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-      if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
-      }
-      if (desc.getIndex() == -1) {
-        return UNRECOGNIZED;
-      }
-      return VALUES[desc.getIndex()];
-    }
-
-    private final int value;
-
-    private JobStatus(int value) {
-      this.value = value;
-    }
-
-    // @@protoc_insertion_point(enum_scope:bioid.services.v1.JobStatus)
-  }
-
   public interface LivenessDetectionRequestOrBuilder extends
       // @@protoc_insertion_point(interface_extends:bioid.services.v1.LivenessDetectionRequest)
       com.google.protobuf.MessageOrBuilder {
@@ -169,24 +24,24 @@ public final class Bws {
      * The input image samples.
      * </pre>
      *
-     * <code>repeated .bioid.services.v1.ImageData live_images = 1;</code>
+     * <code>repeated .ImageData live_images = 1;</code>
      */
-    java.util.List<com.bioid.services.Bws.ImageData> 
+    java.util.List<com.bioid.services.Bwsmessages.ImageData> 
         getLiveImagesList();
     /**
      * <pre>
      * The input image samples.
      * </pre>
      *
-     * <code>repeated .bioid.services.v1.ImageData live_images = 1;</code>
+     * <code>repeated .ImageData live_images = 1;</code>
      */
-    com.bioid.services.Bws.ImageData getLiveImages(int index);
+    com.bioid.services.Bwsmessages.ImageData getLiveImages(int index);
     /**
      * <pre>
      * The input image samples.
      * </pre>
      *
-     * <code>repeated .bioid.services.v1.ImageData live_images = 1;</code>
+     * <code>repeated .ImageData live_images = 1;</code>
      */
     int getLiveImagesCount();
     /**
@@ -194,18 +49,18 @@ public final class Bws {
      * The input image samples.
      * </pre>
      *
-     * <code>repeated .bioid.services.v1.ImageData live_images = 1;</code>
+     * <code>repeated .ImageData live_images = 1;</code>
      */
-    java.util.List<? extends com.bioid.services.Bws.ImageDataOrBuilder> 
+    java.util.List<? extends com.bioid.services.Bwsmessages.ImageDataOrBuilder> 
         getLiveImagesOrBuilderList();
     /**
      * <pre>
      * The input image samples.
      * </pre>
      *
-     * <code>repeated .bioid.services.v1.ImageData live_images = 1;</code>
+     * <code>repeated .ImageData live_images = 1;</code>
      */
-    com.bioid.services.Bws.ImageDataOrBuilder getLiveImagesOrBuilder(
+    com.bioid.services.Bwsmessages.ImageDataOrBuilder getLiveImagesOrBuilder(
         int index);
   }
   /**
@@ -250,16 +105,16 @@ public final class Bws {
 
     public static final int LIVE_IMAGES_FIELD_NUMBER = 1;
     @SuppressWarnings("serial")
-    private java.util.List<com.bioid.services.Bws.ImageData> liveImages_;
+    private java.util.List<com.bioid.services.Bwsmessages.ImageData> liveImages_;
     /**
      * <pre>
      * The input image samples.
      * </pre>
      *
-     * <code>repeated .bioid.services.v1.ImageData live_images = 1;</code>
+     * <code>repeated .ImageData live_images = 1;</code>
      */
     @java.lang.Override
-    public java.util.List<com.bioid.services.Bws.ImageData> getLiveImagesList() {
+    public java.util.List<com.bioid.services.Bwsmessages.ImageData> getLiveImagesList() {
       return liveImages_;
     }
     /**
@@ -267,10 +122,10 @@ public final class Bws {
      * The input image samples.
      * </pre>
      *
-     * <code>repeated .bioid.services.v1.ImageData live_images = 1;</code>
+     * <code>repeated .ImageData live_images = 1;</code>
      */
     @java.lang.Override
-    public java.util.List<? extends com.bioid.services.Bws.ImageDataOrBuilder> 
+    public java.util.List<? extends com.bioid.services.Bwsmessages.ImageDataOrBuilder> 
         getLiveImagesOrBuilderList() {
       return liveImages_;
     }
@@ -279,7 +134,7 @@ public final class Bws {
      * The input image samples.
      * </pre>
      *
-     * <code>repeated .bioid.services.v1.ImageData live_images = 1;</code>
+     * <code>repeated .ImageData live_images = 1;</code>
      */
     @java.lang.Override
     public int getLiveImagesCount() {
@@ -290,10 +145,10 @@ public final class Bws {
      * The input image samples.
      * </pre>
      *
-     * <code>repeated .bioid.services.v1.ImageData live_images = 1;</code>
+     * <code>repeated .ImageData live_images = 1;</code>
      */
     @java.lang.Override
-    public com.bioid.services.Bws.ImageData getLiveImages(int index) {
+    public com.bioid.services.Bwsmessages.ImageData getLiveImages(int index) {
       return liveImages_.get(index);
     }
     /**
@@ -301,10 +156,10 @@ public final class Bws {
      * The input image samples.
      * </pre>
      *
-     * <code>repeated .bioid.services.v1.ImageData live_images = 1;</code>
+     * <code>repeated .ImageData live_images = 1;</code>
      */
     @java.lang.Override
-    public com.bioid.services.Bws.ImageDataOrBuilder getLiveImagesOrBuilder(
+    public com.bioid.services.Bwsmessages.ImageDataOrBuilder getLiveImagesOrBuilder(
         int index) {
       return liveImages_.get(index);
     }
@@ -658,9 +513,9 @@ public final class Bws {
                 done = true;
                 break;
               case 10: {
-                com.bioid.services.Bws.ImageData m =
+                com.bioid.services.Bwsmessages.ImageData m =
                     input.readMessage(
-                        com.bioid.services.Bws.ImageData.parser(),
+                        com.bioid.services.Bwsmessages.ImageData.parser(),
                         extensionRegistry);
                 if (liveImagesBuilder_ == null) {
                   ensureLiveImagesIsMutable();
@@ -687,26 +542,26 @@ public final class Bws {
       }
       private int bitField0_;
 
-      private java.util.List<com.bioid.services.Bws.ImageData> liveImages_ =
+      private java.util.List<com.bioid.services.Bwsmessages.ImageData> liveImages_ =
         java.util.Collections.emptyList();
       private void ensureLiveImagesIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          liveImages_ = new java.util.ArrayList<com.bioid.services.Bws.ImageData>(liveImages_);
+          liveImages_ = new java.util.ArrayList<com.bioid.services.Bwsmessages.ImageData>(liveImages_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.bioid.services.Bws.ImageData, com.bioid.services.Bws.ImageData.Builder, com.bioid.services.Bws.ImageDataOrBuilder> liveImagesBuilder_;
+          com.bioid.services.Bwsmessages.ImageData, com.bioid.services.Bwsmessages.ImageData.Builder, com.bioid.services.Bwsmessages.ImageDataOrBuilder> liveImagesBuilder_;
 
       /**
        * <pre>
        * The input image samples.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.ImageData live_images = 1;</code>
+       * <code>repeated .ImageData live_images = 1;</code>
        */
-      public java.util.List<com.bioid.services.Bws.ImageData> getLiveImagesList() {
+      public java.util.List<com.bioid.services.Bwsmessages.ImageData> getLiveImagesList() {
         if (liveImagesBuilder_ == null) {
           return java.util.Collections.unmodifiableList(liveImages_);
         } else {
@@ -718,7 +573,7 @@ public final class Bws {
        * The input image samples.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.ImageData live_images = 1;</code>
+       * <code>repeated .ImageData live_images = 1;</code>
        */
       public int getLiveImagesCount() {
         if (liveImagesBuilder_ == null) {
@@ -732,9 +587,9 @@ public final class Bws {
        * The input image samples.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.ImageData live_images = 1;</code>
+       * <code>repeated .ImageData live_images = 1;</code>
        */
-      public com.bioid.services.Bws.ImageData getLiveImages(int index) {
+      public com.bioid.services.Bwsmessages.ImageData getLiveImages(int index) {
         if (liveImagesBuilder_ == null) {
           return liveImages_.get(index);
         } else {
@@ -746,10 +601,10 @@ public final class Bws {
        * The input image samples.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.ImageData live_images = 1;</code>
+       * <code>repeated .ImageData live_images = 1;</code>
        */
       public Builder setLiveImages(
-          int index, com.bioid.services.Bws.ImageData value) {
+          int index, com.bioid.services.Bwsmessages.ImageData value) {
         if (liveImagesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -767,10 +622,10 @@ public final class Bws {
        * The input image samples.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.ImageData live_images = 1;</code>
+       * <code>repeated .ImageData live_images = 1;</code>
        */
       public Builder setLiveImages(
-          int index, com.bioid.services.Bws.ImageData.Builder builderForValue) {
+          int index, com.bioid.services.Bwsmessages.ImageData.Builder builderForValue) {
         if (liveImagesBuilder_ == null) {
           ensureLiveImagesIsMutable();
           liveImages_.set(index, builderForValue.build());
@@ -785,9 +640,9 @@ public final class Bws {
        * The input image samples.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.ImageData live_images = 1;</code>
+       * <code>repeated .ImageData live_images = 1;</code>
        */
-      public Builder addLiveImages(com.bioid.services.Bws.ImageData value) {
+      public Builder addLiveImages(com.bioid.services.Bwsmessages.ImageData value) {
         if (liveImagesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -805,10 +660,10 @@ public final class Bws {
        * The input image samples.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.ImageData live_images = 1;</code>
+       * <code>repeated .ImageData live_images = 1;</code>
        */
       public Builder addLiveImages(
-          int index, com.bioid.services.Bws.ImageData value) {
+          int index, com.bioid.services.Bwsmessages.ImageData value) {
         if (liveImagesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -826,10 +681,10 @@ public final class Bws {
        * The input image samples.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.ImageData live_images = 1;</code>
+       * <code>repeated .ImageData live_images = 1;</code>
        */
       public Builder addLiveImages(
-          com.bioid.services.Bws.ImageData.Builder builderForValue) {
+          com.bioid.services.Bwsmessages.ImageData.Builder builderForValue) {
         if (liveImagesBuilder_ == null) {
           ensureLiveImagesIsMutable();
           liveImages_.add(builderForValue.build());
@@ -844,10 +699,10 @@ public final class Bws {
        * The input image samples.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.ImageData live_images = 1;</code>
+       * <code>repeated .ImageData live_images = 1;</code>
        */
       public Builder addLiveImages(
-          int index, com.bioid.services.Bws.ImageData.Builder builderForValue) {
+          int index, com.bioid.services.Bwsmessages.ImageData.Builder builderForValue) {
         if (liveImagesBuilder_ == null) {
           ensureLiveImagesIsMutable();
           liveImages_.add(index, builderForValue.build());
@@ -862,10 +717,10 @@ public final class Bws {
        * The input image samples.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.ImageData live_images = 1;</code>
+       * <code>repeated .ImageData live_images = 1;</code>
        */
       public Builder addAllLiveImages(
-          java.lang.Iterable<? extends com.bioid.services.Bws.ImageData> values) {
+          java.lang.Iterable<? extends com.bioid.services.Bwsmessages.ImageData> values) {
         if (liveImagesBuilder_ == null) {
           ensureLiveImagesIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -881,7 +736,7 @@ public final class Bws {
        * The input image samples.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.ImageData live_images = 1;</code>
+       * <code>repeated .ImageData live_images = 1;</code>
        */
       public Builder clearLiveImages() {
         if (liveImagesBuilder_ == null) {
@@ -898,7 +753,7 @@ public final class Bws {
        * The input image samples.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.ImageData live_images = 1;</code>
+       * <code>repeated .ImageData live_images = 1;</code>
        */
       public Builder removeLiveImages(int index) {
         if (liveImagesBuilder_ == null) {
@@ -915,9 +770,9 @@ public final class Bws {
        * The input image samples.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.ImageData live_images = 1;</code>
+       * <code>repeated .ImageData live_images = 1;</code>
        */
-      public com.bioid.services.Bws.ImageData.Builder getLiveImagesBuilder(
+      public com.bioid.services.Bwsmessages.ImageData.Builder getLiveImagesBuilder(
           int index) {
         return getLiveImagesFieldBuilder().getBuilder(index);
       }
@@ -926,9 +781,9 @@ public final class Bws {
        * The input image samples.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.ImageData live_images = 1;</code>
+       * <code>repeated .ImageData live_images = 1;</code>
        */
-      public com.bioid.services.Bws.ImageDataOrBuilder getLiveImagesOrBuilder(
+      public com.bioid.services.Bwsmessages.ImageDataOrBuilder getLiveImagesOrBuilder(
           int index) {
         if (liveImagesBuilder_ == null) {
           return liveImages_.get(index);  } else {
@@ -940,9 +795,9 @@ public final class Bws {
        * The input image samples.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.ImageData live_images = 1;</code>
+       * <code>repeated .ImageData live_images = 1;</code>
        */
-      public java.util.List<? extends com.bioid.services.Bws.ImageDataOrBuilder> 
+      public java.util.List<? extends com.bioid.services.Bwsmessages.ImageDataOrBuilder> 
            getLiveImagesOrBuilderList() {
         if (liveImagesBuilder_ != null) {
           return liveImagesBuilder_.getMessageOrBuilderList();
@@ -955,41 +810,41 @@ public final class Bws {
        * The input image samples.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.ImageData live_images = 1;</code>
+       * <code>repeated .ImageData live_images = 1;</code>
        */
-      public com.bioid.services.Bws.ImageData.Builder addLiveImagesBuilder() {
+      public com.bioid.services.Bwsmessages.ImageData.Builder addLiveImagesBuilder() {
         return getLiveImagesFieldBuilder().addBuilder(
-            com.bioid.services.Bws.ImageData.getDefaultInstance());
+            com.bioid.services.Bwsmessages.ImageData.getDefaultInstance());
       }
       /**
        * <pre>
        * The input image samples.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.ImageData live_images = 1;</code>
+       * <code>repeated .ImageData live_images = 1;</code>
        */
-      public com.bioid.services.Bws.ImageData.Builder addLiveImagesBuilder(
+      public com.bioid.services.Bwsmessages.ImageData.Builder addLiveImagesBuilder(
           int index) {
         return getLiveImagesFieldBuilder().addBuilder(
-            index, com.bioid.services.Bws.ImageData.getDefaultInstance());
+            index, com.bioid.services.Bwsmessages.ImageData.getDefaultInstance());
       }
       /**
        * <pre>
        * The input image samples.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.ImageData live_images = 1;</code>
+       * <code>repeated .ImageData live_images = 1;</code>
        */
-      public java.util.List<com.bioid.services.Bws.ImageData.Builder> 
+      public java.util.List<com.bioid.services.Bwsmessages.ImageData.Builder> 
            getLiveImagesBuilderList() {
         return getLiveImagesFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.bioid.services.Bws.ImageData, com.bioid.services.Bws.ImageData.Builder, com.bioid.services.Bws.ImageDataOrBuilder> 
+          com.bioid.services.Bwsmessages.ImageData, com.bioid.services.Bwsmessages.ImageData.Builder, com.bioid.services.Bwsmessages.ImageDataOrBuilder> 
           getLiveImagesFieldBuilder() {
         if (liveImagesBuilder_ == null) {
           liveImagesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.bioid.services.Bws.ImageData, com.bioid.services.Bws.ImageData.Builder, com.bioid.services.Bws.ImageDataOrBuilder>(
+              com.bioid.services.Bwsmessages.ImageData, com.bioid.services.Bwsmessages.ImageData.Builder, com.bioid.services.Bwsmessages.ImageDataOrBuilder>(
                   liveImages_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
@@ -1576,7 +1431,7 @@ public final class Bws {
      * The return-status of the processing job.
      * </pre>
      *
-     * <code>.bioid.services.v1.JobStatus status = 1;</code>
+     * <code>.JobStatus status = 1;</code>
      * @return The enum numeric value on the wire for status.
      */
     int getStatusValue();
@@ -1585,34 +1440,34 @@ public final class Bws {
      * The return-status of the processing job.
      * </pre>
      *
-     * <code>.bioid.services.v1.JobStatus status = 1;</code>
+     * <code>.JobStatus status = 1;</code>
      * @return The status.
      */
-    com.bioid.services.Bws.JobStatus getStatus();
+    com.bioid.services.Bwsmessages.JobStatus getStatus();
 
     /**
      * <pre>
      * Any error messages collected during processing.
      * </pre>
      *
-     * <code>repeated .bioid.services.v1.JobError errors = 2;</code>
+     * <code>repeated .JobError errors = 2;</code>
      */
-    java.util.List<com.bioid.services.Bws.JobError> 
+    java.util.List<com.bioid.services.Bwsmessages.JobError> 
         getErrorsList();
     /**
      * <pre>
      * Any error messages collected during processing.
      * </pre>
      *
-     * <code>repeated .bioid.services.v1.JobError errors = 2;</code>
+     * <code>repeated .JobError errors = 2;</code>
      */
-    com.bioid.services.Bws.JobError getErrors(int index);
+    com.bioid.services.Bwsmessages.JobError getErrors(int index);
     /**
      * <pre>
      * Any error messages collected during processing.
      * </pre>
      *
-     * <code>repeated .bioid.services.v1.JobError errors = 2;</code>
+     * <code>repeated .JobError errors = 2;</code>
      */
     int getErrorsCount();
     /**
@@ -1620,18 +1475,18 @@ public final class Bws {
      * Any error messages collected during processing.
      * </pre>
      *
-     * <code>repeated .bioid.services.v1.JobError errors = 2;</code>
+     * <code>repeated .JobError errors = 2;</code>
      */
-    java.util.List<? extends com.bioid.services.Bws.JobErrorOrBuilder> 
+    java.util.List<? extends com.bioid.services.Bwsmessages.JobErrorOrBuilder> 
         getErrorsOrBuilderList();
     /**
      * <pre>
      * Any error messages collected during processing.
      * </pre>
      *
-     * <code>repeated .bioid.services.v1.JobError errors = 2;</code>
+     * <code>repeated .JobError errors = 2;</code>
      */
-    com.bioid.services.Bws.JobErrorOrBuilder getErrorsOrBuilder(
+    com.bioid.services.Bwsmessages.JobErrorOrBuilder getErrorsOrBuilder(
         int index);
 
     /**
@@ -1639,24 +1494,24 @@ public final class Bws {
      * Calculated image properties for each of the provided images in the given order.
      * </pre>
      *
-     * <code>repeated .bioid.services.v1.ImageProperties image_properties = 3;</code>
+     * <code>repeated .ImageProperties image_properties = 3;</code>
      */
-    java.util.List<com.bioid.services.Bws.ImageProperties> 
+    java.util.List<com.bioid.services.Bwsmessages.ImageProperties> 
         getImagePropertiesList();
     /**
      * <pre>
      * Calculated image properties for each of the provided images in the given order.
      * </pre>
      *
-     * <code>repeated .bioid.services.v1.ImageProperties image_properties = 3;</code>
+     * <code>repeated .ImageProperties image_properties = 3;</code>
      */
-    com.bioid.services.Bws.ImageProperties getImageProperties(int index);
+    com.bioid.services.Bwsmessages.ImageProperties getImageProperties(int index);
     /**
      * <pre>
      * Calculated image properties for each of the provided images in the given order.
      * </pre>
      *
-     * <code>repeated .bioid.services.v1.ImageProperties image_properties = 3;</code>
+     * <code>repeated .ImageProperties image_properties = 3;</code>
      */
     int getImagePropertiesCount();
     /**
@@ -1664,18 +1519,18 @@ public final class Bws {
      * Calculated image properties for each of the provided images in the given order.
      * </pre>
      *
-     * <code>repeated .bioid.services.v1.ImageProperties image_properties = 3;</code>
+     * <code>repeated .ImageProperties image_properties = 3;</code>
      */
-    java.util.List<? extends com.bioid.services.Bws.ImagePropertiesOrBuilder> 
+    java.util.List<? extends com.bioid.services.Bwsmessages.ImagePropertiesOrBuilder> 
         getImagePropertiesOrBuilderList();
     /**
      * <pre>
      * Calculated image properties for each of the provided images in the given order.
      * </pre>
      *
-     * <code>repeated .bioid.services.v1.ImageProperties image_properties = 3;</code>
+     * <code>repeated .ImageProperties image_properties = 3;</code>
      */
-    com.bioid.services.Bws.ImagePropertiesOrBuilder getImagePropertiesOrBuilder(
+    com.bioid.services.Bwsmessages.ImagePropertiesOrBuilder getImagePropertiesOrBuilder(
         int index);
 
     /**
@@ -1747,7 +1602,7 @@ public final class Bws {
      * The return-status of the processing job.
      * </pre>
      *
-     * <code>.bioid.services.v1.JobStatus status = 1;</code>
+     * <code>.JobStatus status = 1;</code>
      * @return The enum numeric value on the wire for status.
      */
     @java.lang.Override public int getStatusValue() {
@@ -1758,26 +1613,26 @@ public final class Bws {
      * The return-status of the processing job.
      * </pre>
      *
-     * <code>.bioid.services.v1.JobStatus status = 1;</code>
+     * <code>.JobStatus status = 1;</code>
      * @return The status.
      */
-    @java.lang.Override public com.bioid.services.Bws.JobStatus getStatus() {
-      com.bioid.services.Bws.JobStatus result = com.bioid.services.Bws.JobStatus.forNumber(status_);
-      return result == null ? com.bioid.services.Bws.JobStatus.UNRECOGNIZED : result;
+    @java.lang.Override public com.bioid.services.Bwsmessages.JobStatus getStatus() {
+      com.bioid.services.Bwsmessages.JobStatus result = com.bioid.services.Bwsmessages.JobStatus.forNumber(status_);
+      return result == null ? com.bioid.services.Bwsmessages.JobStatus.UNRECOGNIZED : result;
     }
 
     public static final int ERRORS_FIELD_NUMBER = 2;
     @SuppressWarnings("serial")
-    private java.util.List<com.bioid.services.Bws.JobError> errors_;
+    private java.util.List<com.bioid.services.Bwsmessages.JobError> errors_;
     /**
      * <pre>
      * Any error messages collected during processing.
      * </pre>
      *
-     * <code>repeated .bioid.services.v1.JobError errors = 2;</code>
+     * <code>repeated .JobError errors = 2;</code>
      */
     @java.lang.Override
-    public java.util.List<com.bioid.services.Bws.JobError> getErrorsList() {
+    public java.util.List<com.bioid.services.Bwsmessages.JobError> getErrorsList() {
       return errors_;
     }
     /**
@@ -1785,10 +1640,10 @@ public final class Bws {
      * Any error messages collected during processing.
      * </pre>
      *
-     * <code>repeated .bioid.services.v1.JobError errors = 2;</code>
+     * <code>repeated .JobError errors = 2;</code>
      */
     @java.lang.Override
-    public java.util.List<? extends com.bioid.services.Bws.JobErrorOrBuilder> 
+    public java.util.List<? extends com.bioid.services.Bwsmessages.JobErrorOrBuilder> 
         getErrorsOrBuilderList() {
       return errors_;
     }
@@ -1797,7 +1652,7 @@ public final class Bws {
      * Any error messages collected during processing.
      * </pre>
      *
-     * <code>repeated .bioid.services.v1.JobError errors = 2;</code>
+     * <code>repeated .JobError errors = 2;</code>
      */
     @java.lang.Override
     public int getErrorsCount() {
@@ -1808,10 +1663,10 @@ public final class Bws {
      * Any error messages collected during processing.
      * </pre>
      *
-     * <code>repeated .bioid.services.v1.JobError errors = 2;</code>
+     * <code>repeated .JobError errors = 2;</code>
      */
     @java.lang.Override
-    public com.bioid.services.Bws.JobError getErrors(int index) {
+    public com.bioid.services.Bwsmessages.JobError getErrors(int index) {
       return errors_.get(index);
     }
     /**
@@ -1819,26 +1674,26 @@ public final class Bws {
      * Any error messages collected during processing.
      * </pre>
      *
-     * <code>repeated .bioid.services.v1.JobError errors = 2;</code>
+     * <code>repeated .JobError errors = 2;</code>
      */
     @java.lang.Override
-    public com.bioid.services.Bws.JobErrorOrBuilder getErrorsOrBuilder(
+    public com.bioid.services.Bwsmessages.JobErrorOrBuilder getErrorsOrBuilder(
         int index) {
       return errors_.get(index);
     }
 
     public static final int IMAGE_PROPERTIES_FIELD_NUMBER = 3;
     @SuppressWarnings("serial")
-    private java.util.List<com.bioid.services.Bws.ImageProperties> imageProperties_;
+    private java.util.List<com.bioid.services.Bwsmessages.ImageProperties> imageProperties_;
     /**
      * <pre>
      * Calculated image properties for each of the provided images in the given order.
      * </pre>
      *
-     * <code>repeated .bioid.services.v1.ImageProperties image_properties = 3;</code>
+     * <code>repeated .ImageProperties image_properties = 3;</code>
      */
     @java.lang.Override
-    public java.util.List<com.bioid.services.Bws.ImageProperties> getImagePropertiesList() {
+    public java.util.List<com.bioid.services.Bwsmessages.ImageProperties> getImagePropertiesList() {
       return imageProperties_;
     }
     /**
@@ -1846,10 +1701,10 @@ public final class Bws {
      * Calculated image properties for each of the provided images in the given order.
      * </pre>
      *
-     * <code>repeated .bioid.services.v1.ImageProperties image_properties = 3;</code>
+     * <code>repeated .ImageProperties image_properties = 3;</code>
      */
     @java.lang.Override
-    public java.util.List<? extends com.bioid.services.Bws.ImagePropertiesOrBuilder> 
+    public java.util.List<? extends com.bioid.services.Bwsmessages.ImagePropertiesOrBuilder> 
         getImagePropertiesOrBuilderList() {
       return imageProperties_;
     }
@@ -1858,7 +1713,7 @@ public final class Bws {
      * Calculated image properties for each of the provided images in the given order.
      * </pre>
      *
-     * <code>repeated .bioid.services.v1.ImageProperties image_properties = 3;</code>
+     * <code>repeated .ImageProperties image_properties = 3;</code>
      */
     @java.lang.Override
     public int getImagePropertiesCount() {
@@ -1869,10 +1724,10 @@ public final class Bws {
      * Calculated image properties for each of the provided images in the given order.
      * </pre>
      *
-     * <code>repeated .bioid.services.v1.ImageProperties image_properties = 3;</code>
+     * <code>repeated .ImageProperties image_properties = 3;</code>
      */
     @java.lang.Override
-    public com.bioid.services.Bws.ImageProperties getImageProperties(int index) {
+    public com.bioid.services.Bwsmessages.ImageProperties getImageProperties(int index) {
       return imageProperties_.get(index);
     }
     /**
@@ -1880,10 +1735,10 @@ public final class Bws {
      * Calculated image properties for each of the provided images in the given order.
      * </pre>
      *
-     * <code>repeated .bioid.services.v1.ImageProperties image_properties = 3;</code>
+     * <code>repeated .ImageProperties image_properties = 3;</code>
      */
     @java.lang.Override
-    public com.bioid.services.Bws.ImagePropertiesOrBuilder getImagePropertiesOrBuilder(
+    public com.bioid.services.Bwsmessages.ImagePropertiesOrBuilder getImagePropertiesOrBuilder(
         int index) {
       return imageProperties_.get(index);
     }
@@ -1932,7 +1787,7 @@ public final class Bws {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (status_ != com.bioid.services.Bws.JobStatus.SUCCEEDED.getNumber()) {
+      if (status_ != com.bioid.services.Bwsmessages.JobStatus.SUCCEEDED.getNumber()) {
         output.writeEnum(1, status_);
       }
       for (int i = 0; i < errors_.size(); i++) {
@@ -1956,7 +1811,7 @@ public final class Bws {
       if (size != -1) return size;
 
       size = 0;
-      if (status_ != com.bioid.services.Bws.JobStatus.SUCCEEDED.getNumber()) {
+      if (status_ != com.bioid.services.Bwsmessages.JobStatus.SUCCEEDED.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(1, status_);
       }
@@ -2383,9 +2238,9 @@ public final class Bws {
                 break;
               } // case 8
               case 18: {
-                com.bioid.services.Bws.JobError m =
+                com.bioid.services.Bwsmessages.JobError m =
                     input.readMessage(
-                        com.bioid.services.Bws.JobError.parser(),
+                        com.bioid.services.Bwsmessages.JobError.parser(),
                         extensionRegistry);
                 if (errorsBuilder_ == null) {
                   ensureErrorsIsMutable();
@@ -2396,9 +2251,9 @@ public final class Bws {
                 break;
               } // case 18
               case 26: {
-                com.bioid.services.Bws.ImageProperties m =
+                com.bioid.services.Bwsmessages.ImageProperties m =
                     input.readMessage(
-                        com.bioid.services.Bws.ImageProperties.parser(),
+                        com.bioid.services.Bwsmessages.ImageProperties.parser(),
                         extensionRegistry);
                 if (imagePropertiesBuilder_ == null) {
                   ensureImagePropertiesIsMutable();
@@ -2441,7 +2296,7 @@ public final class Bws {
        * The return-status of the processing job.
        * </pre>
        *
-       * <code>.bioid.services.v1.JobStatus status = 1;</code>
+       * <code>.JobStatus status = 1;</code>
        * @return The enum numeric value on the wire for status.
        */
       @java.lang.Override public int getStatusValue() {
@@ -2452,7 +2307,7 @@ public final class Bws {
        * The return-status of the processing job.
        * </pre>
        *
-       * <code>.bioid.services.v1.JobStatus status = 1;</code>
+       * <code>.JobStatus status = 1;</code>
        * @param value The enum numeric value on the wire for status to set.
        * @return This builder for chaining.
        */
@@ -2467,24 +2322,24 @@ public final class Bws {
        * The return-status of the processing job.
        * </pre>
        *
-       * <code>.bioid.services.v1.JobStatus status = 1;</code>
+       * <code>.JobStatus status = 1;</code>
        * @return The status.
        */
       @java.lang.Override
-      public com.bioid.services.Bws.JobStatus getStatus() {
-        com.bioid.services.Bws.JobStatus result = com.bioid.services.Bws.JobStatus.forNumber(status_);
-        return result == null ? com.bioid.services.Bws.JobStatus.UNRECOGNIZED : result;
+      public com.bioid.services.Bwsmessages.JobStatus getStatus() {
+        com.bioid.services.Bwsmessages.JobStatus result = com.bioid.services.Bwsmessages.JobStatus.forNumber(status_);
+        return result == null ? com.bioid.services.Bwsmessages.JobStatus.UNRECOGNIZED : result;
       }
       /**
        * <pre>
        * The return-status of the processing job.
        * </pre>
        *
-       * <code>.bioid.services.v1.JobStatus status = 1;</code>
+       * <code>.JobStatus status = 1;</code>
        * @param value The status to set.
        * @return This builder for chaining.
        */
-      public Builder setStatus(com.bioid.services.Bws.JobStatus value) {
+      public Builder setStatus(com.bioid.services.Bwsmessages.JobStatus value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -2498,7 +2353,7 @@ public final class Bws {
        * The return-status of the processing job.
        * </pre>
        *
-       * <code>.bioid.services.v1.JobStatus status = 1;</code>
+       * <code>.JobStatus status = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearStatus() {
@@ -2508,26 +2363,26 @@ public final class Bws {
         return this;
       }
 
-      private java.util.List<com.bioid.services.Bws.JobError> errors_ =
+      private java.util.List<com.bioid.services.Bwsmessages.JobError> errors_ =
         java.util.Collections.emptyList();
       private void ensureErrorsIsMutable() {
         if (!((bitField0_ & 0x00000002) != 0)) {
-          errors_ = new java.util.ArrayList<com.bioid.services.Bws.JobError>(errors_);
+          errors_ = new java.util.ArrayList<com.bioid.services.Bwsmessages.JobError>(errors_);
           bitField0_ |= 0x00000002;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.bioid.services.Bws.JobError, com.bioid.services.Bws.JobError.Builder, com.bioid.services.Bws.JobErrorOrBuilder> errorsBuilder_;
+          com.bioid.services.Bwsmessages.JobError, com.bioid.services.Bwsmessages.JobError.Builder, com.bioid.services.Bwsmessages.JobErrorOrBuilder> errorsBuilder_;
 
       /**
        * <pre>
        * Any error messages collected during processing.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.JobError errors = 2;</code>
+       * <code>repeated .JobError errors = 2;</code>
        */
-      public java.util.List<com.bioid.services.Bws.JobError> getErrorsList() {
+      public java.util.List<com.bioid.services.Bwsmessages.JobError> getErrorsList() {
         if (errorsBuilder_ == null) {
           return java.util.Collections.unmodifiableList(errors_);
         } else {
@@ -2539,7 +2394,7 @@ public final class Bws {
        * Any error messages collected during processing.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.JobError errors = 2;</code>
+       * <code>repeated .JobError errors = 2;</code>
        */
       public int getErrorsCount() {
         if (errorsBuilder_ == null) {
@@ -2553,9 +2408,9 @@ public final class Bws {
        * Any error messages collected during processing.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.JobError errors = 2;</code>
+       * <code>repeated .JobError errors = 2;</code>
        */
-      public com.bioid.services.Bws.JobError getErrors(int index) {
+      public com.bioid.services.Bwsmessages.JobError getErrors(int index) {
         if (errorsBuilder_ == null) {
           return errors_.get(index);
         } else {
@@ -2567,10 +2422,10 @@ public final class Bws {
        * Any error messages collected during processing.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.JobError errors = 2;</code>
+       * <code>repeated .JobError errors = 2;</code>
        */
       public Builder setErrors(
-          int index, com.bioid.services.Bws.JobError value) {
+          int index, com.bioid.services.Bwsmessages.JobError value) {
         if (errorsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2588,10 +2443,10 @@ public final class Bws {
        * Any error messages collected during processing.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.JobError errors = 2;</code>
+       * <code>repeated .JobError errors = 2;</code>
        */
       public Builder setErrors(
-          int index, com.bioid.services.Bws.JobError.Builder builderForValue) {
+          int index, com.bioid.services.Bwsmessages.JobError.Builder builderForValue) {
         if (errorsBuilder_ == null) {
           ensureErrorsIsMutable();
           errors_.set(index, builderForValue.build());
@@ -2606,9 +2461,9 @@ public final class Bws {
        * Any error messages collected during processing.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.JobError errors = 2;</code>
+       * <code>repeated .JobError errors = 2;</code>
        */
-      public Builder addErrors(com.bioid.services.Bws.JobError value) {
+      public Builder addErrors(com.bioid.services.Bwsmessages.JobError value) {
         if (errorsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2626,10 +2481,10 @@ public final class Bws {
        * Any error messages collected during processing.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.JobError errors = 2;</code>
+       * <code>repeated .JobError errors = 2;</code>
        */
       public Builder addErrors(
-          int index, com.bioid.services.Bws.JobError value) {
+          int index, com.bioid.services.Bwsmessages.JobError value) {
         if (errorsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2647,10 +2502,10 @@ public final class Bws {
        * Any error messages collected during processing.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.JobError errors = 2;</code>
+       * <code>repeated .JobError errors = 2;</code>
        */
       public Builder addErrors(
-          com.bioid.services.Bws.JobError.Builder builderForValue) {
+          com.bioid.services.Bwsmessages.JobError.Builder builderForValue) {
         if (errorsBuilder_ == null) {
           ensureErrorsIsMutable();
           errors_.add(builderForValue.build());
@@ -2665,10 +2520,10 @@ public final class Bws {
        * Any error messages collected during processing.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.JobError errors = 2;</code>
+       * <code>repeated .JobError errors = 2;</code>
        */
       public Builder addErrors(
-          int index, com.bioid.services.Bws.JobError.Builder builderForValue) {
+          int index, com.bioid.services.Bwsmessages.JobError.Builder builderForValue) {
         if (errorsBuilder_ == null) {
           ensureErrorsIsMutable();
           errors_.add(index, builderForValue.build());
@@ -2683,10 +2538,10 @@ public final class Bws {
        * Any error messages collected during processing.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.JobError errors = 2;</code>
+       * <code>repeated .JobError errors = 2;</code>
        */
       public Builder addAllErrors(
-          java.lang.Iterable<? extends com.bioid.services.Bws.JobError> values) {
+          java.lang.Iterable<? extends com.bioid.services.Bwsmessages.JobError> values) {
         if (errorsBuilder_ == null) {
           ensureErrorsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -2702,7 +2557,7 @@ public final class Bws {
        * Any error messages collected during processing.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.JobError errors = 2;</code>
+       * <code>repeated .JobError errors = 2;</code>
        */
       public Builder clearErrors() {
         if (errorsBuilder_ == null) {
@@ -2719,7 +2574,7 @@ public final class Bws {
        * Any error messages collected during processing.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.JobError errors = 2;</code>
+       * <code>repeated .JobError errors = 2;</code>
        */
       public Builder removeErrors(int index) {
         if (errorsBuilder_ == null) {
@@ -2736,9 +2591,9 @@ public final class Bws {
        * Any error messages collected during processing.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.JobError errors = 2;</code>
+       * <code>repeated .JobError errors = 2;</code>
        */
-      public com.bioid.services.Bws.JobError.Builder getErrorsBuilder(
+      public com.bioid.services.Bwsmessages.JobError.Builder getErrorsBuilder(
           int index) {
         return getErrorsFieldBuilder().getBuilder(index);
       }
@@ -2747,9 +2602,9 @@ public final class Bws {
        * Any error messages collected during processing.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.JobError errors = 2;</code>
+       * <code>repeated .JobError errors = 2;</code>
        */
-      public com.bioid.services.Bws.JobErrorOrBuilder getErrorsOrBuilder(
+      public com.bioid.services.Bwsmessages.JobErrorOrBuilder getErrorsOrBuilder(
           int index) {
         if (errorsBuilder_ == null) {
           return errors_.get(index);  } else {
@@ -2761,9 +2616,9 @@ public final class Bws {
        * Any error messages collected during processing.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.JobError errors = 2;</code>
+       * <code>repeated .JobError errors = 2;</code>
        */
-      public java.util.List<? extends com.bioid.services.Bws.JobErrorOrBuilder> 
+      public java.util.List<? extends com.bioid.services.Bwsmessages.JobErrorOrBuilder> 
            getErrorsOrBuilderList() {
         if (errorsBuilder_ != null) {
           return errorsBuilder_.getMessageOrBuilderList();
@@ -2776,41 +2631,41 @@ public final class Bws {
        * Any error messages collected during processing.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.JobError errors = 2;</code>
+       * <code>repeated .JobError errors = 2;</code>
        */
-      public com.bioid.services.Bws.JobError.Builder addErrorsBuilder() {
+      public com.bioid.services.Bwsmessages.JobError.Builder addErrorsBuilder() {
         return getErrorsFieldBuilder().addBuilder(
-            com.bioid.services.Bws.JobError.getDefaultInstance());
+            com.bioid.services.Bwsmessages.JobError.getDefaultInstance());
       }
       /**
        * <pre>
        * Any error messages collected during processing.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.JobError errors = 2;</code>
+       * <code>repeated .JobError errors = 2;</code>
        */
-      public com.bioid.services.Bws.JobError.Builder addErrorsBuilder(
+      public com.bioid.services.Bwsmessages.JobError.Builder addErrorsBuilder(
           int index) {
         return getErrorsFieldBuilder().addBuilder(
-            index, com.bioid.services.Bws.JobError.getDefaultInstance());
+            index, com.bioid.services.Bwsmessages.JobError.getDefaultInstance());
       }
       /**
        * <pre>
        * Any error messages collected during processing.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.JobError errors = 2;</code>
+       * <code>repeated .JobError errors = 2;</code>
        */
-      public java.util.List<com.bioid.services.Bws.JobError.Builder> 
+      public java.util.List<com.bioid.services.Bwsmessages.JobError.Builder> 
            getErrorsBuilderList() {
         return getErrorsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.bioid.services.Bws.JobError, com.bioid.services.Bws.JobError.Builder, com.bioid.services.Bws.JobErrorOrBuilder> 
+          com.bioid.services.Bwsmessages.JobError, com.bioid.services.Bwsmessages.JobError.Builder, com.bioid.services.Bwsmessages.JobErrorOrBuilder> 
           getErrorsFieldBuilder() {
         if (errorsBuilder_ == null) {
           errorsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.bioid.services.Bws.JobError, com.bioid.services.Bws.JobError.Builder, com.bioid.services.Bws.JobErrorOrBuilder>(
+              com.bioid.services.Bwsmessages.JobError, com.bioid.services.Bwsmessages.JobError.Builder, com.bioid.services.Bwsmessages.JobErrorOrBuilder>(
                   errors_,
                   ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
@@ -2820,26 +2675,26 @@ public final class Bws {
         return errorsBuilder_;
       }
 
-      private java.util.List<com.bioid.services.Bws.ImageProperties> imageProperties_ =
+      private java.util.List<com.bioid.services.Bwsmessages.ImageProperties> imageProperties_ =
         java.util.Collections.emptyList();
       private void ensureImagePropertiesIsMutable() {
         if (!((bitField0_ & 0x00000004) != 0)) {
-          imageProperties_ = new java.util.ArrayList<com.bioid.services.Bws.ImageProperties>(imageProperties_);
+          imageProperties_ = new java.util.ArrayList<com.bioid.services.Bwsmessages.ImageProperties>(imageProperties_);
           bitField0_ |= 0x00000004;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.bioid.services.Bws.ImageProperties, com.bioid.services.Bws.ImageProperties.Builder, com.bioid.services.Bws.ImagePropertiesOrBuilder> imagePropertiesBuilder_;
+          com.bioid.services.Bwsmessages.ImageProperties, com.bioid.services.Bwsmessages.ImageProperties.Builder, com.bioid.services.Bwsmessages.ImagePropertiesOrBuilder> imagePropertiesBuilder_;
 
       /**
        * <pre>
        * Calculated image properties for each of the provided images in the given order.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.ImageProperties image_properties = 3;</code>
+       * <code>repeated .ImageProperties image_properties = 3;</code>
        */
-      public java.util.List<com.bioid.services.Bws.ImageProperties> getImagePropertiesList() {
+      public java.util.List<com.bioid.services.Bwsmessages.ImageProperties> getImagePropertiesList() {
         if (imagePropertiesBuilder_ == null) {
           return java.util.Collections.unmodifiableList(imageProperties_);
         } else {
@@ -2851,7 +2706,7 @@ public final class Bws {
        * Calculated image properties for each of the provided images in the given order.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.ImageProperties image_properties = 3;</code>
+       * <code>repeated .ImageProperties image_properties = 3;</code>
        */
       public int getImagePropertiesCount() {
         if (imagePropertiesBuilder_ == null) {
@@ -2865,9 +2720,9 @@ public final class Bws {
        * Calculated image properties for each of the provided images in the given order.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.ImageProperties image_properties = 3;</code>
+       * <code>repeated .ImageProperties image_properties = 3;</code>
        */
-      public com.bioid.services.Bws.ImageProperties getImageProperties(int index) {
+      public com.bioid.services.Bwsmessages.ImageProperties getImageProperties(int index) {
         if (imagePropertiesBuilder_ == null) {
           return imageProperties_.get(index);
         } else {
@@ -2879,10 +2734,10 @@ public final class Bws {
        * Calculated image properties for each of the provided images in the given order.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.ImageProperties image_properties = 3;</code>
+       * <code>repeated .ImageProperties image_properties = 3;</code>
        */
       public Builder setImageProperties(
-          int index, com.bioid.services.Bws.ImageProperties value) {
+          int index, com.bioid.services.Bwsmessages.ImageProperties value) {
         if (imagePropertiesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2900,10 +2755,10 @@ public final class Bws {
        * Calculated image properties for each of the provided images in the given order.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.ImageProperties image_properties = 3;</code>
+       * <code>repeated .ImageProperties image_properties = 3;</code>
        */
       public Builder setImageProperties(
-          int index, com.bioid.services.Bws.ImageProperties.Builder builderForValue) {
+          int index, com.bioid.services.Bwsmessages.ImageProperties.Builder builderForValue) {
         if (imagePropertiesBuilder_ == null) {
           ensureImagePropertiesIsMutable();
           imageProperties_.set(index, builderForValue.build());
@@ -2918,9 +2773,9 @@ public final class Bws {
        * Calculated image properties for each of the provided images in the given order.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.ImageProperties image_properties = 3;</code>
+       * <code>repeated .ImageProperties image_properties = 3;</code>
        */
-      public Builder addImageProperties(com.bioid.services.Bws.ImageProperties value) {
+      public Builder addImageProperties(com.bioid.services.Bwsmessages.ImageProperties value) {
         if (imagePropertiesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2938,10 +2793,10 @@ public final class Bws {
        * Calculated image properties for each of the provided images in the given order.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.ImageProperties image_properties = 3;</code>
+       * <code>repeated .ImageProperties image_properties = 3;</code>
        */
       public Builder addImageProperties(
-          int index, com.bioid.services.Bws.ImageProperties value) {
+          int index, com.bioid.services.Bwsmessages.ImageProperties value) {
         if (imagePropertiesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2959,10 +2814,10 @@ public final class Bws {
        * Calculated image properties for each of the provided images in the given order.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.ImageProperties image_properties = 3;</code>
+       * <code>repeated .ImageProperties image_properties = 3;</code>
        */
       public Builder addImageProperties(
-          com.bioid.services.Bws.ImageProperties.Builder builderForValue) {
+          com.bioid.services.Bwsmessages.ImageProperties.Builder builderForValue) {
         if (imagePropertiesBuilder_ == null) {
           ensureImagePropertiesIsMutable();
           imageProperties_.add(builderForValue.build());
@@ -2977,10 +2832,10 @@ public final class Bws {
        * Calculated image properties for each of the provided images in the given order.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.ImageProperties image_properties = 3;</code>
+       * <code>repeated .ImageProperties image_properties = 3;</code>
        */
       public Builder addImageProperties(
-          int index, com.bioid.services.Bws.ImageProperties.Builder builderForValue) {
+          int index, com.bioid.services.Bwsmessages.ImageProperties.Builder builderForValue) {
         if (imagePropertiesBuilder_ == null) {
           ensureImagePropertiesIsMutable();
           imageProperties_.add(index, builderForValue.build());
@@ -2995,10 +2850,10 @@ public final class Bws {
        * Calculated image properties for each of the provided images in the given order.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.ImageProperties image_properties = 3;</code>
+       * <code>repeated .ImageProperties image_properties = 3;</code>
        */
       public Builder addAllImageProperties(
-          java.lang.Iterable<? extends com.bioid.services.Bws.ImageProperties> values) {
+          java.lang.Iterable<? extends com.bioid.services.Bwsmessages.ImageProperties> values) {
         if (imagePropertiesBuilder_ == null) {
           ensureImagePropertiesIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -3014,7 +2869,7 @@ public final class Bws {
        * Calculated image properties for each of the provided images in the given order.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.ImageProperties image_properties = 3;</code>
+       * <code>repeated .ImageProperties image_properties = 3;</code>
        */
       public Builder clearImageProperties() {
         if (imagePropertiesBuilder_ == null) {
@@ -3031,7 +2886,7 @@ public final class Bws {
        * Calculated image properties for each of the provided images in the given order.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.ImageProperties image_properties = 3;</code>
+       * <code>repeated .ImageProperties image_properties = 3;</code>
        */
       public Builder removeImageProperties(int index) {
         if (imagePropertiesBuilder_ == null) {
@@ -3048,9 +2903,9 @@ public final class Bws {
        * Calculated image properties for each of the provided images in the given order.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.ImageProperties image_properties = 3;</code>
+       * <code>repeated .ImageProperties image_properties = 3;</code>
        */
-      public com.bioid.services.Bws.ImageProperties.Builder getImagePropertiesBuilder(
+      public com.bioid.services.Bwsmessages.ImageProperties.Builder getImagePropertiesBuilder(
           int index) {
         return getImagePropertiesFieldBuilder().getBuilder(index);
       }
@@ -3059,9 +2914,9 @@ public final class Bws {
        * Calculated image properties for each of the provided images in the given order.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.ImageProperties image_properties = 3;</code>
+       * <code>repeated .ImageProperties image_properties = 3;</code>
        */
-      public com.bioid.services.Bws.ImagePropertiesOrBuilder getImagePropertiesOrBuilder(
+      public com.bioid.services.Bwsmessages.ImagePropertiesOrBuilder getImagePropertiesOrBuilder(
           int index) {
         if (imagePropertiesBuilder_ == null) {
           return imageProperties_.get(index);  } else {
@@ -3073,9 +2928,9 @@ public final class Bws {
        * Calculated image properties for each of the provided images in the given order.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.ImageProperties image_properties = 3;</code>
+       * <code>repeated .ImageProperties image_properties = 3;</code>
        */
-      public java.util.List<? extends com.bioid.services.Bws.ImagePropertiesOrBuilder> 
+      public java.util.List<? extends com.bioid.services.Bwsmessages.ImagePropertiesOrBuilder> 
            getImagePropertiesOrBuilderList() {
         if (imagePropertiesBuilder_ != null) {
           return imagePropertiesBuilder_.getMessageOrBuilderList();
@@ -3088,41 +2943,41 @@ public final class Bws {
        * Calculated image properties for each of the provided images in the given order.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.ImageProperties image_properties = 3;</code>
+       * <code>repeated .ImageProperties image_properties = 3;</code>
        */
-      public com.bioid.services.Bws.ImageProperties.Builder addImagePropertiesBuilder() {
+      public com.bioid.services.Bwsmessages.ImageProperties.Builder addImagePropertiesBuilder() {
         return getImagePropertiesFieldBuilder().addBuilder(
-            com.bioid.services.Bws.ImageProperties.getDefaultInstance());
+            com.bioid.services.Bwsmessages.ImageProperties.getDefaultInstance());
       }
       /**
        * <pre>
        * Calculated image properties for each of the provided images in the given order.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.ImageProperties image_properties = 3;</code>
+       * <code>repeated .ImageProperties image_properties = 3;</code>
        */
-      public com.bioid.services.Bws.ImageProperties.Builder addImagePropertiesBuilder(
+      public com.bioid.services.Bwsmessages.ImageProperties.Builder addImagePropertiesBuilder(
           int index) {
         return getImagePropertiesFieldBuilder().addBuilder(
-            index, com.bioid.services.Bws.ImageProperties.getDefaultInstance());
+            index, com.bioid.services.Bwsmessages.ImageProperties.getDefaultInstance());
       }
       /**
        * <pre>
        * Calculated image properties for each of the provided images in the given order.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.ImageProperties image_properties = 3;</code>
+       * <code>repeated .ImageProperties image_properties = 3;</code>
        */
-      public java.util.List<com.bioid.services.Bws.ImageProperties.Builder> 
+      public java.util.List<com.bioid.services.Bwsmessages.ImageProperties.Builder> 
            getImagePropertiesBuilderList() {
         return getImagePropertiesFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.bioid.services.Bws.ImageProperties, com.bioid.services.Bws.ImageProperties.Builder, com.bioid.services.Bws.ImagePropertiesOrBuilder> 
+          com.bioid.services.Bwsmessages.ImageProperties, com.bioid.services.Bwsmessages.ImageProperties.Builder, com.bioid.services.Bwsmessages.ImagePropertiesOrBuilder> 
           getImagePropertiesFieldBuilder() {
         if (imagePropertiesBuilder_ == null) {
           imagePropertiesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.bioid.services.Bws.ImageProperties, com.bioid.services.Bws.ImageProperties.Builder, com.bioid.services.Bws.ImagePropertiesOrBuilder>(
+              com.bioid.services.Bwsmessages.ImageProperties, com.bioid.services.Bwsmessages.ImageProperties.Builder, com.bioid.services.Bwsmessages.ImagePropertiesOrBuilder>(
                   imageProperties_,
                   ((bitField0_ & 0x00000004) != 0),
                   getParentForChildren(),
@@ -3292,24 +3147,24 @@ public final class Bws {
      * One or more live images.
      * </pre>
      *
-     * <code>repeated .bioid.services.v1.ImageData live_images = 1;</code>
+     * <code>repeated .ImageData live_images = 1;</code>
      */
-    java.util.List<com.bioid.services.Bws.ImageData> 
+    java.util.List<com.bioid.services.Bwsmessages.ImageData> 
         getLiveImagesList();
     /**
      * <pre>
      * One or more live images.
      * </pre>
      *
-     * <code>repeated .bioid.services.v1.ImageData live_images = 1;</code>
+     * <code>repeated .ImageData live_images = 1;</code>
      */
-    com.bioid.services.Bws.ImageData getLiveImages(int index);
+    com.bioid.services.Bwsmessages.ImageData getLiveImages(int index);
     /**
      * <pre>
      * One or more live images.
      * </pre>
      *
-     * <code>repeated .bioid.services.v1.ImageData live_images = 1;</code>
+     * <code>repeated .ImageData live_images = 1;</code>
      */
     int getLiveImagesCount();
     /**
@@ -3317,18 +3172,18 @@ public final class Bws {
      * One or more live images.
      * </pre>
      *
-     * <code>repeated .bioid.services.v1.ImageData live_images = 1;</code>
+     * <code>repeated .ImageData live_images = 1;</code>
      */
-    java.util.List<? extends com.bioid.services.Bws.ImageDataOrBuilder> 
+    java.util.List<? extends com.bioid.services.Bwsmessages.ImageDataOrBuilder> 
         getLiveImagesOrBuilderList();
     /**
      * <pre>
      * One or more live images.
      * </pre>
      *
-     * <code>repeated .bioid.services.v1.ImageData live_images = 1;</code>
+     * <code>repeated .ImageData live_images = 1;</code>
      */
-    com.bioid.services.Bws.ImageDataOrBuilder getLiveImagesOrBuilder(
+    com.bioid.services.Bwsmessages.ImageDataOrBuilder getLiveImagesOrBuilder(
         int index);
 
     /**
@@ -3394,16 +3249,16 @@ public final class Bws {
 
     public static final int LIVE_IMAGES_FIELD_NUMBER = 1;
     @SuppressWarnings("serial")
-    private java.util.List<com.bioid.services.Bws.ImageData> liveImages_;
+    private java.util.List<com.bioid.services.Bwsmessages.ImageData> liveImages_;
     /**
      * <pre>
      * One or more live images.
      * </pre>
      *
-     * <code>repeated .bioid.services.v1.ImageData live_images = 1;</code>
+     * <code>repeated .ImageData live_images = 1;</code>
      */
     @java.lang.Override
-    public java.util.List<com.bioid.services.Bws.ImageData> getLiveImagesList() {
+    public java.util.List<com.bioid.services.Bwsmessages.ImageData> getLiveImagesList() {
       return liveImages_;
     }
     /**
@@ -3411,10 +3266,10 @@ public final class Bws {
      * One or more live images.
      * </pre>
      *
-     * <code>repeated .bioid.services.v1.ImageData live_images = 1;</code>
+     * <code>repeated .ImageData live_images = 1;</code>
      */
     @java.lang.Override
-    public java.util.List<? extends com.bioid.services.Bws.ImageDataOrBuilder> 
+    public java.util.List<? extends com.bioid.services.Bwsmessages.ImageDataOrBuilder> 
         getLiveImagesOrBuilderList() {
       return liveImages_;
     }
@@ -3423,7 +3278,7 @@ public final class Bws {
      * One or more live images.
      * </pre>
      *
-     * <code>repeated .bioid.services.v1.ImageData live_images = 1;</code>
+     * <code>repeated .ImageData live_images = 1;</code>
      */
     @java.lang.Override
     public int getLiveImagesCount() {
@@ -3434,10 +3289,10 @@ public final class Bws {
      * One or more live images.
      * </pre>
      *
-     * <code>repeated .bioid.services.v1.ImageData live_images = 1;</code>
+     * <code>repeated .ImageData live_images = 1;</code>
      */
     @java.lang.Override
-    public com.bioid.services.Bws.ImageData getLiveImages(int index) {
+    public com.bioid.services.Bwsmessages.ImageData getLiveImages(int index) {
       return liveImages_.get(index);
     }
     /**
@@ -3445,10 +3300,10 @@ public final class Bws {
      * One or more live images.
      * </pre>
      *
-     * <code>repeated .bioid.services.v1.ImageData live_images = 1;</code>
+     * <code>repeated .ImageData live_images = 1;</code>
      */
     @java.lang.Override
-    public com.bioid.services.Bws.ImageDataOrBuilder getLiveImagesOrBuilder(
+    public com.bioid.services.Bwsmessages.ImageDataOrBuilder getLiveImagesOrBuilder(
         int index) {
       return liveImages_.get(index);
     }
@@ -3869,9 +3724,9 @@ public final class Bws {
                 done = true;
                 break;
               case 10: {
-                com.bioid.services.Bws.ImageData m =
+                com.bioid.services.Bwsmessages.ImageData m =
                     input.readMessage(
-                        com.bioid.services.Bws.ImageData.parser(),
+                        com.bioid.services.Bwsmessages.ImageData.parser(),
                         extensionRegistry);
                 if (liveImagesBuilder_ == null) {
                   ensureLiveImagesIsMutable();
@@ -3908,26 +3763,26 @@ public final class Bws {
       }
       private int bitField0_;
 
-      private java.util.List<com.bioid.services.Bws.ImageData> liveImages_ =
+      private java.util.List<com.bioid.services.Bwsmessages.ImageData> liveImages_ =
         java.util.Collections.emptyList();
       private void ensureLiveImagesIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          liveImages_ = new java.util.ArrayList<com.bioid.services.Bws.ImageData>(liveImages_);
+          liveImages_ = new java.util.ArrayList<com.bioid.services.Bwsmessages.ImageData>(liveImages_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.bioid.services.Bws.ImageData, com.bioid.services.Bws.ImageData.Builder, com.bioid.services.Bws.ImageDataOrBuilder> liveImagesBuilder_;
+          com.bioid.services.Bwsmessages.ImageData, com.bioid.services.Bwsmessages.ImageData.Builder, com.bioid.services.Bwsmessages.ImageDataOrBuilder> liveImagesBuilder_;
 
       /**
        * <pre>
        * One or more live images.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.ImageData live_images = 1;</code>
+       * <code>repeated .ImageData live_images = 1;</code>
        */
-      public java.util.List<com.bioid.services.Bws.ImageData> getLiveImagesList() {
+      public java.util.List<com.bioid.services.Bwsmessages.ImageData> getLiveImagesList() {
         if (liveImagesBuilder_ == null) {
           return java.util.Collections.unmodifiableList(liveImages_);
         } else {
@@ -3939,7 +3794,7 @@ public final class Bws {
        * One or more live images.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.ImageData live_images = 1;</code>
+       * <code>repeated .ImageData live_images = 1;</code>
        */
       public int getLiveImagesCount() {
         if (liveImagesBuilder_ == null) {
@@ -3953,9 +3808,9 @@ public final class Bws {
        * One or more live images.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.ImageData live_images = 1;</code>
+       * <code>repeated .ImageData live_images = 1;</code>
        */
-      public com.bioid.services.Bws.ImageData getLiveImages(int index) {
+      public com.bioid.services.Bwsmessages.ImageData getLiveImages(int index) {
         if (liveImagesBuilder_ == null) {
           return liveImages_.get(index);
         } else {
@@ -3967,10 +3822,10 @@ public final class Bws {
        * One or more live images.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.ImageData live_images = 1;</code>
+       * <code>repeated .ImageData live_images = 1;</code>
        */
       public Builder setLiveImages(
-          int index, com.bioid.services.Bws.ImageData value) {
+          int index, com.bioid.services.Bwsmessages.ImageData value) {
         if (liveImagesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -3988,10 +3843,10 @@ public final class Bws {
        * One or more live images.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.ImageData live_images = 1;</code>
+       * <code>repeated .ImageData live_images = 1;</code>
        */
       public Builder setLiveImages(
-          int index, com.bioid.services.Bws.ImageData.Builder builderForValue) {
+          int index, com.bioid.services.Bwsmessages.ImageData.Builder builderForValue) {
         if (liveImagesBuilder_ == null) {
           ensureLiveImagesIsMutable();
           liveImages_.set(index, builderForValue.build());
@@ -4006,9 +3861,9 @@ public final class Bws {
        * One or more live images.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.ImageData live_images = 1;</code>
+       * <code>repeated .ImageData live_images = 1;</code>
        */
-      public Builder addLiveImages(com.bioid.services.Bws.ImageData value) {
+      public Builder addLiveImages(com.bioid.services.Bwsmessages.ImageData value) {
         if (liveImagesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -4026,10 +3881,10 @@ public final class Bws {
        * One or more live images.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.ImageData live_images = 1;</code>
+       * <code>repeated .ImageData live_images = 1;</code>
        */
       public Builder addLiveImages(
-          int index, com.bioid.services.Bws.ImageData value) {
+          int index, com.bioid.services.Bwsmessages.ImageData value) {
         if (liveImagesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -4047,10 +3902,10 @@ public final class Bws {
        * One or more live images.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.ImageData live_images = 1;</code>
+       * <code>repeated .ImageData live_images = 1;</code>
        */
       public Builder addLiveImages(
-          com.bioid.services.Bws.ImageData.Builder builderForValue) {
+          com.bioid.services.Bwsmessages.ImageData.Builder builderForValue) {
         if (liveImagesBuilder_ == null) {
           ensureLiveImagesIsMutable();
           liveImages_.add(builderForValue.build());
@@ -4065,10 +3920,10 @@ public final class Bws {
        * One or more live images.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.ImageData live_images = 1;</code>
+       * <code>repeated .ImageData live_images = 1;</code>
        */
       public Builder addLiveImages(
-          int index, com.bioid.services.Bws.ImageData.Builder builderForValue) {
+          int index, com.bioid.services.Bwsmessages.ImageData.Builder builderForValue) {
         if (liveImagesBuilder_ == null) {
           ensureLiveImagesIsMutable();
           liveImages_.add(index, builderForValue.build());
@@ -4083,10 +3938,10 @@ public final class Bws {
        * One or more live images.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.ImageData live_images = 1;</code>
+       * <code>repeated .ImageData live_images = 1;</code>
        */
       public Builder addAllLiveImages(
-          java.lang.Iterable<? extends com.bioid.services.Bws.ImageData> values) {
+          java.lang.Iterable<? extends com.bioid.services.Bwsmessages.ImageData> values) {
         if (liveImagesBuilder_ == null) {
           ensureLiveImagesIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -4102,7 +3957,7 @@ public final class Bws {
        * One or more live images.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.ImageData live_images = 1;</code>
+       * <code>repeated .ImageData live_images = 1;</code>
        */
       public Builder clearLiveImages() {
         if (liveImagesBuilder_ == null) {
@@ -4119,7 +3974,7 @@ public final class Bws {
        * One or more live images.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.ImageData live_images = 1;</code>
+       * <code>repeated .ImageData live_images = 1;</code>
        */
       public Builder removeLiveImages(int index) {
         if (liveImagesBuilder_ == null) {
@@ -4136,9 +3991,9 @@ public final class Bws {
        * One or more live images.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.ImageData live_images = 1;</code>
+       * <code>repeated .ImageData live_images = 1;</code>
        */
-      public com.bioid.services.Bws.ImageData.Builder getLiveImagesBuilder(
+      public com.bioid.services.Bwsmessages.ImageData.Builder getLiveImagesBuilder(
           int index) {
         return getLiveImagesFieldBuilder().getBuilder(index);
       }
@@ -4147,9 +4002,9 @@ public final class Bws {
        * One or more live images.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.ImageData live_images = 1;</code>
+       * <code>repeated .ImageData live_images = 1;</code>
        */
-      public com.bioid.services.Bws.ImageDataOrBuilder getLiveImagesOrBuilder(
+      public com.bioid.services.Bwsmessages.ImageDataOrBuilder getLiveImagesOrBuilder(
           int index) {
         if (liveImagesBuilder_ == null) {
           return liveImages_.get(index);  } else {
@@ -4161,9 +4016,9 @@ public final class Bws {
        * One or more live images.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.ImageData live_images = 1;</code>
+       * <code>repeated .ImageData live_images = 1;</code>
        */
-      public java.util.List<? extends com.bioid.services.Bws.ImageDataOrBuilder> 
+      public java.util.List<? extends com.bioid.services.Bwsmessages.ImageDataOrBuilder> 
            getLiveImagesOrBuilderList() {
         if (liveImagesBuilder_ != null) {
           return liveImagesBuilder_.getMessageOrBuilderList();
@@ -4176,41 +4031,41 @@ public final class Bws {
        * One or more live images.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.ImageData live_images = 1;</code>
+       * <code>repeated .ImageData live_images = 1;</code>
        */
-      public com.bioid.services.Bws.ImageData.Builder addLiveImagesBuilder() {
+      public com.bioid.services.Bwsmessages.ImageData.Builder addLiveImagesBuilder() {
         return getLiveImagesFieldBuilder().addBuilder(
-            com.bioid.services.Bws.ImageData.getDefaultInstance());
+            com.bioid.services.Bwsmessages.ImageData.getDefaultInstance());
       }
       /**
        * <pre>
        * One or more live images.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.ImageData live_images = 1;</code>
+       * <code>repeated .ImageData live_images = 1;</code>
        */
-      public com.bioid.services.Bws.ImageData.Builder addLiveImagesBuilder(
+      public com.bioid.services.Bwsmessages.ImageData.Builder addLiveImagesBuilder(
           int index) {
         return getLiveImagesFieldBuilder().addBuilder(
-            index, com.bioid.services.Bws.ImageData.getDefaultInstance());
+            index, com.bioid.services.Bwsmessages.ImageData.getDefaultInstance());
       }
       /**
        * <pre>
        * One or more live images.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.ImageData live_images = 1;</code>
+       * <code>repeated .ImageData live_images = 1;</code>
        */
-      public java.util.List<com.bioid.services.Bws.ImageData.Builder> 
+      public java.util.List<com.bioid.services.Bwsmessages.ImageData.Builder> 
            getLiveImagesBuilderList() {
         return getLiveImagesFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.bioid.services.Bws.ImageData, com.bioid.services.Bws.ImageData.Builder, com.bioid.services.Bws.ImageDataOrBuilder> 
+          com.bioid.services.Bwsmessages.ImageData, com.bioid.services.Bwsmessages.ImageData.Builder, com.bioid.services.Bwsmessages.ImageDataOrBuilder> 
           getLiveImagesFieldBuilder() {
         if (liveImagesBuilder_ == null) {
           liveImagesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.bioid.services.Bws.ImageData, com.bioid.services.Bws.ImageData.Builder, com.bioid.services.Bws.ImageDataOrBuilder>(
+              com.bioid.services.Bwsmessages.ImageData, com.bioid.services.Bwsmessages.ImageData.Builder, com.bioid.services.Bwsmessages.ImageDataOrBuilder>(
                   liveImages_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
@@ -4380,7 +4235,7 @@ public final class Bws {
      * The return-status of the processing job.
      * </pre>
      *
-     * <code>.bioid.services.v1.JobStatus status = 1;</code>
+     * <code>.JobStatus status = 1;</code>
      * @return The enum numeric value on the wire for status.
      */
     int getStatusValue();
@@ -4389,34 +4244,34 @@ public final class Bws {
      * The return-status of the processing job.
      * </pre>
      *
-     * <code>.bioid.services.v1.JobStatus status = 1;</code>
+     * <code>.JobStatus status = 1;</code>
      * @return The status.
      */
-    com.bioid.services.Bws.JobStatus getStatus();
+    com.bioid.services.Bwsmessages.JobStatus getStatus();
 
     /**
      * <pre>
      * Any error messages collected during processing.
      * </pre>
      *
-     * <code>repeated .bioid.services.v1.JobError errors = 2;</code>
+     * <code>repeated .JobError errors = 2;</code>
      */
-    java.util.List<com.bioid.services.Bws.JobError> 
+    java.util.List<com.bioid.services.Bwsmessages.JobError> 
         getErrorsList();
     /**
      * <pre>
      * Any error messages collected during processing.
      * </pre>
      *
-     * <code>repeated .bioid.services.v1.JobError errors = 2;</code>
+     * <code>repeated .JobError errors = 2;</code>
      */
-    com.bioid.services.Bws.JobError getErrors(int index);
+    com.bioid.services.Bwsmessages.JobError getErrors(int index);
     /**
      * <pre>
      * Any error messages collected during processing.
      * </pre>
      *
-     * <code>repeated .bioid.services.v1.JobError errors = 2;</code>
+     * <code>repeated .JobError errors = 2;</code>
      */
     int getErrorsCount();
     /**
@@ -4424,18 +4279,18 @@ public final class Bws {
      * Any error messages collected during processing.
      * </pre>
      *
-     * <code>repeated .bioid.services.v1.JobError errors = 2;</code>
+     * <code>repeated .JobError errors = 2;</code>
      */
-    java.util.List<? extends com.bioid.services.Bws.JobErrorOrBuilder> 
+    java.util.List<? extends com.bioid.services.Bwsmessages.JobErrorOrBuilder> 
         getErrorsOrBuilderList();
     /**
      * <pre>
      * Any error messages collected during processing.
      * </pre>
      *
-     * <code>repeated .bioid.services.v1.JobError errors = 2;</code>
+     * <code>repeated .JobError errors = 2;</code>
      */
-    com.bioid.services.Bws.JobErrorOrBuilder getErrorsOrBuilder(
+    com.bioid.services.Bwsmessages.JobErrorOrBuilder getErrorsOrBuilder(
         int index);
 
     /**
@@ -4443,24 +4298,24 @@ public final class Bws {
      * Calculated image properties for each of the provided live images if available.
      * </pre>
      *
-     * <code>repeated .bioid.services.v1.ImageProperties image_properties = 3;</code>
+     * <code>repeated .ImageProperties image_properties = 3;</code>
      */
-    java.util.List<com.bioid.services.Bws.ImageProperties> 
+    java.util.List<com.bioid.services.Bwsmessages.ImageProperties> 
         getImagePropertiesList();
     /**
      * <pre>
      * Calculated image properties for each of the provided live images if available.
      * </pre>
      *
-     * <code>repeated .bioid.services.v1.ImageProperties image_properties = 3;</code>
+     * <code>repeated .ImageProperties image_properties = 3;</code>
      */
-    com.bioid.services.Bws.ImageProperties getImageProperties(int index);
+    com.bioid.services.Bwsmessages.ImageProperties getImageProperties(int index);
     /**
      * <pre>
      * Calculated image properties for each of the provided live images if available.
      * </pre>
      *
-     * <code>repeated .bioid.services.v1.ImageProperties image_properties = 3;</code>
+     * <code>repeated .ImageProperties image_properties = 3;</code>
      */
     int getImagePropertiesCount();
     /**
@@ -4468,18 +4323,18 @@ public final class Bws {
      * Calculated image properties for each of the provided live images if available.
      * </pre>
      *
-     * <code>repeated .bioid.services.v1.ImageProperties image_properties = 3;</code>
+     * <code>repeated .ImageProperties image_properties = 3;</code>
      */
-    java.util.List<? extends com.bioid.services.Bws.ImagePropertiesOrBuilder> 
+    java.util.List<? extends com.bioid.services.Bwsmessages.ImagePropertiesOrBuilder> 
         getImagePropertiesOrBuilderList();
     /**
      * <pre>
      * Calculated image properties for each of the provided live images if available.
      * </pre>
      *
-     * <code>repeated .bioid.services.v1.ImageProperties image_properties = 3;</code>
+     * <code>repeated .ImageProperties image_properties = 3;</code>
      */
-    com.bioid.services.Bws.ImagePropertiesOrBuilder getImagePropertiesOrBuilder(
+    com.bioid.services.Bwsmessages.ImagePropertiesOrBuilder getImagePropertiesOrBuilder(
         int index);
 
     /**
@@ -4487,7 +4342,7 @@ public final class Bws {
      * Calculated image properties for the provided photo.
      * </pre>
      *
-     * <code>.bioid.services.v1.ImageProperties photo_properties = 4;</code>
+     * <code>.ImageProperties photo_properties = 4;</code>
      * @return Whether the photoProperties field is set.
      */
     boolean hasPhotoProperties();
@@ -4496,18 +4351,18 @@ public final class Bws {
      * Calculated image properties for the provided photo.
      * </pre>
      *
-     * <code>.bioid.services.v1.ImageProperties photo_properties = 4;</code>
+     * <code>.ImageProperties photo_properties = 4;</code>
      * @return The photoProperties.
      */
-    com.bioid.services.Bws.ImageProperties getPhotoProperties();
+    com.bioid.services.Bwsmessages.ImageProperties getPhotoProperties();
     /**
      * <pre>
      * Calculated image properties for the provided photo.
      * </pre>
      *
-     * <code>.bioid.services.v1.ImageProperties photo_properties = 4;</code>
+     * <code>.ImageProperties photo_properties = 4;</code>
      */
-    com.bioid.services.Bws.ImagePropertiesOrBuilder getPhotoPropertiesOrBuilder();
+    com.bioid.services.Bwsmessages.ImagePropertiesOrBuilder getPhotoPropertiesOrBuilder();
 
     /**
      * <pre>
@@ -4629,7 +4484,7 @@ public final class Bws {
       LEVEL_1(1),
       /**
        * <pre>
-       * Bad accuracy level that correlates with a FAR of 0.1%
+       * Bad accuracy level that correlates with a FAR of 0.25%
        * </pre>
        *
        * <code>LEVEL_2 = 2;</code>
@@ -4637,7 +4492,7 @@ public final class Bws {
       LEVEL_2(2),
       /**
        * <pre>
-       * Not so good accuracy level that correlates with a FAR of 0.01%
+       * Not so good accuracy level that correlates with a FAR of 0.1%
        * </pre>
        *
        * <code>LEVEL_3 = 3;</code>
@@ -4645,7 +4500,7 @@ public final class Bws {
       LEVEL_3(3),
       /**
        * <pre>
-       * Good accuracy level that correlates with a FAR of 0.001%
+       * Good accuracy level that correlates with a FAR of 0.01%
        * </pre>
        *
        * <code>LEVEL_4 = 4;</code>
@@ -4653,7 +4508,7 @@ public final class Bws {
       LEVEL_4(4),
       /**
        * <pre>
-       * Best accuracy level that correlates with a FAR of 0.0001%
+       * Best accuracy level that correlates with a FAR of 0.001%
        * </pre>
        *
        * <code>LEVEL_5 = 5;</code>
@@ -4680,7 +4535,7 @@ public final class Bws {
       public static final int LEVEL_1_VALUE = 1;
       /**
        * <pre>
-       * Bad accuracy level that correlates with a FAR of 0.1%
+       * Bad accuracy level that correlates with a FAR of 0.25%
        * </pre>
        *
        * <code>LEVEL_2 = 2;</code>
@@ -4688,7 +4543,7 @@ public final class Bws {
       public static final int LEVEL_2_VALUE = 2;
       /**
        * <pre>
-       * Not so good accuracy level that correlates with a FAR of 0.01%
+       * Not so good accuracy level that correlates with a FAR of 0.1%
        * </pre>
        *
        * <code>LEVEL_3 = 3;</code>
@@ -4696,7 +4551,7 @@ public final class Bws {
       public static final int LEVEL_3_VALUE = 3;
       /**
        * <pre>
-       * Good accuracy level that correlates with a FAR of 0.001%
+       * Good accuracy level that correlates with a FAR of 0.01%
        * </pre>
        *
        * <code>LEVEL_4 = 4;</code>
@@ -4704,7 +4559,7 @@ public final class Bws {
       public static final int LEVEL_4_VALUE = 4;
       /**
        * <pre>
-       * Best accuracy level that correlates with a FAR of 0.0001%
+       * Best accuracy level that correlates with a FAR of 0.001%
        * </pre>
        *
        * <code>LEVEL_5 = 5;</code>
@@ -4806,7 +4661,7 @@ public final class Bws {
      * The return-status of the processing job.
      * </pre>
      *
-     * <code>.bioid.services.v1.JobStatus status = 1;</code>
+     * <code>.JobStatus status = 1;</code>
      * @return The enum numeric value on the wire for status.
      */
     @java.lang.Override public int getStatusValue() {
@@ -4817,26 +4672,26 @@ public final class Bws {
      * The return-status of the processing job.
      * </pre>
      *
-     * <code>.bioid.services.v1.JobStatus status = 1;</code>
+     * <code>.JobStatus status = 1;</code>
      * @return The status.
      */
-    @java.lang.Override public com.bioid.services.Bws.JobStatus getStatus() {
-      com.bioid.services.Bws.JobStatus result = com.bioid.services.Bws.JobStatus.forNumber(status_);
-      return result == null ? com.bioid.services.Bws.JobStatus.UNRECOGNIZED : result;
+    @java.lang.Override public com.bioid.services.Bwsmessages.JobStatus getStatus() {
+      com.bioid.services.Bwsmessages.JobStatus result = com.bioid.services.Bwsmessages.JobStatus.forNumber(status_);
+      return result == null ? com.bioid.services.Bwsmessages.JobStatus.UNRECOGNIZED : result;
     }
 
     public static final int ERRORS_FIELD_NUMBER = 2;
     @SuppressWarnings("serial")
-    private java.util.List<com.bioid.services.Bws.JobError> errors_;
+    private java.util.List<com.bioid.services.Bwsmessages.JobError> errors_;
     /**
      * <pre>
      * Any error messages collected during processing.
      * </pre>
      *
-     * <code>repeated .bioid.services.v1.JobError errors = 2;</code>
+     * <code>repeated .JobError errors = 2;</code>
      */
     @java.lang.Override
-    public java.util.List<com.bioid.services.Bws.JobError> getErrorsList() {
+    public java.util.List<com.bioid.services.Bwsmessages.JobError> getErrorsList() {
       return errors_;
     }
     /**
@@ -4844,10 +4699,10 @@ public final class Bws {
      * Any error messages collected during processing.
      * </pre>
      *
-     * <code>repeated .bioid.services.v1.JobError errors = 2;</code>
+     * <code>repeated .JobError errors = 2;</code>
      */
     @java.lang.Override
-    public java.util.List<? extends com.bioid.services.Bws.JobErrorOrBuilder> 
+    public java.util.List<? extends com.bioid.services.Bwsmessages.JobErrorOrBuilder> 
         getErrorsOrBuilderList() {
       return errors_;
     }
@@ -4856,7 +4711,7 @@ public final class Bws {
      * Any error messages collected during processing.
      * </pre>
      *
-     * <code>repeated .bioid.services.v1.JobError errors = 2;</code>
+     * <code>repeated .JobError errors = 2;</code>
      */
     @java.lang.Override
     public int getErrorsCount() {
@@ -4867,10 +4722,10 @@ public final class Bws {
      * Any error messages collected during processing.
      * </pre>
      *
-     * <code>repeated .bioid.services.v1.JobError errors = 2;</code>
+     * <code>repeated .JobError errors = 2;</code>
      */
     @java.lang.Override
-    public com.bioid.services.Bws.JobError getErrors(int index) {
+    public com.bioid.services.Bwsmessages.JobError getErrors(int index) {
       return errors_.get(index);
     }
     /**
@@ -4878,26 +4733,26 @@ public final class Bws {
      * Any error messages collected during processing.
      * </pre>
      *
-     * <code>repeated .bioid.services.v1.JobError errors = 2;</code>
+     * <code>repeated .JobError errors = 2;</code>
      */
     @java.lang.Override
-    public com.bioid.services.Bws.JobErrorOrBuilder getErrorsOrBuilder(
+    public com.bioid.services.Bwsmessages.JobErrorOrBuilder getErrorsOrBuilder(
         int index) {
       return errors_.get(index);
     }
 
     public static final int IMAGE_PROPERTIES_FIELD_NUMBER = 3;
     @SuppressWarnings("serial")
-    private java.util.List<com.bioid.services.Bws.ImageProperties> imageProperties_;
+    private java.util.List<com.bioid.services.Bwsmessages.ImageProperties> imageProperties_;
     /**
      * <pre>
      * Calculated image properties for each of the provided live images if available.
      * </pre>
      *
-     * <code>repeated .bioid.services.v1.ImageProperties image_properties = 3;</code>
+     * <code>repeated .ImageProperties image_properties = 3;</code>
      */
     @java.lang.Override
-    public java.util.List<com.bioid.services.Bws.ImageProperties> getImagePropertiesList() {
+    public java.util.List<com.bioid.services.Bwsmessages.ImageProperties> getImagePropertiesList() {
       return imageProperties_;
     }
     /**
@@ -4905,10 +4760,10 @@ public final class Bws {
      * Calculated image properties for each of the provided live images if available.
      * </pre>
      *
-     * <code>repeated .bioid.services.v1.ImageProperties image_properties = 3;</code>
+     * <code>repeated .ImageProperties image_properties = 3;</code>
      */
     @java.lang.Override
-    public java.util.List<? extends com.bioid.services.Bws.ImagePropertiesOrBuilder> 
+    public java.util.List<? extends com.bioid.services.Bwsmessages.ImagePropertiesOrBuilder> 
         getImagePropertiesOrBuilderList() {
       return imageProperties_;
     }
@@ -4917,7 +4772,7 @@ public final class Bws {
      * Calculated image properties for each of the provided live images if available.
      * </pre>
      *
-     * <code>repeated .bioid.services.v1.ImageProperties image_properties = 3;</code>
+     * <code>repeated .ImageProperties image_properties = 3;</code>
      */
     @java.lang.Override
     public int getImagePropertiesCount() {
@@ -4928,10 +4783,10 @@ public final class Bws {
      * Calculated image properties for each of the provided live images if available.
      * </pre>
      *
-     * <code>repeated .bioid.services.v1.ImageProperties image_properties = 3;</code>
+     * <code>repeated .ImageProperties image_properties = 3;</code>
      */
     @java.lang.Override
-    public com.bioid.services.Bws.ImageProperties getImageProperties(int index) {
+    public com.bioid.services.Bwsmessages.ImageProperties getImageProperties(int index) {
       return imageProperties_.get(index);
     }
     /**
@@ -4939,22 +4794,22 @@ public final class Bws {
      * Calculated image properties for each of the provided live images if available.
      * </pre>
      *
-     * <code>repeated .bioid.services.v1.ImageProperties image_properties = 3;</code>
+     * <code>repeated .ImageProperties image_properties = 3;</code>
      */
     @java.lang.Override
-    public com.bioid.services.Bws.ImagePropertiesOrBuilder getImagePropertiesOrBuilder(
+    public com.bioid.services.Bwsmessages.ImagePropertiesOrBuilder getImagePropertiesOrBuilder(
         int index) {
       return imageProperties_.get(index);
     }
 
     public static final int PHOTO_PROPERTIES_FIELD_NUMBER = 4;
-    private com.bioid.services.Bws.ImageProperties photoProperties_;
+    private com.bioid.services.Bwsmessages.ImageProperties photoProperties_;
     /**
      * <pre>
      * Calculated image properties for the provided photo.
      * </pre>
      *
-     * <code>.bioid.services.v1.ImageProperties photo_properties = 4;</code>
+     * <code>.ImageProperties photo_properties = 4;</code>
      * @return Whether the photoProperties field is set.
      */
     @java.lang.Override
@@ -4966,23 +4821,23 @@ public final class Bws {
      * Calculated image properties for the provided photo.
      * </pre>
      *
-     * <code>.bioid.services.v1.ImageProperties photo_properties = 4;</code>
+     * <code>.ImageProperties photo_properties = 4;</code>
      * @return The photoProperties.
      */
     @java.lang.Override
-    public com.bioid.services.Bws.ImageProperties getPhotoProperties() {
-      return photoProperties_ == null ? com.bioid.services.Bws.ImageProperties.getDefaultInstance() : photoProperties_;
+    public com.bioid.services.Bwsmessages.ImageProperties getPhotoProperties() {
+      return photoProperties_ == null ? com.bioid.services.Bwsmessages.ImageProperties.getDefaultInstance() : photoProperties_;
     }
     /**
      * <pre>
      * Calculated image properties for the provided photo.
      * </pre>
      *
-     * <code>.bioid.services.v1.ImageProperties photo_properties = 4;</code>
+     * <code>.ImageProperties photo_properties = 4;</code>
      */
     @java.lang.Override
-    public com.bioid.services.Bws.ImagePropertiesOrBuilder getPhotoPropertiesOrBuilder() {
-      return photoProperties_ == null ? com.bioid.services.Bws.ImageProperties.getDefaultInstance() : photoProperties_;
+    public com.bioid.services.Bwsmessages.ImagePropertiesOrBuilder getPhotoPropertiesOrBuilder() {
+      return photoProperties_ == null ? com.bioid.services.Bwsmessages.ImageProperties.getDefaultInstance() : photoProperties_;
     }
 
     public static final int VERIFICATION_LEVEL_FIELD_NUMBER = 5;
@@ -5070,7 +4925,7 @@ public final class Bws {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (status_ != com.bioid.services.Bws.JobStatus.SUCCEEDED.getNumber()) {
+      if (status_ != com.bioid.services.Bwsmessages.JobStatus.SUCCEEDED.getNumber()) {
         output.writeEnum(1, status_);
       }
       for (int i = 0; i < errors_.size(); i++) {
@@ -5103,7 +4958,7 @@ public final class Bws {
       if (size != -1) return size;
 
       size = 0;
-      if (status_ != com.bioid.services.Bws.JobStatus.SUCCEEDED.getNumber()) {
+      if (status_ != com.bioid.services.Bwsmessages.JobStatus.SUCCEEDED.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(1, status_);
       }
@@ -5598,9 +5453,9 @@ public final class Bws {
                 break;
               } // case 8
               case 18: {
-                com.bioid.services.Bws.JobError m =
+                com.bioid.services.Bwsmessages.JobError m =
                     input.readMessage(
-                        com.bioid.services.Bws.JobError.parser(),
+                        com.bioid.services.Bwsmessages.JobError.parser(),
                         extensionRegistry);
                 if (errorsBuilder_ == null) {
                   ensureErrorsIsMutable();
@@ -5611,9 +5466,9 @@ public final class Bws {
                 break;
               } // case 18
               case 26: {
-                com.bioid.services.Bws.ImageProperties m =
+                com.bioid.services.Bwsmessages.ImageProperties m =
                     input.readMessage(
-                        com.bioid.services.Bws.ImageProperties.parser(),
+                        com.bioid.services.Bwsmessages.ImageProperties.parser(),
                         extensionRegistry);
                 if (imagePropertiesBuilder_ == null) {
                   ensureImagePropertiesIsMutable();
@@ -5673,7 +5528,7 @@ public final class Bws {
        * The return-status of the processing job.
        * </pre>
        *
-       * <code>.bioid.services.v1.JobStatus status = 1;</code>
+       * <code>.JobStatus status = 1;</code>
        * @return The enum numeric value on the wire for status.
        */
       @java.lang.Override public int getStatusValue() {
@@ -5684,7 +5539,7 @@ public final class Bws {
        * The return-status of the processing job.
        * </pre>
        *
-       * <code>.bioid.services.v1.JobStatus status = 1;</code>
+       * <code>.JobStatus status = 1;</code>
        * @param value The enum numeric value on the wire for status to set.
        * @return This builder for chaining.
        */
@@ -5699,24 +5554,24 @@ public final class Bws {
        * The return-status of the processing job.
        * </pre>
        *
-       * <code>.bioid.services.v1.JobStatus status = 1;</code>
+       * <code>.JobStatus status = 1;</code>
        * @return The status.
        */
       @java.lang.Override
-      public com.bioid.services.Bws.JobStatus getStatus() {
-        com.bioid.services.Bws.JobStatus result = com.bioid.services.Bws.JobStatus.forNumber(status_);
-        return result == null ? com.bioid.services.Bws.JobStatus.UNRECOGNIZED : result;
+      public com.bioid.services.Bwsmessages.JobStatus getStatus() {
+        com.bioid.services.Bwsmessages.JobStatus result = com.bioid.services.Bwsmessages.JobStatus.forNumber(status_);
+        return result == null ? com.bioid.services.Bwsmessages.JobStatus.UNRECOGNIZED : result;
       }
       /**
        * <pre>
        * The return-status of the processing job.
        * </pre>
        *
-       * <code>.bioid.services.v1.JobStatus status = 1;</code>
+       * <code>.JobStatus status = 1;</code>
        * @param value The status to set.
        * @return This builder for chaining.
        */
-      public Builder setStatus(com.bioid.services.Bws.JobStatus value) {
+      public Builder setStatus(com.bioid.services.Bwsmessages.JobStatus value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -5730,7 +5585,7 @@ public final class Bws {
        * The return-status of the processing job.
        * </pre>
        *
-       * <code>.bioid.services.v1.JobStatus status = 1;</code>
+       * <code>.JobStatus status = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearStatus() {
@@ -5740,26 +5595,26 @@ public final class Bws {
         return this;
       }
 
-      private java.util.List<com.bioid.services.Bws.JobError> errors_ =
+      private java.util.List<com.bioid.services.Bwsmessages.JobError> errors_ =
         java.util.Collections.emptyList();
       private void ensureErrorsIsMutable() {
         if (!((bitField0_ & 0x00000002) != 0)) {
-          errors_ = new java.util.ArrayList<com.bioid.services.Bws.JobError>(errors_);
+          errors_ = new java.util.ArrayList<com.bioid.services.Bwsmessages.JobError>(errors_);
           bitField0_ |= 0x00000002;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.bioid.services.Bws.JobError, com.bioid.services.Bws.JobError.Builder, com.bioid.services.Bws.JobErrorOrBuilder> errorsBuilder_;
+          com.bioid.services.Bwsmessages.JobError, com.bioid.services.Bwsmessages.JobError.Builder, com.bioid.services.Bwsmessages.JobErrorOrBuilder> errorsBuilder_;
 
       /**
        * <pre>
        * Any error messages collected during processing.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.JobError errors = 2;</code>
+       * <code>repeated .JobError errors = 2;</code>
        */
-      public java.util.List<com.bioid.services.Bws.JobError> getErrorsList() {
+      public java.util.List<com.bioid.services.Bwsmessages.JobError> getErrorsList() {
         if (errorsBuilder_ == null) {
           return java.util.Collections.unmodifiableList(errors_);
         } else {
@@ -5771,7 +5626,7 @@ public final class Bws {
        * Any error messages collected during processing.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.JobError errors = 2;</code>
+       * <code>repeated .JobError errors = 2;</code>
        */
       public int getErrorsCount() {
         if (errorsBuilder_ == null) {
@@ -5785,9 +5640,9 @@ public final class Bws {
        * Any error messages collected during processing.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.JobError errors = 2;</code>
+       * <code>repeated .JobError errors = 2;</code>
        */
-      public com.bioid.services.Bws.JobError getErrors(int index) {
+      public com.bioid.services.Bwsmessages.JobError getErrors(int index) {
         if (errorsBuilder_ == null) {
           return errors_.get(index);
         } else {
@@ -5799,10 +5654,10 @@ public final class Bws {
        * Any error messages collected during processing.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.JobError errors = 2;</code>
+       * <code>repeated .JobError errors = 2;</code>
        */
       public Builder setErrors(
-          int index, com.bioid.services.Bws.JobError value) {
+          int index, com.bioid.services.Bwsmessages.JobError value) {
         if (errorsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -5820,10 +5675,10 @@ public final class Bws {
        * Any error messages collected during processing.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.JobError errors = 2;</code>
+       * <code>repeated .JobError errors = 2;</code>
        */
       public Builder setErrors(
-          int index, com.bioid.services.Bws.JobError.Builder builderForValue) {
+          int index, com.bioid.services.Bwsmessages.JobError.Builder builderForValue) {
         if (errorsBuilder_ == null) {
           ensureErrorsIsMutable();
           errors_.set(index, builderForValue.build());
@@ -5838,9 +5693,9 @@ public final class Bws {
        * Any error messages collected during processing.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.JobError errors = 2;</code>
+       * <code>repeated .JobError errors = 2;</code>
        */
-      public Builder addErrors(com.bioid.services.Bws.JobError value) {
+      public Builder addErrors(com.bioid.services.Bwsmessages.JobError value) {
         if (errorsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -5858,10 +5713,10 @@ public final class Bws {
        * Any error messages collected during processing.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.JobError errors = 2;</code>
+       * <code>repeated .JobError errors = 2;</code>
        */
       public Builder addErrors(
-          int index, com.bioid.services.Bws.JobError value) {
+          int index, com.bioid.services.Bwsmessages.JobError value) {
         if (errorsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -5879,10 +5734,10 @@ public final class Bws {
        * Any error messages collected during processing.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.JobError errors = 2;</code>
+       * <code>repeated .JobError errors = 2;</code>
        */
       public Builder addErrors(
-          com.bioid.services.Bws.JobError.Builder builderForValue) {
+          com.bioid.services.Bwsmessages.JobError.Builder builderForValue) {
         if (errorsBuilder_ == null) {
           ensureErrorsIsMutable();
           errors_.add(builderForValue.build());
@@ -5897,10 +5752,10 @@ public final class Bws {
        * Any error messages collected during processing.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.JobError errors = 2;</code>
+       * <code>repeated .JobError errors = 2;</code>
        */
       public Builder addErrors(
-          int index, com.bioid.services.Bws.JobError.Builder builderForValue) {
+          int index, com.bioid.services.Bwsmessages.JobError.Builder builderForValue) {
         if (errorsBuilder_ == null) {
           ensureErrorsIsMutable();
           errors_.add(index, builderForValue.build());
@@ -5915,10 +5770,10 @@ public final class Bws {
        * Any error messages collected during processing.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.JobError errors = 2;</code>
+       * <code>repeated .JobError errors = 2;</code>
        */
       public Builder addAllErrors(
-          java.lang.Iterable<? extends com.bioid.services.Bws.JobError> values) {
+          java.lang.Iterable<? extends com.bioid.services.Bwsmessages.JobError> values) {
         if (errorsBuilder_ == null) {
           ensureErrorsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -5934,7 +5789,7 @@ public final class Bws {
        * Any error messages collected during processing.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.JobError errors = 2;</code>
+       * <code>repeated .JobError errors = 2;</code>
        */
       public Builder clearErrors() {
         if (errorsBuilder_ == null) {
@@ -5951,7 +5806,7 @@ public final class Bws {
        * Any error messages collected during processing.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.JobError errors = 2;</code>
+       * <code>repeated .JobError errors = 2;</code>
        */
       public Builder removeErrors(int index) {
         if (errorsBuilder_ == null) {
@@ -5968,9 +5823,9 @@ public final class Bws {
        * Any error messages collected during processing.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.JobError errors = 2;</code>
+       * <code>repeated .JobError errors = 2;</code>
        */
-      public com.bioid.services.Bws.JobError.Builder getErrorsBuilder(
+      public com.bioid.services.Bwsmessages.JobError.Builder getErrorsBuilder(
           int index) {
         return getErrorsFieldBuilder().getBuilder(index);
       }
@@ -5979,9 +5834,9 @@ public final class Bws {
        * Any error messages collected during processing.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.JobError errors = 2;</code>
+       * <code>repeated .JobError errors = 2;</code>
        */
-      public com.bioid.services.Bws.JobErrorOrBuilder getErrorsOrBuilder(
+      public com.bioid.services.Bwsmessages.JobErrorOrBuilder getErrorsOrBuilder(
           int index) {
         if (errorsBuilder_ == null) {
           return errors_.get(index);  } else {
@@ -5993,9 +5848,9 @@ public final class Bws {
        * Any error messages collected during processing.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.JobError errors = 2;</code>
+       * <code>repeated .JobError errors = 2;</code>
        */
-      public java.util.List<? extends com.bioid.services.Bws.JobErrorOrBuilder> 
+      public java.util.List<? extends com.bioid.services.Bwsmessages.JobErrorOrBuilder> 
            getErrorsOrBuilderList() {
         if (errorsBuilder_ != null) {
           return errorsBuilder_.getMessageOrBuilderList();
@@ -6008,41 +5863,41 @@ public final class Bws {
        * Any error messages collected during processing.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.JobError errors = 2;</code>
+       * <code>repeated .JobError errors = 2;</code>
        */
-      public com.bioid.services.Bws.JobError.Builder addErrorsBuilder() {
+      public com.bioid.services.Bwsmessages.JobError.Builder addErrorsBuilder() {
         return getErrorsFieldBuilder().addBuilder(
-            com.bioid.services.Bws.JobError.getDefaultInstance());
+            com.bioid.services.Bwsmessages.JobError.getDefaultInstance());
       }
       /**
        * <pre>
        * Any error messages collected during processing.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.JobError errors = 2;</code>
+       * <code>repeated .JobError errors = 2;</code>
        */
-      public com.bioid.services.Bws.JobError.Builder addErrorsBuilder(
+      public com.bioid.services.Bwsmessages.JobError.Builder addErrorsBuilder(
           int index) {
         return getErrorsFieldBuilder().addBuilder(
-            index, com.bioid.services.Bws.JobError.getDefaultInstance());
+            index, com.bioid.services.Bwsmessages.JobError.getDefaultInstance());
       }
       /**
        * <pre>
        * Any error messages collected during processing.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.JobError errors = 2;</code>
+       * <code>repeated .JobError errors = 2;</code>
        */
-      public java.util.List<com.bioid.services.Bws.JobError.Builder> 
+      public java.util.List<com.bioid.services.Bwsmessages.JobError.Builder> 
            getErrorsBuilderList() {
         return getErrorsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.bioid.services.Bws.JobError, com.bioid.services.Bws.JobError.Builder, com.bioid.services.Bws.JobErrorOrBuilder> 
+          com.bioid.services.Bwsmessages.JobError, com.bioid.services.Bwsmessages.JobError.Builder, com.bioid.services.Bwsmessages.JobErrorOrBuilder> 
           getErrorsFieldBuilder() {
         if (errorsBuilder_ == null) {
           errorsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.bioid.services.Bws.JobError, com.bioid.services.Bws.JobError.Builder, com.bioid.services.Bws.JobErrorOrBuilder>(
+              com.bioid.services.Bwsmessages.JobError, com.bioid.services.Bwsmessages.JobError.Builder, com.bioid.services.Bwsmessages.JobErrorOrBuilder>(
                   errors_,
                   ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
@@ -6052,26 +5907,26 @@ public final class Bws {
         return errorsBuilder_;
       }
 
-      private java.util.List<com.bioid.services.Bws.ImageProperties> imageProperties_ =
+      private java.util.List<com.bioid.services.Bwsmessages.ImageProperties> imageProperties_ =
         java.util.Collections.emptyList();
       private void ensureImagePropertiesIsMutable() {
         if (!((bitField0_ & 0x00000004) != 0)) {
-          imageProperties_ = new java.util.ArrayList<com.bioid.services.Bws.ImageProperties>(imageProperties_);
+          imageProperties_ = new java.util.ArrayList<com.bioid.services.Bwsmessages.ImageProperties>(imageProperties_);
           bitField0_ |= 0x00000004;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.bioid.services.Bws.ImageProperties, com.bioid.services.Bws.ImageProperties.Builder, com.bioid.services.Bws.ImagePropertiesOrBuilder> imagePropertiesBuilder_;
+          com.bioid.services.Bwsmessages.ImageProperties, com.bioid.services.Bwsmessages.ImageProperties.Builder, com.bioid.services.Bwsmessages.ImagePropertiesOrBuilder> imagePropertiesBuilder_;
 
       /**
        * <pre>
        * Calculated image properties for each of the provided live images if available.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.ImageProperties image_properties = 3;</code>
+       * <code>repeated .ImageProperties image_properties = 3;</code>
        */
-      public java.util.List<com.bioid.services.Bws.ImageProperties> getImagePropertiesList() {
+      public java.util.List<com.bioid.services.Bwsmessages.ImageProperties> getImagePropertiesList() {
         if (imagePropertiesBuilder_ == null) {
           return java.util.Collections.unmodifiableList(imageProperties_);
         } else {
@@ -6083,7 +5938,7 @@ public final class Bws {
        * Calculated image properties for each of the provided live images if available.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.ImageProperties image_properties = 3;</code>
+       * <code>repeated .ImageProperties image_properties = 3;</code>
        */
       public int getImagePropertiesCount() {
         if (imagePropertiesBuilder_ == null) {
@@ -6097,9 +5952,9 @@ public final class Bws {
        * Calculated image properties for each of the provided live images if available.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.ImageProperties image_properties = 3;</code>
+       * <code>repeated .ImageProperties image_properties = 3;</code>
        */
-      public com.bioid.services.Bws.ImageProperties getImageProperties(int index) {
+      public com.bioid.services.Bwsmessages.ImageProperties getImageProperties(int index) {
         if (imagePropertiesBuilder_ == null) {
           return imageProperties_.get(index);
         } else {
@@ -6111,10 +5966,10 @@ public final class Bws {
        * Calculated image properties for each of the provided live images if available.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.ImageProperties image_properties = 3;</code>
+       * <code>repeated .ImageProperties image_properties = 3;</code>
        */
       public Builder setImageProperties(
-          int index, com.bioid.services.Bws.ImageProperties value) {
+          int index, com.bioid.services.Bwsmessages.ImageProperties value) {
         if (imagePropertiesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -6132,10 +5987,10 @@ public final class Bws {
        * Calculated image properties for each of the provided live images if available.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.ImageProperties image_properties = 3;</code>
+       * <code>repeated .ImageProperties image_properties = 3;</code>
        */
       public Builder setImageProperties(
-          int index, com.bioid.services.Bws.ImageProperties.Builder builderForValue) {
+          int index, com.bioid.services.Bwsmessages.ImageProperties.Builder builderForValue) {
         if (imagePropertiesBuilder_ == null) {
           ensureImagePropertiesIsMutable();
           imageProperties_.set(index, builderForValue.build());
@@ -6150,9 +6005,9 @@ public final class Bws {
        * Calculated image properties for each of the provided live images if available.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.ImageProperties image_properties = 3;</code>
+       * <code>repeated .ImageProperties image_properties = 3;</code>
        */
-      public Builder addImageProperties(com.bioid.services.Bws.ImageProperties value) {
+      public Builder addImageProperties(com.bioid.services.Bwsmessages.ImageProperties value) {
         if (imagePropertiesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -6170,10 +6025,10 @@ public final class Bws {
        * Calculated image properties for each of the provided live images if available.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.ImageProperties image_properties = 3;</code>
+       * <code>repeated .ImageProperties image_properties = 3;</code>
        */
       public Builder addImageProperties(
-          int index, com.bioid.services.Bws.ImageProperties value) {
+          int index, com.bioid.services.Bwsmessages.ImageProperties value) {
         if (imagePropertiesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -6191,10 +6046,10 @@ public final class Bws {
        * Calculated image properties for each of the provided live images if available.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.ImageProperties image_properties = 3;</code>
+       * <code>repeated .ImageProperties image_properties = 3;</code>
        */
       public Builder addImageProperties(
-          com.bioid.services.Bws.ImageProperties.Builder builderForValue) {
+          com.bioid.services.Bwsmessages.ImageProperties.Builder builderForValue) {
         if (imagePropertiesBuilder_ == null) {
           ensureImagePropertiesIsMutable();
           imageProperties_.add(builderForValue.build());
@@ -6209,10 +6064,10 @@ public final class Bws {
        * Calculated image properties for each of the provided live images if available.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.ImageProperties image_properties = 3;</code>
+       * <code>repeated .ImageProperties image_properties = 3;</code>
        */
       public Builder addImageProperties(
-          int index, com.bioid.services.Bws.ImageProperties.Builder builderForValue) {
+          int index, com.bioid.services.Bwsmessages.ImageProperties.Builder builderForValue) {
         if (imagePropertiesBuilder_ == null) {
           ensureImagePropertiesIsMutable();
           imageProperties_.add(index, builderForValue.build());
@@ -6227,10 +6082,10 @@ public final class Bws {
        * Calculated image properties for each of the provided live images if available.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.ImageProperties image_properties = 3;</code>
+       * <code>repeated .ImageProperties image_properties = 3;</code>
        */
       public Builder addAllImageProperties(
-          java.lang.Iterable<? extends com.bioid.services.Bws.ImageProperties> values) {
+          java.lang.Iterable<? extends com.bioid.services.Bwsmessages.ImageProperties> values) {
         if (imagePropertiesBuilder_ == null) {
           ensureImagePropertiesIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -6246,7 +6101,7 @@ public final class Bws {
        * Calculated image properties for each of the provided live images if available.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.ImageProperties image_properties = 3;</code>
+       * <code>repeated .ImageProperties image_properties = 3;</code>
        */
       public Builder clearImageProperties() {
         if (imagePropertiesBuilder_ == null) {
@@ -6263,7 +6118,7 @@ public final class Bws {
        * Calculated image properties for each of the provided live images if available.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.ImageProperties image_properties = 3;</code>
+       * <code>repeated .ImageProperties image_properties = 3;</code>
        */
       public Builder removeImageProperties(int index) {
         if (imagePropertiesBuilder_ == null) {
@@ -6280,9 +6135,9 @@ public final class Bws {
        * Calculated image properties for each of the provided live images if available.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.ImageProperties image_properties = 3;</code>
+       * <code>repeated .ImageProperties image_properties = 3;</code>
        */
-      public com.bioid.services.Bws.ImageProperties.Builder getImagePropertiesBuilder(
+      public com.bioid.services.Bwsmessages.ImageProperties.Builder getImagePropertiesBuilder(
           int index) {
         return getImagePropertiesFieldBuilder().getBuilder(index);
       }
@@ -6291,9 +6146,9 @@ public final class Bws {
        * Calculated image properties for each of the provided live images if available.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.ImageProperties image_properties = 3;</code>
+       * <code>repeated .ImageProperties image_properties = 3;</code>
        */
-      public com.bioid.services.Bws.ImagePropertiesOrBuilder getImagePropertiesOrBuilder(
+      public com.bioid.services.Bwsmessages.ImagePropertiesOrBuilder getImagePropertiesOrBuilder(
           int index) {
         if (imagePropertiesBuilder_ == null) {
           return imageProperties_.get(index);  } else {
@@ -6305,9 +6160,9 @@ public final class Bws {
        * Calculated image properties for each of the provided live images if available.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.ImageProperties image_properties = 3;</code>
+       * <code>repeated .ImageProperties image_properties = 3;</code>
        */
-      public java.util.List<? extends com.bioid.services.Bws.ImagePropertiesOrBuilder> 
+      public java.util.List<? extends com.bioid.services.Bwsmessages.ImagePropertiesOrBuilder> 
            getImagePropertiesOrBuilderList() {
         if (imagePropertiesBuilder_ != null) {
           return imagePropertiesBuilder_.getMessageOrBuilderList();
@@ -6320,41 +6175,41 @@ public final class Bws {
        * Calculated image properties for each of the provided live images if available.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.ImageProperties image_properties = 3;</code>
+       * <code>repeated .ImageProperties image_properties = 3;</code>
        */
-      public com.bioid.services.Bws.ImageProperties.Builder addImagePropertiesBuilder() {
+      public com.bioid.services.Bwsmessages.ImageProperties.Builder addImagePropertiesBuilder() {
         return getImagePropertiesFieldBuilder().addBuilder(
-            com.bioid.services.Bws.ImageProperties.getDefaultInstance());
+            com.bioid.services.Bwsmessages.ImageProperties.getDefaultInstance());
       }
       /**
        * <pre>
        * Calculated image properties for each of the provided live images if available.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.ImageProperties image_properties = 3;</code>
+       * <code>repeated .ImageProperties image_properties = 3;</code>
        */
-      public com.bioid.services.Bws.ImageProperties.Builder addImagePropertiesBuilder(
+      public com.bioid.services.Bwsmessages.ImageProperties.Builder addImagePropertiesBuilder(
           int index) {
         return getImagePropertiesFieldBuilder().addBuilder(
-            index, com.bioid.services.Bws.ImageProperties.getDefaultInstance());
+            index, com.bioid.services.Bwsmessages.ImageProperties.getDefaultInstance());
       }
       /**
        * <pre>
        * Calculated image properties for each of the provided live images if available.
        * </pre>
        *
-       * <code>repeated .bioid.services.v1.ImageProperties image_properties = 3;</code>
+       * <code>repeated .ImageProperties image_properties = 3;</code>
        */
-      public java.util.List<com.bioid.services.Bws.ImageProperties.Builder> 
+      public java.util.List<com.bioid.services.Bwsmessages.ImageProperties.Builder> 
            getImagePropertiesBuilderList() {
         return getImagePropertiesFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.bioid.services.Bws.ImageProperties, com.bioid.services.Bws.ImageProperties.Builder, com.bioid.services.Bws.ImagePropertiesOrBuilder> 
+          com.bioid.services.Bwsmessages.ImageProperties, com.bioid.services.Bwsmessages.ImageProperties.Builder, com.bioid.services.Bwsmessages.ImagePropertiesOrBuilder> 
           getImagePropertiesFieldBuilder() {
         if (imagePropertiesBuilder_ == null) {
           imagePropertiesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.bioid.services.Bws.ImageProperties, com.bioid.services.Bws.ImageProperties.Builder, com.bioid.services.Bws.ImagePropertiesOrBuilder>(
+              com.bioid.services.Bwsmessages.ImageProperties, com.bioid.services.Bwsmessages.ImageProperties.Builder, com.bioid.services.Bwsmessages.ImagePropertiesOrBuilder>(
                   imageProperties_,
                   ((bitField0_ & 0x00000004) != 0),
                   getParentForChildren(),
@@ -6364,15 +6219,15 @@ public final class Bws {
         return imagePropertiesBuilder_;
       }
 
-      private com.bioid.services.Bws.ImageProperties photoProperties_;
+      private com.bioid.services.Bwsmessages.ImageProperties photoProperties_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.bioid.services.Bws.ImageProperties, com.bioid.services.Bws.ImageProperties.Builder, com.bioid.services.Bws.ImagePropertiesOrBuilder> photoPropertiesBuilder_;
+          com.bioid.services.Bwsmessages.ImageProperties, com.bioid.services.Bwsmessages.ImageProperties.Builder, com.bioid.services.Bwsmessages.ImagePropertiesOrBuilder> photoPropertiesBuilder_;
       /**
        * <pre>
        * Calculated image properties for the provided photo.
        * </pre>
        *
-       * <code>.bioid.services.v1.ImageProperties photo_properties = 4;</code>
+       * <code>.ImageProperties photo_properties = 4;</code>
        * @return Whether the photoProperties field is set.
        */
       public boolean hasPhotoProperties() {
@@ -6383,12 +6238,12 @@ public final class Bws {
        * Calculated image properties for the provided photo.
        * </pre>
        *
-       * <code>.bioid.services.v1.ImageProperties photo_properties = 4;</code>
+       * <code>.ImageProperties photo_properties = 4;</code>
        * @return The photoProperties.
        */
-      public com.bioid.services.Bws.ImageProperties getPhotoProperties() {
+      public com.bioid.services.Bwsmessages.ImageProperties getPhotoProperties() {
         if (photoPropertiesBuilder_ == null) {
-          return photoProperties_ == null ? com.bioid.services.Bws.ImageProperties.getDefaultInstance() : photoProperties_;
+          return photoProperties_ == null ? com.bioid.services.Bwsmessages.ImageProperties.getDefaultInstance() : photoProperties_;
         } else {
           return photoPropertiesBuilder_.getMessage();
         }
@@ -6398,9 +6253,9 @@ public final class Bws {
        * Calculated image properties for the provided photo.
        * </pre>
        *
-       * <code>.bioid.services.v1.ImageProperties photo_properties = 4;</code>
+       * <code>.ImageProperties photo_properties = 4;</code>
        */
-      public Builder setPhotoProperties(com.bioid.services.Bws.ImageProperties value) {
+      public Builder setPhotoProperties(com.bioid.services.Bwsmessages.ImageProperties value) {
         if (photoPropertiesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -6418,10 +6273,10 @@ public final class Bws {
        * Calculated image properties for the provided photo.
        * </pre>
        *
-       * <code>.bioid.services.v1.ImageProperties photo_properties = 4;</code>
+       * <code>.ImageProperties photo_properties = 4;</code>
        */
       public Builder setPhotoProperties(
-          com.bioid.services.Bws.ImageProperties.Builder builderForValue) {
+          com.bioid.services.Bwsmessages.ImageProperties.Builder builderForValue) {
         if (photoPropertiesBuilder_ == null) {
           photoProperties_ = builderForValue.build();
         } else {
@@ -6436,13 +6291,13 @@ public final class Bws {
        * Calculated image properties for the provided photo.
        * </pre>
        *
-       * <code>.bioid.services.v1.ImageProperties photo_properties = 4;</code>
+       * <code>.ImageProperties photo_properties = 4;</code>
        */
-      public Builder mergePhotoProperties(com.bioid.services.Bws.ImageProperties value) {
+      public Builder mergePhotoProperties(com.bioid.services.Bwsmessages.ImageProperties value) {
         if (photoPropertiesBuilder_ == null) {
           if (((bitField0_ & 0x00000008) != 0) &&
             photoProperties_ != null &&
-            photoProperties_ != com.bioid.services.Bws.ImageProperties.getDefaultInstance()) {
+            photoProperties_ != com.bioid.services.Bwsmessages.ImageProperties.getDefaultInstance()) {
             getPhotoPropertiesBuilder().mergeFrom(value);
           } else {
             photoProperties_ = value;
@@ -6461,7 +6316,7 @@ public final class Bws {
        * Calculated image properties for the provided photo.
        * </pre>
        *
-       * <code>.bioid.services.v1.ImageProperties photo_properties = 4;</code>
+       * <code>.ImageProperties photo_properties = 4;</code>
        */
       public Builder clearPhotoProperties() {
         bitField0_ = (bitField0_ & ~0x00000008);
@@ -6478,9 +6333,9 @@ public final class Bws {
        * Calculated image properties for the provided photo.
        * </pre>
        *
-       * <code>.bioid.services.v1.ImageProperties photo_properties = 4;</code>
+       * <code>.ImageProperties photo_properties = 4;</code>
        */
-      public com.bioid.services.Bws.ImageProperties.Builder getPhotoPropertiesBuilder() {
+      public com.bioid.services.Bwsmessages.ImageProperties.Builder getPhotoPropertiesBuilder() {
         bitField0_ |= 0x00000008;
         onChanged();
         return getPhotoPropertiesFieldBuilder().getBuilder();
@@ -6490,14 +6345,14 @@ public final class Bws {
        * Calculated image properties for the provided photo.
        * </pre>
        *
-       * <code>.bioid.services.v1.ImageProperties photo_properties = 4;</code>
+       * <code>.ImageProperties photo_properties = 4;</code>
        */
-      public com.bioid.services.Bws.ImagePropertiesOrBuilder getPhotoPropertiesOrBuilder() {
+      public com.bioid.services.Bwsmessages.ImagePropertiesOrBuilder getPhotoPropertiesOrBuilder() {
         if (photoPropertiesBuilder_ != null) {
           return photoPropertiesBuilder_.getMessageOrBuilder();
         } else {
           return photoProperties_ == null ?
-              com.bioid.services.Bws.ImageProperties.getDefaultInstance() : photoProperties_;
+              com.bioid.services.Bwsmessages.ImageProperties.getDefaultInstance() : photoProperties_;
         }
       }
       /**
@@ -6505,14 +6360,14 @@ public final class Bws {
        * Calculated image properties for the provided photo.
        * </pre>
        *
-       * <code>.bioid.services.v1.ImageProperties photo_properties = 4;</code>
+       * <code>.ImageProperties photo_properties = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.bioid.services.Bws.ImageProperties, com.bioid.services.Bws.ImageProperties.Builder, com.bioid.services.Bws.ImagePropertiesOrBuilder> 
+          com.bioid.services.Bwsmessages.ImageProperties, com.bioid.services.Bwsmessages.ImageProperties.Builder, com.bioid.services.Bwsmessages.ImagePropertiesOrBuilder> 
           getPhotoPropertiesFieldBuilder() {
         if (photoPropertiesBuilder_ == null) {
           photoPropertiesBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.bioid.services.Bws.ImageProperties, com.bioid.services.Bws.ImageProperties.Builder, com.bioid.services.Bws.ImagePropertiesOrBuilder>(
+              com.bioid.services.Bwsmessages.ImageProperties, com.bioid.services.Bwsmessages.ImageProperties.Builder, com.bioid.services.Bwsmessages.ImagePropertiesOrBuilder>(
                   getPhotoProperties(),
                   getParentForChildren(),
                   isClean());
@@ -6789,5719 +6644,6 @@ public final class Bws {
 
   }
 
-  public interface JobErrorOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:bioid.services.v1.JobError)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     * The error-code identifying the reported error message.
-     * </pre>
-     *
-     * <code>string error_code = 1;</code>
-     * @return The errorCode.
-     */
-    java.lang.String getErrorCode();
-    /**
-     * <pre>
-     * The error-code identifying the reported error message.
-     * </pre>
-     *
-     * <code>string error_code = 1;</code>
-     * @return The bytes for errorCode.
-     */
-    com.google.protobuf.ByteString
-        getErrorCodeBytes();
-
-    /**
-     * <pre>
-     * The error message describing the error.
-     * </pre>
-     *
-     * <code>string message = 2;</code>
-     * @return The message.
-     */
-    java.lang.String getMessage();
-    /**
-     * <pre>
-     * The error message describing the error.
-     * </pre>
-     *
-     * <code>string message = 2;</code>
-     * @return The bytes for message.
-     */
-    com.google.protobuf.ByteString
-        getMessageBytes();
-  }
-  /**
-   * <pre>
-   * Errors collected with BWS jobs.
-   * </pre>
-   *
-   * Protobuf type {@code bioid.services.v1.JobError}
-   */
-  public static final class JobError extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:bioid.services.v1.JobError)
-      JobErrorOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use JobError.newBuilder() to construct.
-    private JobError(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private JobError() {
-      errorCode_ = "";
-      message_ = "";
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new JobError();
-    }
-
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.bioid.services.Bws.internal_static_bioid_services_v1_JobError_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.bioid.services.Bws.internal_static_bioid_services_v1_JobError_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.bioid.services.Bws.JobError.class, com.bioid.services.Bws.JobError.Builder.class);
-    }
-
-    public static final int ERROR_CODE_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object errorCode_ = "";
-    /**
-     * <pre>
-     * The error-code identifying the reported error message.
-     * </pre>
-     *
-     * <code>string error_code = 1;</code>
-     * @return The errorCode.
-     */
-    @java.lang.Override
-    public java.lang.String getErrorCode() {
-      java.lang.Object ref = errorCode_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        errorCode_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * The error-code identifying the reported error message.
-     * </pre>
-     *
-     * <code>string error_code = 1;</code>
-     * @return The bytes for errorCode.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getErrorCodeBytes() {
-      java.lang.Object ref = errorCode_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        errorCode_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int MESSAGE_FIELD_NUMBER = 2;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object message_ = "";
-    /**
-     * <pre>
-     * The error message describing the error.
-     * </pre>
-     *
-     * <code>string message = 2;</code>
-     * @return The message.
-     */
-    @java.lang.Override
-    public java.lang.String getMessage() {
-      java.lang.Object ref = message_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        message_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * The error message describing the error.
-     * </pre>
-     *
-     * <code>string message = 2;</code>
-     * @return The bytes for message.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getMessageBytes() {
-      java.lang.Object ref = message_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        message_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(errorCode_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, errorCode_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, message_);
-      }
-      getUnknownFields().writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(errorCode_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, errorCode_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, message_);
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.bioid.services.Bws.JobError)) {
-        return super.equals(obj);
-      }
-      com.bioid.services.Bws.JobError other = (com.bioid.services.Bws.JobError) obj;
-
-      if (!getErrorCode()
-          .equals(other.getErrorCode())) return false;
-      if (!getMessage()
-          .equals(other.getMessage())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ERROR_CODE_FIELD_NUMBER;
-      hash = (53 * hash) + getErrorCode().hashCode();
-      hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
-      hash = (53 * hash) + getMessage().hashCode();
-      hash = (29 * hash) + getUnknownFields().hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.bioid.services.Bws.JobError parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.bioid.services.Bws.JobError parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.bioid.services.Bws.JobError parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.bioid.services.Bws.JobError parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.bioid.services.Bws.JobError parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.bioid.services.Bws.JobError parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.bioid.services.Bws.JobError parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.bioid.services.Bws.JobError parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public static com.bioid.services.Bws.JobError parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-
-    public static com.bioid.services.Bws.JobError parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.bioid.services.Bws.JobError parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.bioid.services.Bws.JobError parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.bioid.services.Bws.JobError prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * <pre>
-     * Errors collected with BWS jobs.
-     * </pre>
-     *
-     * Protobuf type {@code bioid.services.v1.JobError}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:bioid.services.v1.JobError)
-        com.bioid.services.Bws.JobErrorOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.bioid.services.Bws.internal_static_bioid_services_v1_JobError_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.bioid.services.Bws.internal_static_bioid_services_v1_JobError_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.bioid.services.Bws.JobError.class, com.bioid.services.Bws.JobError.Builder.class);
-      }
-
-      // Construct using com.bioid.services.Bws.JobError.newBuilder()
-      private Builder() {
-
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        bitField0_ = 0;
-        errorCode_ = "";
-        message_ = "";
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.bioid.services.Bws.internal_static_bioid_services_v1_JobError_descriptor;
-      }
-
-      @java.lang.Override
-      public com.bioid.services.Bws.JobError getDefaultInstanceForType() {
-        return com.bioid.services.Bws.JobError.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.bioid.services.Bws.JobError build() {
-        com.bioid.services.Bws.JobError result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.bioid.services.Bws.JobError buildPartial() {
-        com.bioid.services.Bws.JobError result = new com.bioid.services.Bws.JobError(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartial0(com.bioid.services.Bws.JobError result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.errorCode_ = errorCode_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.message_ = message_;
-        }
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.bioid.services.Bws.JobError) {
-          return mergeFrom((com.bioid.services.Bws.JobError)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.bioid.services.Bws.JobError other) {
-        if (other == com.bioid.services.Bws.JobError.getDefaultInstance()) return this;
-        if (!other.getErrorCode().isEmpty()) {
-          errorCode_ = other.errorCode_;
-          bitField0_ |= 0x00000001;
-          onChanged();
-        }
-        if (!other.getMessage().isEmpty()) {
-          message_ = other.message_;
-          bitField0_ |= 0x00000002;
-          onChanged();
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                errorCode_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 10
-              case 18: {
-                message_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 18
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.unwrapIOException();
-        } finally {
-          onChanged();
-        } // finally
-        return this;
-      }
-      private int bitField0_;
-
-      private java.lang.Object errorCode_ = "";
-      /**
-       * <pre>
-       * The error-code identifying the reported error message.
-       * </pre>
-       *
-       * <code>string error_code = 1;</code>
-       * @return The errorCode.
-       */
-      public java.lang.String getErrorCode() {
-        java.lang.Object ref = errorCode_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          errorCode_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The error-code identifying the reported error message.
-       * </pre>
-       *
-       * <code>string error_code = 1;</code>
-       * @return The bytes for errorCode.
-       */
-      public com.google.protobuf.ByteString
-          getErrorCodeBytes() {
-        java.lang.Object ref = errorCode_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          errorCode_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The error-code identifying the reported error message.
-       * </pre>
-       *
-       * <code>string error_code = 1;</code>
-       * @param value The errorCode to set.
-       * @return This builder for chaining.
-       */
-      public Builder setErrorCode(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        errorCode_ = value;
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The error-code identifying the reported error message.
-       * </pre>
-       *
-       * <code>string error_code = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearErrorCode() {
-        errorCode_ = getDefaultInstance().getErrorCode();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The error-code identifying the reported error message.
-       * </pre>
-       *
-       * <code>string error_code = 1;</code>
-       * @param value The bytes for errorCode to set.
-       * @return This builder for chaining.
-       */
-      public Builder setErrorCodeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
-        errorCode_ = value;
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object message_ = "";
-      /**
-       * <pre>
-       * The error message describing the error.
-       * </pre>
-       *
-       * <code>string message = 2;</code>
-       * @return The message.
-       */
-      public java.lang.String getMessage() {
-        java.lang.Object ref = message_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          message_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The error message describing the error.
-       * </pre>
-       *
-       * <code>string message = 2;</code>
-       * @return The bytes for message.
-       */
-      public com.google.protobuf.ByteString
-          getMessageBytes() {
-        java.lang.Object ref = message_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          message_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The error message describing the error.
-       * </pre>
-       *
-       * <code>string message = 2;</code>
-       * @param value The message to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMessage(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        message_ = value;
-        bitField0_ |= 0x00000002;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The error message describing the error.
-       * </pre>
-       *
-       * <code>string message = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearMessage() {
-        message_ = getDefaultInstance().getMessage();
-        bitField0_ = (bitField0_ & ~0x00000002);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The error message describing the error.
-       * </pre>
-       *
-       * <code>string message = 2;</code>
-       * @param value The bytes for message to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMessageBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
-        message_ = value;
-        bitField0_ |= 0x00000002;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:bioid.services.v1.JobError)
-    }
-
-    // @@protoc_insertion_point(class_scope:bioid.services.v1.JobError)
-    private static final com.bioid.services.Bws.JobError DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.bioid.services.Bws.JobError();
-    }
-
-    public static com.bioid.services.Bws.JobError getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<JobError>
-        PARSER = new com.google.protobuf.AbstractParser<JobError>() {
-      @java.lang.Override
-      public JobError parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
-      }
-    };
-
-    public static com.google.protobuf.Parser<JobError> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<JobError> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.bioid.services.Bws.JobError getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface ImageDataOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:bioid.services.v1.ImageData)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     * The image.
-     * </pre>
-     *
-     * <code>bytes image = 1;</code>
-     * @return The image.
-     */
-    com.google.protobuf.ByteString getImage();
-
-    /**
-     * <pre>
-     * Optional list of tags associated with this image.
-     * </pre>
-     *
-     * <code>repeated string tags = 2;</code>
-     * @return A list containing the tags.
-     */
-    java.util.List<java.lang.String>
-        getTagsList();
-    /**
-     * <pre>
-     * Optional list of tags associated with this image.
-     * </pre>
-     *
-     * <code>repeated string tags = 2;</code>
-     * @return The count of tags.
-     */
-    int getTagsCount();
-    /**
-     * <pre>
-     * Optional list of tags associated with this image.
-     * </pre>
-     *
-     * <code>repeated string tags = 2;</code>
-     * @param index The index of the element to return.
-     * @return The tags at the given index.
-     */
-    java.lang.String getTags(int index);
-    /**
-     * <pre>
-     * Optional list of tags associated with this image.
-     * </pre>
-     *
-     * <code>repeated string tags = 2;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the tags at the given index.
-     */
-    com.google.protobuf.ByteString
-        getTagsBytes(int index);
-  }
-  /**
-   * <pre>
-   * Sample containing an image and some optional tags associated with this image sample.
-   * </pre>
-   *
-   * Protobuf type {@code bioid.services.v1.ImageData}
-   */
-  public static final class ImageData extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:bioid.services.v1.ImageData)
-      ImageDataOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use ImageData.newBuilder() to construct.
-    private ImageData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private ImageData() {
-      image_ = com.google.protobuf.ByteString.EMPTY;
-      tags_ =
-          com.google.protobuf.LazyStringArrayList.emptyList();
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new ImageData();
-    }
-
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.bioid.services.Bws.internal_static_bioid_services_v1_ImageData_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.bioid.services.Bws.internal_static_bioid_services_v1_ImageData_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.bioid.services.Bws.ImageData.class, com.bioid.services.Bws.ImageData.Builder.class);
-    }
-
-    public static final int IMAGE_FIELD_NUMBER = 1;
-    private com.google.protobuf.ByteString image_ = com.google.protobuf.ByteString.EMPTY;
-    /**
-     * <pre>
-     * The image.
-     * </pre>
-     *
-     * <code>bytes image = 1;</code>
-     * @return The image.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString getImage() {
-      return image_;
-    }
-
-    public static final int TAGS_FIELD_NUMBER = 2;
-    @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringArrayList tags_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
-    /**
-     * <pre>
-     * Optional list of tags associated with this image.
-     * </pre>
-     *
-     * <code>repeated string tags = 2;</code>
-     * @return A list containing the tags.
-     */
-    public com.google.protobuf.ProtocolStringList
-        getTagsList() {
-      return tags_;
-    }
-    /**
-     * <pre>
-     * Optional list of tags associated with this image.
-     * </pre>
-     *
-     * <code>repeated string tags = 2;</code>
-     * @return The count of tags.
-     */
-    public int getTagsCount() {
-      return tags_.size();
-    }
-    /**
-     * <pre>
-     * Optional list of tags associated with this image.
-     * </pre>
-     *
-     * <code>repeated string tags = 2;</code>
-     * @param index The index of the element to return.
-     * @return The tags at the given index.
-     */
-    public java.lang.String getTags(int index) {
-      return tags_.get(index);
-    }
-    /**
-     * <pre>
-     * Optional list of tags associated with this image.
-     * </pre>
-     *
-     * <code>repeated string tags = 2;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the tags at the given index.
-     */
-    public com.google.protobuf.ByteString
-        getTagsBytes(int index) {
-      return tags_.getByteString(index);
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!image_.isEmpty()) {
-        output.writeBytes(1, image_);
-      }
-      for (int i = 0; i < tags_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, tags_.getRaw(i));
-      }
-      getUnknownFields().writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!image_.isEmpty()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(1, image_);
-      }
-      {
-        int dataSize = 0;
-        for (int i = 0; i < tags_.size(); i++) {
-          dataSize += computeStringSizeNoTag(tags_.getRaw(i));
-        }
-        size += dataSize;
-        size += 1 * getTagsList().size();
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.bioid.services.Bws.ImageData)) {
-        return super.equals(obj);
-      }
-      com.bioid.services.Bws.ImageData other = (com.bioid.services.Bws.ImageData) obj;
-
-      if (!getImage()
-          .equals(other.getImage())) return false;
-      if (!getTagsList()
-          .equals(other.getTagsList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + IMAGE_FIELD_NUMBER;
-      hash = (53 * hash) + getImage().hashCode();
-      if (getTagsCount() > 0) {
-        hash = (37 * hash) + TAGS_FIELD_NUMBER;
-        hash = (53 * hash) + getTagsList().hashCode();
-      }
-      hash = (29 * hash) + getUnknownFields().hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.bioid.services.Bws.ImageData parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.bioid.services.Bws.ImageData parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.bioid.services.Bws.ImageData parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.bioid.services.Bws.ImageData parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.bioid.services.Bws.ImageData parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.bioid.services.Bws.ImageData parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.bioid.services.Bws.ImageData parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.bioid.services.Bws.ImageData parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public static com.bioid.services.Bws.ImageData parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-
-    public static com.bioid.services.Bws.ImageData parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.bioid.services.Bws.ImageData parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.bioid.services.Bws.ImageData parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.bioid.services.Bws.ImageData prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * <pre>
-     * Sample containing an image and some optional tags associated with this image sample.
-     * </pre>
-     *
-     * Protobuf type {@code bioid.services.v1.ImageData}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:bioid.services.v1.ImageData)
-        com.bioid.services.Bws.ImageDataOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.bioid.services.Bws.internal_static_bioid_services_v1_ImageData_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.bioid.services.Bws.internal_static_bioid_services_v1_ImageData_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.bioid.services.Bws.ImageData.class, com.bioid.services.Bws.ImageData.Builder.class);
-      }
-
-      // Construct using com.bioid.services.Bws.ImageData.newBuilder()
-      private Builder() {
-
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        bitField0_ = 0;
-        image_ = com.google.protobuf.ByteString.EMPTY;
-        tags_ =
-            com.google.protobuf.LazyStringArrayList.emptyList();
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.bioid.services.Bws.internal_static_bioid_services_v1_ImageData_descriptor;
-      }
-
-      @java.lang.Override
-      public com.bioid.services.Bws.ImageData getDefaultInstanceForType() {
-        return com.bioid.services.Bws.ImageData.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.bioid.services.Bws.ImageData build() {
-        com.bioid.services.Bws.ImageData result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.bioid.services.Bws.ImageData buildPartial() {
-        com.bioid.services.Bws.ImageData result = new com.bioid.services.Bws.ImageData(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartial0(com.bioid.services.Bws.ImageData result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.image_ = image_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          tags_.makeImmutable();
-          result.tags_ = tags_;
-        }
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.bioid.services.Bws.ImageData) {
-          return mergeFrom((com.bioid.services.Bws.ImageData)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.bioid.services.Bws.ImageData other) {
-        if (other == com.bioid.services.Bws.ImageData.getDefaultInstance()) return this;
-        if (other.getImage() != com.google.protobuf.ByteString.EMPTY) {
-          setImage(other.getImage());
-        }
-        if (!other.tags_.isEmpty()) {
-          if (tags_.isEmpty()) {
-            tags_ = other.tags_;
-            bitField0_ |= 0x00000002;
-          } else {
-            ensureTagsIsMutable();
-            tags_.addAll(other.tags_);
-          }
-          onChanged();
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                image_ = input.readBytes();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 10
-              case 18: {
-                java.lang.String s = input.readStringRequireUtf8();
-                ensureTagsIsMutable();
-                tags_.add(s);
-                break;
-              } // case 18
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.unwrapIOException();
-        } finally {
-          onChanged();
-        } // finally
-        return this;
-      }
-      private int bitField0_;
-
-      private com.google.protobuf.ByteString image_ = com.google.protobuf.ByteString.EMPTY;
-      /**
-       * <pre>
-       * The image.
-       * </pre>
-       *
-       * <code>bytes image = 1;</code>
-       * @return The image.
-       */
-      @java.lang.Override
-      public com.google.protobuf.ByteString getImage() {
-        return image_;
-      }
-      /**
-       * <pre>
-       * The image.
-       * </pre>
-       *
-       * <code>bytes image = 1;</code>
-       * @param value The image to set.
-       * @return This builder for chaining.
-       */
-      public Builder setImage(com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        image_ = value;
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The image.
-       * </pre>
-       *
-       * <code>bytes image = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearImage() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        image_ = getDefaultInstance().getImage();
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.LazyStringArrayList tags_ =
-          com.google.protobuf.LazyStringArrayList.emptyList();
-      private void ensureTagsIsMutable() {
-        if (!tags_.isModifiable()) {
-          tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
-        }
-        bitField0_ |= 0x00000002;
-      }
-      /**
-       * <pre>
-       * Optional list of tags associated with this image.
-       * </pre>
-       *
-       * <code>repeated string tags = 2;</code>
-       * @return A list containing the tags.
-       */
-      public com.google.protobuf.ProtocolStringList
-          getTagsList() {
-        tags_.makeImmutable();
-        return tags_;
-      }
-      /**
-       * <pre>
-       * Optional list of tags associated with this image.
-       * </pre>
-       *
-       * <code>repeated string tags = 2;</code>
-       * @return The count of tags.
-       */
-      public int getTagsCount() {
-        return tags_.size();
-      }
-      /**
-       * <pre>
-       * Optional list of tags associated with this image.
-       * </pre>
-       *
-       * <code>repeated string tags = 2;</code>
-       * @param index The index of the element to return.
-       * @return The tags at the given index.
-       */
-      public java.lang.String getTags(int index) {
-        return tags_.get(index);
-      }
-      /**
-       * <pre>
-       * Optional list of tags associated with this image.
-       * </pre>
-       *
-       * <code>repeated string tags = 2;</code>
-       * @param index The index of the value to return.
-       * @return The bytes of the tags at the given index.
-       */
-      public com.google.protobuf.ByteString
-          getTagsBytes(int index) {
-        return tags_.getByteString(index);
-      }
-      /**
-       * <pre>
-       * Optional list of tags associated with this image.
-       * </pre>
-       *
-       * <code>repeated string tags = 2;</code>
-       * @param index The index to set the value at.
-       * @param value The tags to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTags(
-          int index, java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        ensureTagsIsMutable();
-        tags_.set(index, value);
-        bitField0_ |= 0x00000002;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Optional list of tags associated with this image.
-       * </pre>
-       *
-       * <code>repeated string tags = 2;</code>
-       * @param value The tags to add.
-       * @return This builder for chaining.
-       */
-      public Builder addTags(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        ensureTagsIsMutable();
-        tags_.add(value);
-        bitField0_ |= 0x00000002;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Optional list of tags associated with this image.
-       * </pre>
-       *
-       * <code>repeated string tags = 2;</code>
-       * @param values The tags to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllTags(
-          java.lang.Iterable<java.lang.String> values) {
-        ensureTagsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, tags_);
-        bitField0_ |= 0x00000002;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Optional list of tags associated with this image.
-       * </pre>
-       *
-       * <code>repeated string tags = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTags() {
-        tags_ =
-          com.google.protobuf.LazyStringArrayList.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Optional list of tags associated with this image.
-       * </pre>
-       *
-       * <code>repeated string tags = 2;</code>
-       * @param value The bytes of the tags to add.
-       * @return This builder for chaining.
-       */
-      public Builder addTagsBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
-        ensureTagsIsMutable();
-        tags_.add(value);
-        bitField0_ |= 0x00000002;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:bioid.services.v1.ImageData)
-    }
-
-    // @@protoc_insertion_point(class_scope:bioid.services.v1.ImageData)
-    private static final com.bioid.services.Bws.ImageData DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.bioid.services.Bws.ImageData();
-    }
-
-    public static com.bioid.services.Bws.ImageData getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<ImageData>
-        PARSER = new com.google.protobuf.AbstractParser<ImageData>() {
-      @java.lang.Override
-      public ImageData parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
-      }
-    };
-
-    public static com.google.protobuf.Parser<ImageData> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<ImageData> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.bioid.services.Bws.ImageData getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface ImagePropertiesOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:bioid.services.v1.ImageProperties)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     * Rotation of the input image. 
-     * If not 0, the coordinates relate to an image rotated clockwise by this amount of degrees.
-     * </pre>
-     *
-     * <code>int32 rotated = 1;</code>
-     * @return The rotated.
-     */
-    int getRotated();
-
-    /**
-     * <pre>
-     * List of faces found in the image.
-     * </pre>
-     *
-     * <code>repeated .bioid.services.v1.Face faces = 2;</code>
-     */
-    java.util.List<com.bioid.services.Bws.Face> 
-        getFacesList();
-    /**
-     * <pre>
-     * List of faces found in the image.
-     * </pre>
-     *
-     * <code>repeated .bioid.services.v1.Face faces = 2;</code>
-     */
-    com.bioid.services.Bws.Face getFaces(int index);
-    /**
-     * <pre>
-     * List of faces found in the image.
-     * </pre>
-     *
-     * <code>repeated .bioid.services.v1.Face faces = 2;</code>
-     */
-    int getFacesCount();
-    /**
-     * <pre>
-     * List of faces found in the image.
-     * </pre>
-     *
-     * <code>repeated .bioid.services.v1.Face faces = 2;</code>
-     */
-    java.util.List<? extends com.bioid.services.Bws.FaceOrBuilder> 
-        getFacesOrBuilderList();
-    /**
-     * <pre>
-     * List of faces found in the image.
-     * </pre>
-     *
-     * <code>repeated .bioid.services.v1.Face faces = 2;</code>
-     */
-    com.bioid.services.Bws.FaceOrBuilder getFacesOrBuilder(
-        int index);
-
-    /**
-     * <pre>
-     * An optionally calculated quality assessment score.
-     * </pre>
-     *
-     * <code>double quality_score = 3;</code>
-     * @return The qualityScore.
-     */
-    double getQualityScore();
-
-    /**
-     * <pre>
-     * List of quality checks and other checks performed.
-     * </pre>
-     *
-     * <code>repeated .bioid.services.v1.QualityAssessment quality_assessments = 4;</code>
-     */
-    java.util.List<com.bioid.services.Bws.QualityAssessment> 
-        getQualityAssessmentsList();
-    /**
-     * <pre>
-     * List of quality checks and other checks performed.
-     * </pre>
-     *
-     * <code>repeated .bioid.services.v1.QualityAssessment quality_assessments = 4;</code>
-     */
-    com.bioid.services.Bws.QualityAssessment getQualityAssessments(int index);
-    /**
-     * <pre>
-     * List of quality checks and other checks performed.
-     * </pre>
-     *
-     * <code>repeated .bioid.services.v1.QualityAssessment quality_assessments = 4;</code>
-     */
-    int getQualityAssessmentsCount();
-    /**
-     * <pre>
-     * List of quality checks and other checks performed.
-     * </pre>
-     *
-     * <code>repeated .bioid.services.v1.QualityAssessment quality_assessments = 4;</code>
-     */
-    java.util.List<? extends com.bioid.services.Bws.QualityAssessmentOrBuilder> 
-        getQualityAssessmentsOrBuilderList();
-    /**
-     * <pre>
-     * List of quality checks and other checks performed.
-     * </pre>
-     *
-     * <code>repeated .bioid.services.v1.QualityAssessment quality_assessments = 4;</code>
-     */
-    com.bioid.services.Bws.QualityAssessmentOrBuilder getQualityAssessmentsOrBuilder(
-        int index);
-
-    /**
-     * <pre>
-     * Optional frame number in case the input was a video.
-     * </pre>
-     *
-     * <code>int32 frame_number = 5;</code>
-     * @return The frameNumber.
-     */
-    int getFrameNumber();
-  }
-  /**
-   * <pre>
-   * Calculated properties from a single input image.
-   * </pre>
-   *
-   * Protobuf type {@code bioid.services.v1.ImageProperties}
-   */
-  public static final class ImageProperties extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:bioid.services.v1.ImageProperties)
-      ImagePropertiesOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use ImageProperties.newBuilder() to construct.
-    private ImageProperties(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private ImageProperties() {
-      faces_ = java.util.Collections.emptyList();
-      qualityAssessments_ = java.util.Collections.emptyList();
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new ImageProperties();
-    }
-
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.bioid.services.Bws.internal_static_bioid_services_v1_ImageProperties_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.bioid.services.Bws.internal_static_bioid_services_v1_ImageProperties_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.bioid.services.Bws.ImageProperties.class, com.bioid.services.Bws.ImageProperties.Builder.class);
-    }
-
-    public static final int ROTATED_FIELD_NUMBER = 1;
-    private int rotated_ = 0;
-    /**
-     * <pre>
-     * Rotation of the input image. 
-     * If not 0, the coordinates relate to an image rotated clockwise by this amount of degrees.
-     * </pre>
-     *
-     * <code>int32 rotated = 1;</code>
-     * @return The rotated.
-     */
-    @java.lang.Override
-    public int getRotated() {
-      return rotated_;
-    }
-
-    public static final int FACES_FIELD_NUMBER = 2;
-    @SuppressWarnings("serial")
-    private java.util.List<com.bioid.services.Bws.Face> faces_;
-    /**
-     * <pre>
-     * List of faces found in the image.
-     * </pre>
-     *
-     * <code>repeated .bioid.services.v1.Face faces = 2;</code>
-     */
-    @java.lang.Override
-    public java.util.List<com.bioid.services.Bws.Face> getFacesList() {
-      return faces_;
-    }
-    /**
-     * <pre>
-     * List of faces found in the image.
-     * </pre>
-     *
-     * <code>repeated .bioid.services.v1.Face faces = 2;</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends com.bioid.services.Bws.FaceOrBuilder> 
-        getFacesOrBuilderList() {
-      return faces_;
-    }
-    /**
-     * <pre>
-     * List of faces found in the image.
-     * </pre>
-     *
-     * <code>repeated .bioid.services.v1.Face faces = 2;</code>
-     */
-    @java.lang.Override
-    public int getFacesCount() {
-      return faces_.size();
-    }
-    /**
-     * <pre>
-     * List of faces found in the image.
-     * </pre>
-     *
-     * <code>repeated .bioid.services.v1.Face faces = 2;</code>
-     */
-    @java.lang.Override
-    public com.bioid.services.Bws.Face getFaces(int index) {
-      return faces_.get(index);
-    }
-    /**
-     * <pre>
-     * List of faces found in the image.
-     * </pre>
-     *
-     * <code>repeated .bioid.services.v1.Face faces = 2;</code>
-     */
-    @java.lang.Override
-    public com.bioid.services.Bws.FaceOrBuilder getFacesOrBuilder(
-        int index) {
-      return faces_.get(index);
-    }
-
-    public static final int QUALITY_SCORE_FIELD_NUMBER = 3;
-    private double qualityScore_ = 0D;
-    /**
-     * <pre>
-     * An optionally calculated quality assessment score.
-     * </pre>
-     *
-     * <code>double quality_score = 3;</code>
-     * @return The qualityScore.
-     */
-    @java.lang.Override
-    public double getQualityScore() {
-      return qualityScore_;
-    }
-
-    public static final int QUALITY_ASSESSMENTS_FIELD_NUMBER = 4;
-    @SuppressWarnings("serial")
-    private java.util.List<com.bioid.services.Bws.QualityAssessment> qualityAssessments_;
-    /**
-     * <pre>
-     * List of quality checks and other checks performed.
-     * </pre>
-     *
-     * <code>repeated .bioid.services.v1.QualityAssessment quality_assessments = 4;</code>
-     */
-    @java.lang.Override
-    public java.util.List<com.bioid.services.Bws.QualityAssessment> getQualityAssessmentsList() {
-      return qualityAssessments_;
-    }
-    /**
-     * <pre>
-     * List of quality checks and other checks performed.
-     * </pre>
-     *
-     * <code>repeated .bioid.services.v1.QualityAssessment quality_assessments = 4;</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends com.bioid.services.Bws.QualityAssessmentOrBuilder> 
-        getQualityAssessmentsOrBuilderList() {
-      return qualityAssessments_;
-    }
-    /**
-     * <pre>
-     * List of quality checks and other checks performed.
-     * </pre>
-     *
-     * <code>repeated .bioid.services.v1.QualityAssessment quality_assessments = 4;</code>
-     */
-    @java.lang.Override
-    public int getQualityAssessmentsCount() {
-      return qualityAssessments_.size();
-    }
-    /**
-     * <pre>
-     * List of quality checks and other checks performed.
-     * </pre>
-     *
-     * <code>repeated .bioid.services.v1.QualityAssessment quality_assessments = 4;</code>
-     */
-    @java.lang.Override
-    public com.bioid.services.Bws.QualityAssessment getQualityAssessments(int index) {
-      return qualityAssessments_.get(index);
-    }
-    /**
-     * <pre>
-     * List of quality checks and other checks performed.
-     * </pre>
-     *
-     * <code>repeated .bioid.services.v1.QualityAssessment quality_assessments = 4;</code>
-     */
-    @java.lang.Override
-    public com.bioid.services.Bws.QualityAssessmentOrBuilder getQualityAssessmentsOrBuilder(
-        int index) {
-      return qualityAssessments_.get(index);
-    }
-
-    public static final int FRAME_NUMBER_FIELD_NUMBER = 5;
-    private int frameNumber_ = 0;
-    /**
-     * <pre>
-     * Optional frame number in case the input was a video.
-     * </pre>
-     *
-     * <code>int32 frame_number = 5;</code>
-     * @return The frameNumber.
-     */
-    @java.lang.Override
-    public int getFrameNumber() {
-      return frameNumber_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (rotated_ != 0) {
-        output.writeInt32(1, rotated_);
-      }
-      for (int i = 0; i < faces_.size(); i++) {
-        output.writeMessage(2, faces_.get(i));
-      }
-      if (java.lang.Double.doubleToRawLongBits(qualityScore_) != 0) {
-        output.writeDouble(3, qualityScore_);
-      }
-      for (int i = 0; i < qualityAssessments_.size(); i++) {
-        output.writeMessage(4, qualityAssessments_.get(i));
-      }
-      if (frameNumber_ != 0) {
-        output.writeInt32(5, frameNumber_);
-      }
-      getUnknownFields().writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (rotated_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, rotated_);
-      }
-      for (int i = 0; i < faces_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, faces_.get(i));
-      }
-      if (java.lang.Double.doubleToRawLongBits(qualityScore_) != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(3, qualityScore_);
-      }
-      for (int i = 0; i < qualityAssessments_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, qualityAssessments_.get(i));
-      }
-      if (frameNumber_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(5, frameNumber_);
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.bioid.services.Bws.ImageProperties)) {
-        return super.equals(obj);
-      }
-      com.bioid.services.Bws.ImageProperties other = (com.bioid.services.Bws.ImageProperties) obj;
-
-      if (getRotated()
-          != other.getRotated()) return false;
-      if (!getFacesList()
-          .equals(other.getFacesList())) return false;
-      if (java.lang.Double.doubleToLongBits(getQualityScore())
-          != java.lang.Double.doubleToLongBits(
-              other.getQualityScore())) return false;
-      if (!getQualityAssessmentsList()
-          .equals(other.getQualityAssessmentsList())) return false;
-      if (getFrameNumber()
-          != other.getFrameNumber()) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ROTATED_FIELD_NUMBER;
-      hash = (53 * hash) + getRotated();
-      if (getFacesCount() > 0) {
-        hash = (37 * hash) + FACES_FIELD_NUMBER;
-        hash = (53 * hash) + getFacesList().hashCode();
-      }
-      hash = (37 * hash) + QUALITY_SCORE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getQualityScore()));
-      if (getQualityAssessmentsCount() > 0) {
-        hash = (37 * hash) + QUALITY_ASSESSMENTS_FIELD_NUMBER;
-        hash = (53 * hash) + getQualityAssessmentsList().hashCode();
-      }
-      hash = (37 * hash) + FRAME_NUMBER_FIELD_NUMBER;
-      hash = (53 * hash) + getFrameNumber();
-      hash = (29 * hash) + getUnknownFields().hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.bioid.services.Bws.ImageProperties parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.bioid.services.Bws.ImageProperties parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.bioid.services.Bws.ImageProperties parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.bioid.services.Bws.ImageProperties parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.bioid.services.Bws.ImageProperties parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.bioid.services.Bws.ImageProperties parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.bioid.services.Bws.ImageProperties parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.bioid.services.Bws.ImageProperties parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public static com.bioid.services.Bws.ImageProperties parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-
-    public static com.bioid.services.Bws.ImageProperties parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.bioid.services.Bws.ImageProperties parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.bioid.services.Bws.ImageProperties parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.bioid.services.Bws.ImageProperties prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * <pre>
-     * Calculated properties from a single input image.
-     * </pre>
-     *
-     * Protobuf type {@code bioid.services.v1.ImageProperties}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:bioid.services.v1.ImageProperties)
-        com.bioid.services.Bws.ImagePropertiesOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.bioid.services.Bws.internal_static_bioid_services_v1_ImageProperties_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.bioid.services.Bws.internal_static_bioid_services_v1_ImageProperties_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.bioid.services.Bws.ImageProperties.class, com.bioid.services.Bws.ImageProperties.Builder.class);
-      }
-
-      // Construct using com.bioid.services.Bws.ImageProperties.newBuilder()
-      private Builder() {
-
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        bitField0_ = 0;
-        rotated_ = 0;
-        if (facesBuilder_ == null) {
-          faces_ = java.util.Collections.emptyList();
-        } else {
-          faces_ = null;
-          facesBuilder_.clear();
-        }
-        bitField0_ = (bitField0_ & ~0x00000002);
-        qualityScore_ = 0D;
-        if (qualityAssessmentsBuilder_ == null) {
-          qualityAssessments_ = java.util.Collections.emptyList();
-        } else {
-          qualityAssessments_ = null;
-          qualityAssessmentsBuilder_.clear();
-        }
-        bitField0_ = (bitField0_ & ~0x00000008);
-        frameNumber_ = 0;
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.bioid.services.Bws.internal_static_bioid_services_v1_ImageProperties_descriptor;
-      }
-
-      @java.lang.Override
-      public com.bioid.services.Bws.ImageProperties getDefaultInstanceForType() {
-        return com.bioid.services.Bws.ImageProperties.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.bioid.services.Bws.ImageProperties build() {
-        com.bioid.services.Bws.ImageProperties result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.bioid.services.Bws.ImageProperties buildPartial() {
-        com.bioid.services.Bws.ImageProperties result = new com.bioid.services.Bws.ImageProperties(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(com.bioid.services.Bws.ImageProperties result) {
-        if (facesBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
-            faces_ = java.util.Collections.unmodifiableList(faces_);
-            bitField0_ = (bitField0_ & ~0x00000002);
-          }
-          result.faces_ = faces_;
-        } else {
-          result.faces_ = facesBuilder_.build();
-        }
-        if (qualityAssessmentsBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) != 0)) {
-            qualityAssessments_ = java.util.Collections.unmodifiableList(qualityAssessments_);
-            bitField0_ = (bitField0_ & ~0x00000008);
-          }
-          result.qualityAssessments_ = qualityAssessments_;
-        } else {
-          result.qualityAssessments_ = qualityAssessmentsBuilder_.build();
-        }
-      }
-
-      private void buildPartial0(com.bioid.services.Bws.ImageProperties result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.rotated_ = rotated_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.qualityScore_ = qualityScore_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.frameNumber_ = frameNumber_;
-        }
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.bioid.services.Bws.ImageProperties) {
-          return mergeFrom((com.bioid.services.Bws.ImageProperties)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.bioid.services.Bws.ImageProperties other) {
-        if (other == com.bioid.services.Bws.ImageProperties.getDefaultInstance()) return this;
-        if (other.getRotated() != 0) {
-          setRotated(other.getRotated());
-        }
-        if (facesBuilder_ == null) {
-          if (!other.faces_.isEmpty()) {
-            if (faces_.isEmpty()) {
-              faces_ = other.faces_;
-              bitField0_ = (bitField0_ & ~0x00000002);
-            } else {
-              ensureFacesIsMutable();
-              faces_.addAll(other.faces_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.faces_.isEmpty()) {
-            if (facesBuilder_.isEmpty()) {
-              facesBuilder_.dispose();
-              facesBuilder_ = null;
-              faces_ = other.faces_;
-              bitField0_ = (bitField0_ & ~0x00000002);
-              facesBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getFacesFieldBuilder() : null;
-            } else {
-              facesBuilder_.addAllMessages(other.faces_);
-            }
-          }
-        }
-        if (other.getQualityScore() != 0D) {
-          setQualityScore(other.getQualityScore());
-        }
-        if (qualityAssessmentsBuilder_ == null) {
-          if (!other.qualityAssessments_.isEmpty()) {
-            if (qualityAssessments_.isEmpty()) {
-              qualityAssessments_ = other.qualityAssessments_;
-              bitField0_ = (bitField0_ & ~0x00000008);
-            } else {
-              ensureQualityAssessmentsIsMutable();
-              qualityAssessments_.addAll(other.qualityAssessments_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.qualityAssessments_.isEmpty()) {
-            if (qualityAssessmentsBuilder_.isEmpty()) {
-              qualityAssessmentsBuilder_.dispose();
-              qualityAssessmentsBuilder_ = null;
-              qualityAssessments_ = other.qualityAssessments_;
-              bitField0_ = (bitField0_ & ~0x00000008);
-              qualityAssessmentsBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getQualityAssessmentsFieldBuilder() : null;
-            } else {
-              qualityAssessmentsBuilder_.addAllMessages(other.qualityAssessments_);
-            }
-          }
-        }
-        if (other.getFrameNumber() != 0) {
-          setFrameNumber(other.getFrameNumber());
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-                rotated_ = input.readInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 8
-              case 18: {
-                com.bioid.services.Bws.Face m =
-                    input.readMessage(
-                        com.bioid.services.Bws.Face.parser(),
-                        extensionRegistry);
-                if (facesBuilder_ == null) {
-                  ensureFacesIsMutable();
-                  faces_.add(m);
-                } else {
-                  facesBuilder_.addMessage(m);
-                }
-                break;
-              } // case 18
-              case 25: {
-                qualityScore_ = input.readDouble();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 25
-              case 34: {
-                com.bioid.services.Bws.QualityAssessment m =
-                    input.readMessage(
-                        com.bioid.services.Bws.QualityAssessment.parser(),
-                        extensionRegistry);
-                if (qualityAssessmentsBuilder_ == null) {
-                  ensureQualityAssessmentsIsMutable();
-                  qualityAssessments_.add(m);
-                } else {
-                  qualityAssessmentsBuilder_.addMessage(m);
-                }
-                break;
-              } // case 34
-              case 40: {
-                frameNumber_ = input.readInt32();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 40
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.unwrapIOException();
-        } finally {
-          onChanged();
-        } // finally
-        return this;
-      }
-      private int bitField0_;
-
-      private int rotated_ ;
-      /**
-       * <pre>
-       * Rotation of the input image. 
-       * If not 0, the coordinates relate to an image rotated clockwise by this amount of degrees.
-       * </pre>
-       *
-       * <code>int32 rotated = 1;</code>
-       * @return The rotated.
-       */
-      @java.lang.Override
-      public int getRotated() {
-        return rotated_;
-      }
-      /**
-       * <pre>
-       * Rotation of the input image. 
-       * If not 0, the coordinates relate to an image rotated clockwise by this amount of degrees.
-       * </pre>
-       *
-       * <code>int32 rotated = 1;</code>
-       * @param value The rotated to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRotated(int value) {
-
-        rotated_ = value;
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Rotation of the input image. 
-       * If not 0, the coordinates relate to an image rotated clockwise by this amount of degrees.
-       * </pre>
-       *
-       * <code>int32 rotated = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRotated() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        rotated_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private java.util.List<com.bioid.services.Bws.Face> faces_ =
-        java.util.Collections.emptyList();
-      private void ensureFacesIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
-          faces_ = new java.util.ArrayList<com.bioid.services.Bws.Face>(faces_);
-          bitField0_ |= 0x00000002;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.bioid.services.Bws.Face, com.bioid.services.Bws.Face.Builder, com.bioid.services.Bws.FaceOrBuilder> facesBuilder_;
-
-      /**
-       * <pre>
-       * List of faces found in the image.
-       * </pre>
-       *
-       * <code>repeated .bioid.services.v1.Face faces = 2;</code>
-       */
-      public java.util.List<com.bioid.services.Bws.Face> getFacesList() {
-        if (facesBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(faces_);
-        } else {
-          return facesBuilder_.getMessageList();
-        }
-      }
-      /**
-       * <pre>
-       * List of faces found in the image.
-       * </pre>
-       *
-       * <code>repeated .bioid.services.v1.Face faces = 2;</code>
-       */
-      public int getFacesCount() {
-        if (facesBuilder_ == null) {
-          return faces_.size();
-        } else {
-          return facesBuilder_.getCount();
-        }
-      }
-      /**
-       * <pre>
-       * List of faces found in the image.
-       * </pre>
-       *
-       * <code>repeated .bioid.services.v1.Face faces = 2;</code>
-       */
-      public com.bioid.services.Bws.Face getFaces(int index) {
-        if (facesBuilder_ == null) {
-          return faces_.get(index);
-        } else {
-          return facesBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <pre>
-       * List of faces found in the image.
-       * </pre>
-       *
-       * <code>repeated .bioid.services.v1.Face faces = 2;</code>
-       */
-      public Builder setFaces(
-          int index, com.bioid.services.Bws.Face value) {
-        if (facesBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureFacesIsMutable();
-          faces_.set(index, value);
-          onChanged();
-        } else {
-          facesBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * List of faces found in the image.
-       * </pre>
-       *
-       * <code>repeated .bioid.services.v1.Face faces = 2;</code>
-       */
-      public Builder setFaces(
-          int index, com.bioid.services.Bws.Face.Builder builderForValue) {
-        if (facesBuilder_ == null) {
-          ensureFacesIsMutable();
-          faces_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          facesBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * List of faces found in the image.
-       * </pre>
-       *
-       * <code>repeated .bioid.services.v1.Face faces = 2;</code>
-       */
-      public Builder addFaces(com.bioid.services.Bws.Face value) {
-        if (facesBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureFacesIsMutable();
-          faces_.add(value);
-          onChanged();
-        } else {
-          facesBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * List of faces found in the image.
-       * </pre>
-       *
-       * <code>repeated .bioid.services.v1.Face faces = 2;</code>
-       */
-      public Builder addFaces(
-          int index, com.bioid.services.Bws.Face value) {
-        if (facesBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureFacesIsMutable();
-          faces_.add(index, value);
-          onChanged();
-        } else {
-          facesBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * List of faces found in the image.
-       * </pre>
-       *
-       * <code>repeated .bioid.services.v1.Face faces = 2;</code>
-       */
-      public Builder addFaces(
-          com.bioid.services.Bws.Face.Builder builderForValue) {
-        if (facesBuilder_ == null) {
-          ensureFacesIsMutable();
-          faces_.add(builderForValue.build());
-          onChanged();
-        } else {
-          facesBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * List of faces found in the image.
-       * </pre>
-       *
-       * <code>repeated .bioid.services.v1.Face faces = 2;</code>
-       */
-      public Builder addFaces(
-          int index, com.bioid.services.Bws.Face.Builder builderForValue) {
-        if (facesBuilder_ == null) {
-          ensureFacesIsMutable();
-          faces_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          facesBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * List of faces found in the image.
-       * </pre>
-       *
-       * <code>repeated .bioid.services.v1.Face faces = 2;</code>
-       */
-      public Builder addAllFaces(
-          java.lang.Iterable<? extends com.bioid.services.Bws.Face> values) {
-        if (facesBuilder_ == null) {
-          ensureFacesIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, faces_);
-          onChanged();
-        } else {
-          facesBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * List of faces found in the image.
-       * </pre>
-       *
-       * <code>repeated .bioid.services.v1.Face faces = 2;</code>
-       */
-      public Builder clearFaces() {
-        if (facesBuilder_ == null) {
-          faces_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
-          onChanged();
-        } else {
-          facesBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * List of faces found in the image.
-       * </pre>
-       *
-       * <code>repeated .bioid.services.v1.Face faces = 2;</code>
-       */
-      public Builder removeFaces(int index) {
-        if (facesBuilder_ == null) {
-          ensureFacesIsMutable();
-          faces_.remove(index);
-          onChanged();
-        } else {
-          facesBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * List of faces found in the image.
-       * </pre>
-       *
-       * <code>repeated .bioid.services.v1.Face faces = 2;</code>
-       */
-      public com.bioid.services.Bws.Face.Builder getFacesBuilder(
-          int index) {
-        return getFacesFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <pre>
-       * List of faces found in the image.
-       * </pre>
-       *
-       * <code>repeated .bioid.services.v1.Face faces = 2;</code>
-       */
-      public com.bioid.services.Bws.FaceOrBuilder getFacesOrBuilder(
-          int index) {
-        if (facesBuilder_ == null) {
-          return faces_.get(index);  } else {
-          return facesBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <pre>
-       * List of faces found in the image.
-       * </pre>
-       *
-       * <code>repeated .bioid.services.v1.Face faces = 2;</code>
-       */
-      public java.util.List<? extends com.bioid.services.Bws.FaceOrBuilder> 
-           getFacesOrBuilderList() {
-        if (facesBuilder_ != null) {
-          return facesBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(faces_);
-        }
-      }
-      /**
-       * <pre>
-       * List of faces found in the image.
-       * </pre>
-       *
-       * <code>repeated .bioid.services.v1.Face faces = 2;</code>
-       */
-      public com.bioid.services.Bws.Face.Builder addFacesBuilder() {
-        return getFacesFieldBuilder().addBuilder(
-            com.bioid.services.Bws.Face.getDefaultInstance());
-      }
-      /**
-       * <pre>
-       * List of faces found in the image.
-       * </pre>
-       *
-       * <code>repeated .bioid.services.v1.Face faces = 2;</code>
-       */
-      public com.bioid.services.Bws.Face.Builder addFacesBuilder(
-          int index) {
-        return getFacesFieldBuilder().addBuilder(
-            index, com.bioid.services.Bws.Face.getDefaultInstance());
-      }
-      /**
-       * <pre>
-       * List of faces found in the image.
-       * </pre>
-       *
-       * <code>repeated .bioid.services.v1.Face faces = 2;</code>
-       */
-      public java.util.List<com.bioid.services.Bws.Face.Builder> 
-           getFacesBuilderList() {
-        return getFacesFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.bioid.services.Bws.Face, com.bioid.services.Bws.Face.Builder, com.bioid.services.Bws.FaceOrBuilder> 
-          getFacesFieldBuilder() {
-        if (facesBuilder_ == null) {
-          facesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.bioid.services.Bws.Face, com.bioid.services.Bws.Face.Builder, com.bioid.services.Bws.FaceOrBuilder>(
-                  faces_,
-                  ((bitField0_ & 0x00000002) != 0),
-                  getParentForChildren(),
-                  isClean());
-          faces_ = null;
-        }
-        return facesBuilder_;
-      }
-
-      private double qualityScore_ ;
-      /**
-       * <pre>
-       * An optionally calculated quality assessment score.
-       * </pre>
-       *
-       * <code>double quality_score = 3;</code>
-       * @return The qualityScore.
-       */
-      @java.lang.Override
-      public double getQualityScore() {
-        return qualityScore_;
-      }
-      /**
-       * <pre>
-       * An optionally calculated quality assessment score.
-       * </pre>
-       *
-       * <code>double quality_score = 3;</code>
-       * @param value The qualityScore to set.
-       * @return This builder for chaining.
-       */
-      public Builder setQualityScore(double value) {
-
-        qualityScore_ = value;
-        bitField0_ |= 0x00000004;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * An optionally calculated quality assessment score.
-       * </pre>
-       *
-       * <code>double quality_score = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearQualityScore() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        qualityScore_ = 0D;
-        onChanged();
-        return this;
-      }
-
-      private java.util.List<com.bioid.services.Bws.QualityAssessment> qualityAssessments_ =
-        java.util.Collections.emptyList();
-      private void ensureQualityAssessmentsIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
-          qualityAssessments_ = new java.util.ArrayList<com.bioid.services.Bws.QualityAssessment>(qualityAssessments_);
-          bitField0_ |= 0x00000008;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.bioid.services.Bws.QualityAssessment, com.bioid.services.Bws.QualityAssessment.Builder, com.bioid.services.Bws.QualityAssessmentOrBuilder> qualityAssessmentsBuilder_;
-
-      /**
-       * <pre>
-       * List of quality checks and other checks performed.
-       * </pre>
-       *
-       * <code>repeated .bioid.services.v1.QualityAssessment quality_assessments = 4;</code>
-       */
-      public java.util.List<com.bioid.services.Bws.QualityAssessment> getQualityAssessmentsList() {
-        if (qualityAssessmentsBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(qualityAssessments_);
-        } else {
-          return qualityAssessmentsBuilder_.getMessageList();
-        }
-      }
-      /**
-       * <pre>
-       * List of quality checks and other checks performed.
-       * </pre>
-       *
-       * <code>repeated .bioid.services.v1.QualityAssessment quality_assessments = 4;</code>
-       */
-      public int getQualityAssessmentsCount() {
-        if (qualityAssessmentsBuilder_ == null) {
-          return qualityAssessments_.size();
-        } else {
-          return qualityAssessmentsBuilder_.getCount();
-        }
-      }
-      /**
-       * <pre>
-       * List of quality checks and other checks performed.
-       * </pre>
-       *
-       * <code>repeated .bioid.services.v1.QualityAssessment quality_assessments = 4;</code>
-       */
-      public com.bioid.services.Bws.QualityAssessment getQualityAssessments(int index) {
-        if (qualityAssessmentsBuilder_ == null) {
-          return qualityAssessments_.get(index);
-        } else {
-          return qualityAssessmentsBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <pre>
-       * List of quality checks and other checks performed.
-       * </pre>
-       *
-       * <code>repeated .bioid.services.v1.QualityAssessment quality_assessments = 4;</code>
-       */
-      public Builder setQualityAssessments(
-          int index, com.bioid.services.Bws.QualityAssessment value) {
-        if (qualityAssessmentsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureQualityAssessmentsIsMutable();
-          qualityAssessments_.set(index, value);
-          onChanged();
-        } else {
-          qualityAssessmentsBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * List of quality checks and other checks performed.
-       * </pre>
-       *
-       * <code>repeated .bioid.services.v1.QualityAssessment quality_assessments = 4;</code>
-       */
-      public Builder setQualityAssessments(
-          int index, com.bioid.services.Bws.QualityAssessment.Builder builderForValue) {
-        if (qualityAssessmentsBuilder_ == null) {
-          ensureQualityAssessmentsIsMutable();
-          qualityAssessments_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          qualityAssessmentsBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * List of quality checks and other checks performed.
-       * </pre>
-       *
-       * <code>repeated .bioid.services.v1.QualityAssessment quality_assessments = 4;</code>
-       */
-      public Builder addQualityAssessments(com.bioid.services.Bws.QualityAssessment value) {
-        if (qualityAssessmentsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureQualityAssessmentsIsMutable();
-          qualityAssessments_.add(value);
-          onChanged();
-        } else {
-          qualityAssessmentsBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * List of quality checks and other checks performed.
-       * </pre>
-       *
-       * <code>repeated .bioid.services.v1.QualityAssessment quality_assessments = 4;</code>
-       */
-      public Builder addQualityAssessments(
-          int index, com.bioid.services.Bws.QualityAssessment value) {
-        if (qualityAssessmentsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureQualityAssessmentsIsMutable();
-          qualityAssessments_.add(index, value);
-          onChanged();
-        } else {
-          qualityAssessmentsBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * List of quality checks and other checks performed.
-       * </pre>
-       *
-       * <code>repeated .bioid.services.v1.QualityAssessment quality_assessments = 4;</code>
-       */
-      public Builder addQualityAssessments(
-          com.bioid.services.Bws.QualityAssessment.Builder builderForValue) {
-        if (qualityAssessmentsBuilder_ == null) {
-          ensureQualityAssessmentsIsMutable();
-          qualityAssessments_.add(builderForValue.build());
-          onChanged();
-        } else {
-          qualityAssessmentsBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * List of quality checks and other checks performed.
-       * </pre>
-       *
-       * <code>repeated .bioid.services.v1.QualityAssessment quality_assessments = 4;</code>
-       */
-      public Builder addQualityAssessments(
-          int index, com.bioid.services.Bws.QualityAssessment.Builder builderForValue) {
-        if (qualityAssessmentsBuilder_ == null) {
-          ensureQualityAssessmentsIsMutable();
-          qualityAssessments_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          qualityAssessmentsBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * List of quality checks and other checks performed.
-       * </pre>
-       *
-       * <code>repeated .bioid.services.v1.QualityAssessment quality_assessments = 4;</code>
-       */
-      public Builder addAllQualityAssessments(
-          java.lang.Iterable<? extends com.bioid.services.Bws.QualityAssessment> values) {
-        if (qualityAssessmentsBuilder_ == null) {
-          ensureQualityAssessmentsIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, qualityAssessments_);
-          onChanged();
-        } else {
-          qualityAssessmentsBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * List of quality checks and other checks performed.
-       * </pre>
-       *
-       * <code>repeated .bioid.services.v1.QualityAssessment quality_assessments = 4;</code>
-       */
-      public Builder clearQualityAssessments() {
-        if (qualityAssessmentsBuilder_ == null) {
-          qualityAssessments_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
-          onChanged();
-        } else {
-          qualityAssessmentsBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * List of quality checks and other checks performed.
-       * </pre>
-       *
-       * <code>repeated .bioid.services.v1.QualityAssessment quality_assessments = 4;</code>
-       */
-      public Builder removeQualityAssessments(int index) {
-        if (qualityAssessmentsBuilder_ == null) {
-          ensureQualityAssessmentsIsMutable();
-          qualityAssessments_.remove(index);
-          onChanged();
-        } else {
-          qualityAssessmentsBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * List of quality checks and other checks performed.
-       * </pre>
-       *
-       * <code>repeated .bioid.services.v1.QualityAssessment quality_assessments = 4;</code>
-       */
-      public com.bioid.services.Bws.QualityAssessment.Builder getQualityAssessmentsBuilder(
-          int index) {
-        return getQualityAssessmentsFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <pre>
-       * List of quality checks and other checks performed.
-       * </pre>
-       *
-       * <code>repeated .bioid.services.v1.QualityAssessment quality_assessments = 4;</code>
-       */
-      public com.bioid.services.Bws.QualityAssessmentOrBuilder getQualityAssessmentsOrBuilder(
-          int index) {
-        if (qualityAssessmentsBuilder_ == null) {
-          return qualityAssessments_.get(index);  } else {
-          return qualityAssessmentsBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <pre>
-       * List of quality checks and other checks performed.
-       * </pre>
-       *
-       * <code>repeated .bioid.services.v1.QualityAssessment quality_assessments = 4;</code>
-       */
-      public java.util.List<? extends com.bioid.services.Bws.QualityAssessmentOrBuilder> 
-           getQualityAssessmentsOrBuilderList() {
-        if (qualityAssessmentsBuilder_ != null) {
-          return qualityAssessmentsBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(qualityAssessments_);
-        }
-      }
-      /**
-       * <pre>
-       * List of quality checks and other checks performed.
-       * </pre>
-       *
-       * <code>repeated .bioid.services.v1.QualityAssessment quality_assessments = 4;</code>
-       */
-      public com.bioid.services.Bws.QualityAssessment.Builder addQualityAssessmentsBuilder() {
-        return getQualityAssessmentsFieldBuilder().addBuilder(
-            com.bioid.services.Bws.QualityAssessment.getDefaultInstance());
-      }
-      /**
-       * <pre>
-       * List of quality checks and other checks performed.
-       * </pre>
-       *
-       * <code>repeated .bioid.services.v1.QualityAssessment quality_assessments = 4;</code>
-       */
-      public com.bioid.services.Bws.QualityAssessment.Builder addQualityAssessmentsBuilder(
-          int index) {
-        return getQualityAssessmentsFieldBuilder().addBuilder(
-            index, com.bioid.services.Bws.QualityAssessment.getDefaultInstance());
-      }
-      /**
-       * <pre>
-       * List of quality checks and other checks performed.
-       * </pre>
-       *
-       * <code>repeated .bioid.services.v1.QualityAssessment quality_assessments = 4;</code>
-       */
-      public java.util.List<com.bioid.services.Bws.QualityAssessment.Builder> 
-           getQualityAssessmentsBuilderList() {
-        return getQualityAssessmentsFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.bioid.services.Bws.QualityAssessment, com.bioid.services.Bws.QualityAssessment.Builder, com.bioid.services.Bws.QualityAssessmentOrBuilder> 
-          getQualityAssessmentsFieldBuilder() {
-        if (qualityAssessmentsBuilder_ == null) {
-          qualityAssessmentsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.bioid.services.Bws.QualityAssessment, com.bioid.services.Bws.QualityAssessment.Builder, com.bioid.services.Bws.QualityAssessmentOrBuilder>(
-                  qualityAssessments_,
-                  ((bitField0_ & 0x00000008) != 0),
-                  getParentForChildren(),
-                  isClean());
-          qualityAssessments_ = null;
-        }
-        return qualityAssessmentsBuilder_;
-      }
-
-      private int frameNumber_ ;
-      /**
-       * <pre>
-       * Optional frame number in case the input was a video.
-       * </pre>
-       *
-       * <code>int32 frame_number = 5;</code>
-       * @return The frameNumber.
-       */
-      @java.lang.Override
-      public int getFrameNumber() {
-        return frameNumber_;
-      }
-      /**
-       * <pre>
-       * Optional frame number in case the input was a video.
-       * </pre>
-       *
-       * <code>int32 frame_number = 5;</code>
-       * @param value The frameNumber to set.
-       * @return This builder for chaining.
-       */
-      public Builder setFrameNumber(int value) {
-
-        frameNumber_ = value;
-        bitField0_ |= 0x00000010;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Optional frame number in case the input was a video.
-       * </pre>
-       *
-       * <code>int32 frame_number = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearFrameNumber() {
-        bitField0_ = (bitField0_ & ~0x00000010);
-        frameNumber_ = 0;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:bioid.services.v1.ImageProperties)
-    }
-
-    // @@protoc_insertion_point(class_scope:bioid.services.v1.ImageProperties)
-    private static final com.bioid.services.Bws.ImageProperties DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.bioid.services.Bws.ImageProperties();
-    }
-
-    public static com.bioid.services.Bws.ImageProperties getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<ImageProperties>
-        PARSER = new com.google.protobuf.AbstractParser<ImageProperties>() {
-      @java.lang.Override
-      public ImageProperties parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
-      }
-    };
-
-    public static com.google.protobuf.Parser<ImageProperties> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<ImageProperties> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.bioid.services.Bws.ImageProperties getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface QualityAssessmentOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:bioid.services.v1.QualityAssessment)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     * The quality check performed.
-     * </pre>
-     *
-     * <code>string check = 1;</code>
-     * @return The check.
-     */
-    java.lang.String getCheck();
-    /**
-     * <pre>
-     * The quality check performed.
-     * </pre>
-     *
-     * <code>string check = 1;</code>
-     * @return The bytes for check.
-     */
-    com.google.protobuf.ByteString
-        getCheckBytes();
-
-    /**
-     * <pre>
-     * The outcome of the quality check. A score int the range [0.0, 1.0].
-     * The higher the value, the better the check was passed. 
-     * </pre>
-     *
-     * <code>double score = 2;</code>
-     * @return The score.
-     */
-    double getScore();
-
-    /**
-     * <pre>
-     * A text with additional info about this quality assessment.
-     * </pre>
-     *
-     * <code>string message = 3;</code>
-     * @return The message.
-     */
-    java.lang.String getMessage();
-    /**
-     * <pre>
-     * A text with additional info about this quality assessment.
-     * </pre>
-     *
-     * <code>string message = 3;</code>
-     * @return The bytes for message.
-     */
-    com.google.protobuf.ByteString
-        getMessageBytes();
-  }
-  /**
-   * <pre>
-   * Informational messages collected with BWS jobs during processing of an image to give feedback to users.
-   * </pre>
-   *
-   * Protobuf type {@code bioid.services.v1.QualityAssessment}
-   */
-  public static final class QualityAssessment extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:bioid.services.v1.QualityAssessment)
-      QualityAssessmentOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use QualityAssessment.newBuilder() to construct.
-    private QualityAssessment(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private QualityAssessment() {
-      check_ = "";
-      message_ = "";
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new QualityAssessment();
-    }
-
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.bioid.services.Bws.internal_static_bioid_services_v1_QualityAssessment_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.bioid.services.Bws.internal_static_bioid_services_v1_QualityAssessment_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.bioid.services.Bws.QualityAssessment.class, com.bioid.services.Bws.QualityAssessment.Builder.class);
-    }
-
-    public static final int CHECK_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object check_ = "";
-    /**
-     * <pre>
-     * The quality check performed.
-     * </pre>
-     *
-     * <code>string check = 1;</code>
-     * @return The check.
-     */
-    @java.lang.Override
-    public java.lang.String getCheck() {
-      java.lang.Object ref = check_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        check_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * The quality check performed.
-     * </pre>
-     *
-     * <code>string check = 1;</code>
-     * @return The bytes for check.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getCheckBytes() {
-      java.lang.Object ref = check_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        check_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int SCORE_FIELD_NUMBER = 2;
-    private double score_ = 0D;
-    /**
-     * <pre>
-     * The outcome of the quality check. A score int the range [0.0, 1.0].
-     * The higher the value, the better the check was passed. 
-     * </pre>
-     *
-     * <code>double score = 2;</code>
-     * @return The score.
-     */
-    @java.lang.Override
-    public double getScore() {
-      return score_;
-    }
-
-    public static final int MESSAGE_FIELD_NUMBER = 3;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object message_ = "";
-    /**
-     * <pre>
-     * A text with additional info about this quality assessment.
-     * </pre>
-     *
-     * <code>string message = 3;</code>
-     * @return The message.
-     */
-    @java.lang.Override
-    public java.lang.String getMessage() {
-      java.lang.Object ref = message_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        message_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * A text with additional info about this quality assessment.
-     * </pre>
-     *
-     * <code>string message = 3;</code>
-     * @return The bytes for message.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getMessageBytes() {
-      java.lang.Object ref = message_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        message_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(check_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, check_);
-      }
-      if (java.lang.Double.doubleToRawLongBits(score_) != 0) {
-        output.writeDouble(2, score_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, message_);
-      }
-      getUnknownFields().writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(check_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, check_);
-      }
-      if (java.lang.Double.doubleToRawLongBits(score_) != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(2, score_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, message_);
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.bioid.services.Bws.QualityAssessment)) {
-        return super.equals(obj);
-      }
-      com.bioid.services.Bws.QualityAssessment other = (com.bioid.services.Bws.QualityAssessment) obj;
-
-      if (!getCheck()
-          .equals(other.getCheck())) return false;
-      if (java.lang.Double.doubleToLongBits(getScore())
-          != java.lang.Double.doubleToLongBits(
-              other.getScore())) return false;
-      if (!getMessage()
-          .equals(other.getMessage())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + CHECK_FIELD_NUMBER;
-      hash = (53 * hash) + getCheck().hashCode();
-      hash = (37 * hash) + SCORE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getScore()));
-      hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
-      hash = (53 * hash) + getMessage().hashCode();
-      hash = (29 * hash) + getUnknownFields().hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.bioid.services.Bws.QualityAssessment parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.bioid.services.Bws.QualityAssessment parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.bioid.services.Bws.QualityAssessment parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.bioid.services.Bws.QualityAssessment parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.bioid.services.Bws.QualityAssessment parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.bioid.services.Bws.QualityAssessment parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.bioid.services.Bws.QualityAssessment parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.bioid.services.Bws.QualityAssessment parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public static com.bioid.services.Bws.QualityAssessment parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-
-    public static com.bioid.services.Bws.QualityAssessment parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.bioid.services.Bws.QualityAssessment parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.bioid.services.Bws.QualityAssessment parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.bioid.services.Bws.QualityAssessment prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * <pre>
-     * Informational messages collected with BWS jobs during processing of an image to give feedback to users.
-     * </pre>
-     *
-     * Protobuf type {@code bioid.services.v1.QualityAssessment}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:bioid.services.v1.QualityAssessment)
-        com.bioid.services.Bws.QualityAssessmentOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.bioid.services.Bws.internal_static_bioid_services_v1_QualityAssessment_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.bioid.services.Bws.internal_static_bioid_services_v1_QualityAssessment_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.bioid.services.Bws.QualityAssessment.class, com.bioid.services.Bws.QualityAssessment.Builder.class);
-      }
-
-      // Construct using com.bioid.services.Bws.QualityAssessment.newBuilder()
-      private Builder() {
-
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        bitField0_ = 0;
-        check_ = "";
-        score_ = 0D;
-        message_ = "";
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.bioid.services.Bws.internal_static_bioid_services_v1_QualityAssessment_descriptor;
-      }
-
-      @java.lang.Override
-      public com.bioid.services.Bws.QualityAssessment getDefaultInstanceForType() {
-        return com.bioid.services.Bws.QualityAssessment.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.bioid.services.Bws.QualityAssessment build() {
-        com.bioid.services.Bws.QualityAssessment result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.bioid.services.Bws.QualityAssessment buildPartial() {
-        com.bioid.services.Bws.QualityAssessment result = new com.bioid.services.Bws.QualityAssessment(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartial0(com.bioid.services.Bws.QualityAssessment result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.check_ = check_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.score_ = score_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.message_ = message_;
-        }
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.bioid.services.Bws.QualityAssessment) {
-          return mergeFrom((com.bioid.services.Bws.QualityAssessment)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.bioid.services.Bws.QualityAssessment other) {
-        if (other == com.bioid.services.Bws.QualityAssessment.getDefaultInstance()) return this;
-        if (!other.getCheck().isEmpty()) {
-          check_ = other.check_;
-          bitField0_ |= 0x00000001;
-          onChanged();
-        }
-        if (other.getScore() != 0D) {
-          setScore(other.getScore());
-        }
-        if (!other.getMessage().isEmpty()) {
-          message_ = other.message_;
-          bitField0_ |= 0x00000004;
-          onChanged();
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                check_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 10
-              case 17: {
-                score_ = input.readDouble();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 17
-              case 26: {
-                message_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 26
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.unwrapIOException();
-        } finally {
-          onChanged();
-        } // finally
-        return this;
-      }
-      private int bitField0_;
-
-      private java.lang.Object check_ = "";
-      /**
-       * <pre>
-       * The quality check performed.
-       * </pre>
-       *
-       * <code>string check = 1;</code>
-       * @return The check.
-       */
-      public java.lang.String getCheck() {
-        java.lang.Object ref = check_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          check_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The quality check performed.
-       * </pre>
-       *
-       * <code>string check = 1;</code>
-       * @return The bytes for check.
-       */
-      public com.google.protobuf.ByteString
-          getCheckBytes() {
-        java.lang.Object ref = check_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          check_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * The quality check performed.
-       * </pre>
-       *
-       * <code>string check = 1;</code>
-       * @param value The check to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCheck(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        check_ = value;
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The quality check performed.
-       * </pre>
-       *
-       * <code>string check = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCheck() {
-        check_ = getDefaultInstance().getCheck();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The quality check performed.
-       * </pre>
-       *
-       * <code>string check = 1;</code>
-       * @param value The bytes for check to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCheckBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
-        check_ = value;
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
-
-      private double score_ ;
-      /**
-       * <pre>
-       * The outcome of the quality check. A score int the range [0.0, 1.0].
-       * The higher the value, the better the check was passed. 
-       * </pre>
-       *
-       * <code>double score = 2;</code>
-       * @return The score.
-       */
-      @java.lang.Override
-      public double getScore() {
-        return score_;
-      }
-      /**
-       * <pre>
-       * The outcome of the quality check. A score int the range [0.0, 1.0].
-       * The higher the value, the better the check was passed. 
-       * </pre>
-       *
-       * <code>double score = 2;</code>
-       * @param value The score to set.
-       * @return This builder for chaining.
-       */
-      public Builder setScore(double value) {
-
-        score_ = value;
-        bitField0_ |= 0x00000002;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The outcome of the quality check. A score int the range [0.0, 1.0].
-       * The higher the value, the better the check was passed. 
-       * </pre>
-       *
-       * <code>double score = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearScore() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        score_ = 0D;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object message_ = "";
-      /**
-       * <pre>
-       * A text with additional info about this quality assessment.
-       * </pre>
-       *
-       * <code>string message = 3;</code>
-       * @return The message.
-       */
-      public java.lang.String getMessage() {
-        java.lang.Object ref = message_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          message_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * A text with additional info about this quality assessment.
-       * </pre>
-       *
-       * <code>string message = 3;</code>
-       * @return The bytes for message.
-       */
-      public com.google.protobuf.ByteString
-          getMessageBytes() {
-        java.lang.Object ref = message_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          message_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * A text with additional info about this quality assessment.
-       * </pre>
-       *
-       * <code>string message = 3;</code>
-       * @param value The message to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMessage(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        message_ = value;
-        bitField0_ |= 0x00000004;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * A text with additional info about this quality assessment.
-       * </pre>
-       *
-       * <code>string message = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearMessage() {
-        message_ = getDefaultInstance().getMessage();
-        bitField0_ = (bitField0_ & ~0x00000004);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * A text with additional info about this quality assessment.
-       * </pre>
-       *
-       * <code>string message = 3;</code>
-       * @param value The bytes for message to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMessageBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
-        message_ = value;
-        bitField0_ |= 0x00000004;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:bioid.services.v1.QualityAssessment)
-    }
-
-    // @@protoc_insertion_point(class_scope:bioid.services.v1.QualityAssessment)
-    private static final com.bioid.services.Bws.QualityAssessment DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.bioid.services.Bws.QualityAssessment();
-    }
-
-    public static com.bioid.services.Bws.QualityAssessment getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<QualityAssessment>
-        PARSER = new com.google.protobuf.AbstractParser<QualityAssessment>() {
-      @java.lang.Override
-      public QualityAssessment parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
-      }
-    };
-
-    public static com.google.protobuf.Parser<QualityAssessment> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<QualityAssessment> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.bioid.services.Bws.QualityAssessment getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface FaceOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:bioid.services.v1.Face)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>.bioid.services.v1.PointD left_eye = 2;</code>
-     * @return Whether the leftEye field is set.
-     */
-    boolean hasLeftEye();
-    /**
-     * <code>.bioid.services.v1.PointD left_eye = 2;</code>
-     * @return The leftEye.
-     */
-    com.bioid.services.Bws.PointD getLeftEye();
-    /**
-     * <code>.bioid.services.v1.PointD left_eye = 2;</code>
-     */
-    com.bioid.services.Bws.PointDOrBuilder getLeftEyeOrBuilder();
-
-    /**
-     * <code>.bioid.services.v1.PointD right_eye = 3;</code>
-     * @return Whether the rightEye field is set.
-     */
-    boolean hasRightEye();
-    /**
-     * <code>.bioid.services.v1.PointD right_eye = 3;</code>
-     * @return The rightEye.
-     */
-    com.bioid.services.Bws.PointD getRightEye();
-    /**
-     * <code>.bioid.services.v1.PointD right_eye = 3;</code>
-     */
-    com.bioid.services.Bws.PointDOrBuilder getRightEyeOrBuilder();
-
-    /**
-     * <code>double texture_liveness_score = 11;</code>
-     * @return The textureLivenessScore.
-     */
-    double getTextureLivenessScore();
-
-    /**
-     * <code>double motion_liveness_score = 12;</code>
-     * @return The motionLivenessScore.
-     */
-    double getMotionLivenessScore();
-
-    /**
-     * <code>double movement_direction = 13;</code>
-     * @return The movementDirection.
-     */
-    double getMovementDirection();
-  }
-  /**
-   * <pre>
-   * Describes some landmarks of a found face within an image together with some optional scores generated by additional DCNNs.
-   * Important note: It is assumed that the face image is mirrored, i.e. the right eye is on the left side of the image and vice versa!
-   * </pre>
-   *
-   * Protobuf type {@code bioid.services.v1.Face}
-   */
-  public static final class Face extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:bioid.services.v1.Face)
-      FaceOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use Face.newBuilder() to construct.
-    private Face(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private Face() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new Face();
-    }
-
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.bioid.services.Bws.internal_static_bioid_services_v1_Face_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.bioid.services.Bws.internal_static_bioid_services_v1_Face_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.bioid.services.Bws.Face.class, com.bioid.services.Bws.Face.Builder.class);
-    }
-
-    private int bitField0_;
-    public static final int LEFT_EYE_FIELD_NUMBER = 2;
-    private com.bioid.services.Bws.PointD leftEye_;
-    /**
-     * <code>.bioid.services.v1.PointD left_eye = 2;</code>
-     * @return Whether the leftEye field is set.
-     */
-    @java.lang.Override
-    public boolean hasLeftEye() {
-      return ((bitField0_ & 0x00000001) != 0);
-    }
-    /**
-     * <code>.bioid.services.v1.PointD left_eye = 2;</code>
-     * @return The leftEye.
-     */
-    @java.lang.Override
-    public com.bioid.services.Bws.PointD getLeftEye() {
-      return leftEye_ == null ? com.bioid.services.Bws.PointD.getDefaultInstance() : leftEye_;
-    }
-    /**
-     * <code>.bioid.services.v1.PointD left_eye = 2;</code>
-     */
-    @java.lang.Override
-    public com.bioid.services.Bws.PointDOrBuilder getLeftEyeOrBuilder() {
-      return leftEye_ == null ? com.bioid.services.Bws.PointD.getDefaultInstance() : leftEye_;
-    }
-
-    public static final int RIGHT_EYE_FIELD_NUMBER = 3;
-    private com.bioid.services.Bws.PointD rightEye_;
-    /**
-     * <code>.bioid.services.v1.PointD right_eye = 3;</code>
-     * @return Whether the rightEye field is set.
-     */
-    @java.lang.Override
-    public boolean hasRightEye() {
-      return ((bitField0_ & 0x00000002) != 0);
-    }
-    /**
-     * <code>.bioid.services.v1.PointD right_eye = 3;</code>
-     * @return The rightEye.
-     */
-    @java.lang.Override
-    public com.bioid.services.Bws.PointD getRightEye() {
-      return rightEye_ == null ? com.bioid.services.Bws.PointD.getDefaultInstance() : rightEye_;
-    }
-    /**
-     * <code>.bioid.services.v1.PointD right_eye = 3;</code>
-     */
-    @java.lang.Override
-    public com.bioid.services.Bws.PointDOrBuilder getRightEyeOrBuilder() {
-      return rightEye_ == null ? com.bioid.services.Bws.PointD.getDefaultInstance() : rightEye_;
-    }
-
-    public static final int TEXTURE_LIVENESS_SCORE_FIELD_NUMBER = 11;
-    private double textureLivenessScore_ = 0D;
-    /**
-     * <code>double texture_liveness_score = 11;</code>
-     * @return The textureLivenessScore.
-     */
-    @java.lang.Override
-    public double getTextureLivenessScore() {
-      return textureLivenessScore_;
-    }
-
-    public static final int MOTION_LIVENESS_SCORE_FIELD_NUMBER = 12;
-    private double motionLivenessScore_ = 0D;
-    /**
-     * <code>double motion_liveness_score = 12;</code>
-     * @return The motionLivenessScore.
-     */
-    @java.lang.Override
-    public double getMotionLivenessScore() {
-      return motionLivenessScore_;
-    }
-
-    public static final int MOVEMENT_DIRECTION_FIELD_NUMBER = 13;
-    private double movementDirection_ = 0D;
-    /**
-     * <code>double movement_direction = 13;</code>
-     * @return The movementDirection.
-     */
-    @java.lang.Override
-    public double getMovementDirection() {
-      return movementDirection_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        output.writeMessage(2, getLeftEye());
-      }
-      if (((bitField0_ & 0x00000002) != 0)) {
-        output.writeMessage(3, getRightEye());
-      }
-      if (java.lang.Double.doubleToRawLongBits(textureLivenessScore_) != 0) {
-        output.writeDouble(11, textureLivenessScore_);
-      }
-      if (java.lang.Double.doubleToRawLongBits(motionLivenessScore_) != 0) {
-        output.writeDouble(12, motionLivenessScore_);
-      }
-      if (java.lang.Double.doubleToRawLongBits(movementDirection_) != 0) {
-        output.writeDouble(13, movementDirection_);
-      }
-      getUnknownFields().writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getLeftEye());
-      }
-      if (((bitField0_ & 0x00000002) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getRightEye());
-      }
-      if (java.lang.Double.doubleToRawLongBits(textureLivenessScore_) != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(11, textureLivenessScore_);
-      }
-      if (java.lang.Double.doubleToRawLongBits(motionLivenessScore_) != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(12, motionLivenessScore_);
-      }
-      if (java.lang.Double.doubleToRawLongBits(movementDirection_) != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(13, movementDirection_);
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.bioid.services.Bws.Face)) {
-        return super.equals(obj);
-      }
-      com.bioid.services.Bws.Face other = (com.bioid.services.Bws.Face) obj;
-
-      if (hasLeftEye() != other.hasLeftEye()) return false;
-      if (hasLeftEye()) {
-        if (!getLeftEye()
-            .equals(other.getLeftEye())) return false;
-      }
-      if (hasRightEye() != other.hasRightEye()) return false;
-      if (hasRightEye()) {
-        if (!getRightEye()
-            .equals(other.getRightEye())) return false;
-      }
-      if (java.lang.Double.doubleToLongBits(getTextureLivenessScore())
-          != java.lang.Double.doubleToLongBits(
-              other.getTextureLivenessScore())) return false;
-      if (java.lang.Double.doubleToLongBits(getMotionLivenessScore())
-          != java.lang.Double.doubleToLongBits(
-              other.getMotionLivenessScore())) return false;
-      if (java.lang.Double.doubleToLongBits(getMovementDirection())
-          != java.lang.Double.doubleToLongBits(
-              other.getMovementDirection())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasLeftEye()) {
-        hash = (37 * hash) + LEFT_EYE_FIELD_NUMBER;
-        hash = (53 * hash) + getLeftEye().hashCode();
-      }
-      if (hasRightEye()) {
-        hash = (37 * hash) + RIGHT_EYE_FIELD_NUMBER;
-        hash = (53 * hash) + getRightEye().hashCode();
-      }
-      hash = (37 * hash) + TEXTURE_LIVENESS_SCORE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getTextureLivenessScore()));
-      hash = (37 * hash) + MOTION_LIVENESS_SCORE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getMotionLivenessScore()));
-      hash = (37 * hash) + MOVEMENT_DIRECTION_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getMovementDirection()));
-      hash = (29 * hash) + getUnknownFields().hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.bioid.services.Bws.Face parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.bioid.services.Bws.Face parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.bioid.services.Bws.Face parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.bioid.services.Bws.Face parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.bioid.services.Bws.Face parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.bioid.services.Bws.Face parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.bioid.services.Bws.Face parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.bioid.services.Bws.Face parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public static com.bioid.services.Bws.Face parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-
-    public static com.bioid.services.Bws.Face parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.bioid.services.Bws.Face parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.bioid.services.Bws.Face parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.bioid.services.Bws.Face prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * <pre>
-     * Describes some landmarks of a found face within an image together with some optional scores generated by additional DCNNs.
-     * Important note: It is assumed that the face image is mirrored, i.e. the right eye is on the left side of the image and vice versa!
-     * </pre>
-     *
-     * Protobuf type {@code bioid.services.v1.Face}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:bioid.services.v1.Face)
-        com.bioid.services.Bws.FaceOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.bioid.services.Bws.internal_static_bioid_services_v1_Face_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.bioid.services.Bws.internal_static_bioid_services_v1_Face_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.bioid.services.Bws.Face.class, com.bioid.services.Bws.Face.Builder.class);
-      }
-
-      // Construct using com.bioid.services.Bws.Face.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getLeftEyeFieldBuilder();
-          getRightEyeFieldBuilder();
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        bitField0_ = 0;
-        leftEye_ = null;
-        if (leftEyeBuilder_ != null) {
-          leftEyeBuilder_.dispose();
-          leftEyeBuilder_ = null;
-        }
-        rightEye_ = null;
-        if (rightEyeBuilder_ != null) {
-          rightEyeBuilder_.dispose();
-          rightEyeBuilder_ = null;
-        }
-        textureLivenessScore_ = 0D;
-        motionLivenessScore_ = 0D;
-        movementDirection_ = 0D;
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.bioid.services.Bws.internal_static_bioid_services_v1_Face_descriptor;
-      }
-
-      @java.lang.Override
-      public com.bioid.services.Bws.Face getDefaultInstanceForType() {
-        return com.bioid.services.Bws.Face.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.bioid.services.Bws.Face build() {
-        com.bioid.services.Bws.Face result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.bioid.services.Bws.Face buildPartial() {
-        com.bioid.services.Bws.Face result = new com.bioid.services.Bws.Face(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartial0(com.bioid.services.Bws.Face result) {
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.leftEye_ = leftEyeBuilder_ == null
-              ? leftEye_
-              : leftEyeBuilder_.build();
-          to_bitField0_ |= 0x00000001;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.rightEye_ = rightEyeBuilder_ == null
-              ? rightEye_
-              : rightEyeBuilder_.build();
-          to_bitField0_ |= 0x00000002;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.textureLivenessScore_ = textureLivenessScore_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.motionLivenessScore_ = motionLivenessScore_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.movementDirection_ = movementDirection_;
-        }
-        result.bitField0_ |= to_bitField0_;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.bioid.services.Bws.Face) {
-          return mergeFrom((com.bioid.services.Bws.Face)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.bioid.services.Bws.Face other) {
-        if (other == com.bioid.services.Bws.Face.getDefaultInstance()) return this;
-        if (other.hasLeftEye()) {
-          mergeLeftEye(other.getLeftEye());
-        }
-        if (other.hasRightEye()) {
-          mergeRightEye(other.getRightEye());
-        }
-        if (other.getTextureLivenessScore() != 0D) {
-          setTextureLivenessScore(other.getTextureLivenessScore());
-        }
-        if (other.getMotionLivenessScore() != 0D) {
-          setMotionLivenessScore(other.getMotionLivenessScore());
-        }
-        if (other.getMovementDirection() != 0D) {
-          setMovementDirection(other.getMovementDirection());
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 18: {
-                input.readMessage(
-                    getLeftEyeFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 18
-              case 26: {
-                input.readMessage(
-                    getRightEyeFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 26
-              case 89: {
-                textureLivenessScore_ = input.readDouble();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 89
-              case 97: {
-                motionLivenessScore_ = input.readDouble();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 97
-              case 105: {
-                movementDirection_ = input.readDouble();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 105
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.unwrapIOException();
-        } finally {
-          onChanged();
-        } // finally
-        return this;
-      }
-      private int bitField0_;
-
-      private com.bioid.services.Bws.PointD leftEye_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.bioid.services.Bws.PointD, com.bioid.services.Bws.PointD.Builder, com.bioid.services.Bws.PointDOrBuilder> leftEyeBuilder_;
-      /**
-       * <code>.bioid.services.v1.PointD left_eye = 2;</code>
-       * @return Whether the leftEye field is set.
-       */
-      public boolean hasLeftEye() {
-        return ((bitField0_ & 0x00000001) != 0);
-      }
-      /**
-       * <code>.bioid.services.v1.PointD left_eye = 2;</code>
-       * @return The leftEye.
-       */
-      public com.bioid.services.Bws.PointD getLeftEye() {
-        if (leftEyeBuilder_ == null) {
-          return leftEye_ == null ? com.bioid.services.Bws.PointD.getDefaultInstance() : leftEye_;
-        } else {
-          return leftEyeBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.bioid.services.v1.PointD left_eye = 2;</code>
-       */
-      public Builder setLeftEye(com.bioid.services.Bws.PointD value) {
-        if (leftEyeBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          leftEye_ = value;
-        } else {
-          leftEyeBuilder_.setMessage(value);
-        }
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.bioid.services.v1.PointD left_eye = 2;</code>
-       */
-      public Builder setLeftEye(
-          com.bioid.services.Bws.PointD.Builder builderForValue) {
-        if (leftEyeBuilder_ == null) {
-          leftEye_ = builderForValue.build();
-        } else {
-          leftEyeBuilder_.setMessage(builderForValue.build());
-        }
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.bioid.services.v1.PointD left_eye = 2;</code>
-       */
-      public Builder mergeLeftEye(com.bioid.services.Bws.PointD value) {
-        if (leftEyeBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0) &&
-            leftEye_ != null &&
-            leftEye_ != com.bioid.services.Bws.PointD.getDefaultInstance()) {
-            getLeftEyeBuilder().mergeFrom(value);
-          } else {
-            leftEye_ = value;
-          }
-        } else {
-          leftEyeBuilder_.mergeFrom(value);
-        }
-        if (leftEye_ != null) {
-          bitField0_ |= 0x00000001;
-          onChanged();
-        }
-        return this;
-      }
-      /**
-       * <code>.bioid.services.v1.PointD left_eye = 2;</code>
-       */
-      public Builder clearLeftEye() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        leftEye_ = null;
-        if (leftEyeBuilder_ != null) {
-          leftEyeBuilder_.dispose();
-          leftEyeBuilder_ = null;
-        }
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.bioid.services.v1.PointD left_eye = 2;</code>
-       */
-      public com.bioid.services.Bws.PointD.Builder getLeftEyeBuilder() {
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return getLeftEyeFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.bioid.services.v1.PointD left_eye = 2;</code>
-       */
-      public com.bioid.services.Bws.PointDOrBuilder getLeftEyeOrBuilder() {
-        if (leftEyeBuilder_ != null) {
-          return leftEyeBuilder_.getMessageOrBuilder();
-        } else {
-          return leftEye_ == null ?
-              com.bioid.services.Bws.PointD.getDefaultInstance() : leftEye_;
-        }
-      }
-      /**
-       * <code>.bioid.services.v1.PointD left_eye = 2;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.bioid.services.Bws.PointD, com.bioid.services.Bws.PointD.Builder, com.bioid.services.Bws.PointDOrBuilder> 
-          getLeftEyeFieldBuilder() {
-        if (leftEyeBuilder_ == null) {
-          leftEyeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.bioid.services.Bws.PointD, com.bioid.services.Bws.PointD.Builder, com.bioid.services.Bws.PointDOrBuilder>(
-                  getLeftEye(),
-                  getParentForChildren(),
-                  isClean());
-          leftEye_ = null;
-        }
-        return leftEyeBuilder_;
-      }
-
-      private com.bioid.services.Bws.PointD rightEye_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.bioid.services.Bws.PointD, com.bioid.services.Bws.PointD.Builder, com.bioid.services.Bws.PointDOrBuilder> rightEyeBuilder_;
-      /**
-       * <code>.bioid.services.v1.PointD right_eye = 3;</code>
-       * @return Whether the rightEye field is set.
-       */
-      public boolean hasRightEye() {
-        return ((bitField0_ & 0x00000002) != 0);
-      }
-      /**
-       * <code>.bioid.services.v1.PointD right_eye = 3;</code>
-       * @return The rightEye.
-       */
-      public com.bioid.services.Bws.PointD getRightEye() {
-        if (rightEyeBuilder_ == null) {
-          return rightEye_ == null ? com.bioid.services.Bws.PointD.getDefaultInstance() : rightEye_;
-        } else {
-          return rightEyeBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.bioid.services.v1.PointD right_eye = 3;</code>
-       */
-      public Builder setRightEye(com.bioid.services.Bws.PointD value) {
-        if (rightEyeBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          rightEye_ = value;
-        } else {
-          rightEyeBuilder_.setMessage(value);
-        }
-        bitField0_ |= 0x00000002;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.bioid.services.v1.PointD right_eye = 3;</code>
-       */
-      public Builder setRightEye(
-          com.bioid.services.Bws.PointD.Builder builderForValue) {
-        if (rightEyeBuilder_ == null) {
-          rightEye_ = builderForValue.build();
-        } else {
-          rightEyeBuilder_.setMessage(builderForValue.build());
-        }
-        bitField0_ |= 0x00000002;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.bioid.services.v1.PointD right_eye = 3;</code>
-       */
-      public Builder mergeRightEye(com.bioid.services.Bws.PointD value) {
-        if (rightEyeBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0) &&
-            rightEye_ != null &&
-            rightEye_ != com.bioid.services.Bws.PointD.getDefaultInstance()) {
-            getRightEyeBuilder().mergeFrom(value);
-          } else {
-            rightEye_ = value;
-          }
-        } else {
-          rightEyeBuilder_.mergeFrom(value);
-        }
-        if (rightEye_ != null) {
-          bitField0_ |= 0x00000002;
-          onChanged();
-        }
-        return this;
-      }
-      /**
-       * <code>.bioid.services.v1.PointD right_eye = 3;</code>
-       */
-      public Builder clearRightEye() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        rightEye_ = null;
-        if (rightEyeBuilder_ != null) {
-          rightEyeBuilder_.dispose();
-          rightEyeBuilder_ = null;
-        }
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.bioid.services.v1.PointD right_eye = 3;</code>
-       */
-      public com.bioid.services.Bws.PointD.Builder getRightEyeBuilder() {
-        bitField0_ |= 0x00000002;
-        onChanged();
-        return getRightEyeFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.bioid.services.v1.PointD right_eye = 3;</code>
-       */
-      public com.bioid.services.Bws.PointDOrBuilder getRightEyeOrBuilder() {
-        if (rightEyeBuilder_ != null) {
-          return rightEyeBuilder_.getMessageOrBuilder();
-        } else {
-          return rightEye_ == null ?
-              com.bioid.services.Bws.PointD.getDefaultInstance() : rightEye_;
-        }
-      }
-      /**
-       * <code>.bioid.services.v1.PointD right_eye = 3;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.bioid.services.Bws.PointD, com.bioid.services.Bws.PointD.Builder, com.bioid.services.Bws.PointDOrBuilder> 
-          getRightEyeFieldBuilder() {
-        if (rightEyeBuilder_ == null) {
-          rightEyeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.bioid.services.Bws.PointD, com.bioid.services.Bws.PointD.Builder, com.bioid.services.Bws.PointDOrBuilder>(
-                  getRightEye(),
-                  getParentForChildren(),
-                  isClean());
-          rightEye_ = null;
-        }
-        return rightEyeBuilder_;
-      }
-
-      private double textureLivenessScore_ ;
-      /**
-       * <code>double texture_liveness_score = 11;</code>
-       * @return The textureLivenessScore.
-       */
-      @java.lang.Override
-      public double getTextureLivenessScore() {
-        return textureLivenessScore_;
-      }
-      /**
-       * <code>double texture_liveness_score = 11;</code>
-       * @param value The textureLivenessScore to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTextureLivenessScore(double value) {
-
-        textureLivenessScore_ = value;
-        bitField0_ |= 0x00000004;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>double texture_liveness_score = 11;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTextureLivenessScore() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        textureLivenessScore_ = 0D;
-        onChanged();
-        return this;
-      }
-
-      private double motionLivenessScore_ ;
-      /**
-       * <code>double motion_liveness_score = 12;</code>
-       * @return The motionLivenessScore.
-       */
-      @java.lang.Override
-      public double getMotionLivenessScore() {
-        return motionLivenessScore_;
-      }
-      /**
-       * <code>double motion_liveness_score = 12;</code>
-       * @param value The motionLivenessScore to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMotionLivenessScore(double value) {
-
-        motionLivenessScore_ = value;
-        bitField0_ |= 0x00000008;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>double motion_liveness_score = 12;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearMotionLivenessScore() {
-        bitField0_ = (bitField0_ & ~0x00000008);
-        motionLivenessScore_ = 0D;
-        onChanged();
-        return this;
-      }
-
-      private double movementDirection_ ;
-      /**
-       * <code>double movement_direction = 13;</code>
-       * @return The movementDirection.
-       */
-      @java.lang.Override
-      public double getMovementDirection() {
-        return movementDirection_;
-      }
-      /**
-       * <code>double movement_direction = 13;</code>
-       * @param value The movementDirection to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMovementDirection(double value) {
-
-        movementDirection_ = value;
-        bitField0_ |= 0x00000010;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>double movement_direction = 13;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearMovementDirection() {
-        bitField0_ = (bitField0_ & ~0x00000010);
-        movementDirection_ = 0D;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:bioid.services.v1.Face)
-    }
-
-    // @@protoc_insertion_point(class_scope:bioid.services.v1.Face)
-    private static final com.bioid.services.Bws.Face DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.bioid.services.Bws.Face();
-    }
-
-    public static com.bioid.services.Bws.Face getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<Face>
-        PARSER = new com.google.protobuf.AbstractParser<Face>() {
-      @java.lang.Override
-      public Face parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
-      }
-    };
-
-    public static com.google.protobuf.Parser<Face> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<Face> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.bioid.services.Bws.Face getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface PointDOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:bioid.services.v1.PointD)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>double x = 1;</code>
-     * @return The x.
-     */
-    double getX();
-
-    /**
-     * <code>double y = 2;</code>
-     * @return The y.
-     */
-    double getY();
-  }
-  /**
-   * Protobuf type {@code bioid.services.v1.PointD}
-   */
-  public static final class PointD extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:bioid.services.v1.PointD)
-      PointDOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use PointD.newBuilder() to construct.
-    private PointD(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private PointD() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new PointD();
-    }
-
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.bioid.services.Bws.internal_static_bioid_services_v1_PointD_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.bioid.services.Bws.internal_static_bioid_services_v1_PointD_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.bioid.services.Bws.PointD.class, com.bioid.services.Bws.PointD.Builder.class);
-    }
-
-    public static final int X_FIELD_NUMBER = 1;
-    private double x_ = 0D;
-    /**
-     * <code>double x = 1;</code>
-     * @return The x.
-     */
-    @java.lang.Override
-    public double getX() {
-      return x_;
-    }
-
-    public static final int Y_FIELD_NUMBER = 2;
-    private double y_ = 0D;
-    /**
-     * <code>double y = 2;</code>
-     * @return The y.
-     */
-    @java.lang.Override
-    public double getY() {
-      return y_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (java.lang.Double.doubleToRawLongBits(x_) != 0) {
-        output.writeDouble(1, x_);
-      }
-      if (java.lang.Double.doubleToRawLongBits(y_) != 0) {
-        output.writeDouble(2, y_);
-      }
-      getUnknownFields().writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (java.lang.Double.doubleToRawLongBits(x_) != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(1, x_);
-      }
-      if (java.lang.Double.doubleToRawLongBits(y_) != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(2, y_);
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.bioid.services.Bws.PointD)) {
-        return super.equals(obj);
-      }
-      com.bioid.services.Bws.PointD other = (com.bioid.services.Bws.PointD) obj;
-
-      if (java.lang.Double.doubleToLongBits(getX())
-          != java.lang.Double.doubleToLongBits(
-              other.getX())) return false;
-      if (java.lang.Double.doubleToLongBits(getY())
-          != java.lang.Double.doubleToLongBits(
-              other.getY())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + X_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getX()));
-      hash = (37 * hash) + Y_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          java.lang.Double.doubleToLongBits(getY()));
-      hash = (29 * hash) + getUnknownFields().hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.bioid.services.Bws.PointD parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.bioid.services.Bws.PointD parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.bioid.services.Bws.PointD parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.bioid.services.Bws.PointD parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.bioid.services.Bws.PointD parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.bioid.services.Bws.PointD parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.bioid.services.Bws.PointD parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.bioid.services.Bws.PointD parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public static com.bioid.services.Bws.PointD parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-
-    public static com.bioid.services.Bws.PointD parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.bioid.services.Bws.PointD parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.bioid.services.Bws.PointD parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.bioid.services.Bws.PointD prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code bioid.services.v1.PointD}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:bioid.services.v1.PointD)
-        com.bioid.services.Bws.PointDOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.bioid.services.Bws.internal_static_bioid_services_v1_PointD_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.bioid.services.Bws.internal_static_bioid_services_v1_PointD_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.bioid.services.Bws.PointD.class, com.bioid.services.Bws.PointD.Builder.class);
-      }
-
-      // Construct using com.bioid.services.Bws.PointD.newBuilder()
-      private Builder() {
-
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        bitField0_ = 0;
-        x_ = 0D;
-        y_ = 0D;
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.bioid.services.Bws.internal_static_bioid_services_v1_PointD_descriptor;
-      }
-
-      @java.lang.Override
-      public com.bioid.services.Bws.PointD getDefaultInstanceForType() {
-        return com.bioid.services.Bws.PointD.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.bioid.services.Bws.PointD build() {
-        com.bioid.services.Bws.PointD result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.bioid.services.Bws.PointD buildPartial() {
-        com.bioid.services.Bws.PointD result = new com.bioid.services.Bws.PointD(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartial0(com.bioid.services.Bws.PointD result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.x_ = x_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.y_ = y_;
-        }
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.bioid.services.Bws.PointD) {
-          return mergeFrom((com.bioid.services.Bws.PointD)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.bioid.services.Bws.PointD other) {
-        if (other == com.bioid.services.Bws.PointD.getDefaultInstance()) return this;
-        if (other.getX() != 0D) {
-          setX(other.getX());
-        }
-        if (other.getY() != 0D) {
-          setY(other.getY());
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 9: {
-                x_ = input.readDouble();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 9
-              case 17: {
-                y_ = input.readDouble();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 17
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.unwrapIOException();
-        } finally {
-          onChanged();
-        } // finally
-        return this;
-      }
-      private int bitField0_;
-
-      private double x_ ;
-      /**
-       * <code>double x = 1;</code>
-       * @return The x.
-       */
-      @java.lang.Override
-      public double getX() {
-        return x_;
-      }
-      /**
-       * <code>double x = 1;</code>
-       * @param value The x to set.
-       * @return This builder for chaining.
-       */
-      public Builder setX(double value) {
-
-        x_ = value;
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>double x = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearX() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        x_ = 0D;
-        onChanged();
-        return this;
-      }
-
-      private double y_ ;
-      /**
-       * <code>double y = 2;</code>
-       * @return The y.
-       */
-      @java.lang.Override
-      public double getY() {
-        return y_;
-      }
-      /**
-       * <code>double y = 2;</code>
-       * @param value The y to set.
-       * @return This builder for chaining.
-       */
-      public Builder setY(double value) {
-
-        y_ = value;
-        bitField0_ |= 0x00000002;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>double y = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearY() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        y_ = 0D;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:bioid.services.v1.PointD)
-    }
-
-    // @@protoc_insertion_point(class_scope:bioid.services.v1.PointD)
-    private static final com.bioid.services.Bws.PointD DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.bioid.services.Bws.PointD();
-    }
-
-    public static com.bioid.services.Bws.PointD getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<PointD>
-        PARSER = new com.google.protobuf.AbstractParser<PointD>() {
-      @java.lang.Override
-      public PointD parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
-      }
-    };
-
-    public static com.google.protobuf.Parser<PointD> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<PointD> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.bioid.services.Bws.PointD getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_bioid_services_v1_LivenessDetectionRequest_descriptor;
   private static final 
@@ -12527,36 +6669,6 @@ public final class Bws {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_bioid_services_v1_PhotoVerifyResponse_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_bioid_services_v1_JobError_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_bioid_services_v1_JobError_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_bioid_services_v1_ImageData_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_bioid_services_v1_ImageData_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_bioid_services_v1_ImageProperties_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_bioid_services_v1_ImageProperties_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_bioid_services_v1_QualityAssessment_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_bioid_services_v1_QualityAssessment_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_bioid_services_v1_Face_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_bioid_services_v1_Face_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_bioid_services_v1_PointD_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_bioid_services_v1_PointD_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -12566,61 +6678,43 @@ public final class Bws {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\tbws.proto\022\021bioid.services.v1\"M\n\030Livene" +
-      "ssDetectionRequest\0221\n\013live_images\030\001 \003(\0132" +
-      "\034.bioid.services.v1.ImageData\".\n\035VideoLi" +
-      "venessDetectionRequest\022\r\n\005video\030\001 \001(\014\"\332\001" +
-      "\n\031LivenessDetectionResponse\022,\n\006status\030\001 " +
-      "\001(\0162\034.bioid.services.v1.JobStatus\022+\n\006err" +
-      "ors\030\002 \003(\0132\033.bioid.services.v1.JobError\022<" +
-      "\n\020image_properties\030\003 \003(\0132\".bioid.service" +
-      "s.v1.ImageProperties\022\014\n\004live\030\004 \001(\010\022\026\n\016li" +
-      "veness_score\030\005 \001(\001\"z\n\022PhotoVerifyRequest" +
-      "\0221\n\013live_images\030\001 \003(\0132\034.bioid.services.v" +
-      "1.ImageData\022\r\n\005photo\030\002 \001(\014\022\"\n\032disable_li" +
-      "veness_detection\030\003 \001(\010\"\346\003\n\023PhotoVerifyRe" +
-      "sponse\022,\n\006status\030\001 \001(\0162\034.bioid.services." +
-      "v1.JobStatus\022+\n\006errors\030\002 \003(\0132\033.bioid.ser" +
-      "vices.v1.JobError\022<\n\020image_properties\030\003 " +
-      "\003(\0132\".bioid.services.v1.ImageProperties\022" +
-      "<\n\020photo_properties\030\004 \001(\0132\".bioid.servic" +
-      "es.v1.ImageProperties\022P\n\022verification_le" +
-      "vel\030\005 \001(\01624.bioid.services.v1.PhotoVerif" +
-      "yResponse.AccuracyLevel\022\032\n\022verification_" +
-      "score\030\006 \001(\001\022\014\n\004live\030\007 \001(\010\022\026\n\016liveness_sc" +
-      "ore\030\010 \001(\001\"d\n\rAccuracyLevel\022\022\n\016NOT_RECOGN" +
-      "IZED\020\000\022\013\n\007LEVEL_1\020\001\022\013\n\007LEVEL_2\020\002\022\013\n\007LEVE" +
-      "L_3\020\003\022\013\n\007LEVEL_4\020\004\022\013\n\007LEVEL_5\020\005\"/\n\010JobEr" +
-      "ror\022\022\n\nerror_code\030\001 \001(\t\022\017\n\007message\030\002 \001(\t" +
-      "\"(\n\tImageData\022\r\n\005image\030\001 \001(\014\022\014\n\004tags\030\002 \003" +
-      "(\t\"\272\001\n\017ImageProperties\022\017\n\007rotated\030\001 \001(\005\022" +
-      "&\n\005faces\030\002 \003(\0132\027.bioid.services.v1.Face\022" +
-      "\025\n\rquality_score\030\003 \001(\001\022A\n\023quality_assess" +
-      "ments\030\004 \003(\0132$.bioid.services.v1.QualityA" +
-      "ssessment\022\024\n\014frame_number\030\005 \001(\005\"B\n\021Quali" +
-      "tyAssessment\022\r\n\005check\030\001 \001(\t\022\r\n\005score\030\002 \001" +
-      "(\001\022\017\n\007message\030\003 \001(\t\"\274\001\n\004Face\022+\n\010left_eye" +
-      "\030\002 \001(\0132\031.bioid.services.v1.PointD\022,\n\trig" +
-      "ht_eye\030\003 \001(\0132\031.bioid.services.v1.PointD\022" +
-      "\036\n\026texture_liveness_score\030\013 \001(\001\022\035\n\025motio" +
-      "n_liveness_score\030\014 \001(\001\022\032\n\022movement_direc" +
-      "tion\030\r \001(\001\"\036\n\006PointD\022\t\n\001x\030\001 \001(\001\022\t\n\001y\030\002 \001" +
-      "(\001*6\n\tJobStatus\022\r\n\tSUCCEEDED\020\000\022\013\n\007FAULTE" +
-      "D\020\001\022\r\n\tCANCELLED\020\0022\331\002\n\017BioIDWebService\022n" +
-      "\n\021LivenessDetection\022+.bioid.services.v1." +
-      "LivenessDetectionRequest\032,.bioid.service" +
-      "s.v1.LivenessDetectionResponse\022x\n\026VideoL" +
-      "ivenessDetection\0220.bioid.services.v1.Vid" +
-      "eoLivenessDetectionRequest\032,.bioid.servi" +
-      "ces.v1.LivenessDetectionResponse\022\\\n\013Phot" +
-      "oVerify\022%.bioid.services.v1.PhotoVerifyR" +
-      "equest\032&.bioid.services.v1.PhotoVerifyRe" +
-      "sponseB%\n\022com.bioid.services\252\002\016BioID.Ser" +
-      "vicesb\006proto3"
+      "\n\tbws.proto\022\021bioid.services.v1\032\021bwsmessa" +
+      "ges.proto\";\n\030LivenessDetectionRequest\022\037\n" +
+      "\013live_images\030\001 \003(\0132\n.ImageData\".\n\035VideoL" +
+      "ivenessDetectionRequest\022\r\n\005video\030\001 \001(\014\"\244" +
+      "\001\n\031LivenessDetectionResponse\022\032\n\006status\030\001" +
+      " \001(\0162\n.JobStatus\022\031\n\006errors\030\002 \003(\0132\t.JobEr" +
+      "ror\022*\n\020image_properties\030\003 \003(\0132\020.ImagePro" +
+      "perties\022\014\n\004live\030\004 \001(\010\022\026\n\016liveness_score\030" +
+      "\005 \001(\001\"h\n\022PhotoVerifyRequest\022\037\n\013live_imag" +
+      "es\030\001 \003(\0132\n.ImageData\022\r\n\005photo\030\002 \001(\014\022\"\n\032d" +
+      "isable_liveness_detection\030\003 \001(\010\"\236\003\n\023Phot" +
+      "oVerifyResponse\022\032\n\006status\030\001 \001(\0162\n.JobSta" +
+      "tus\022\031\n\006errors\030\002 \003(\0132\t.JobError\022*\n\020image_" +
+      "properties\030\003 \003(\0132\020.ImageProperties\022*\n\020ph" +
+      "oto_properties\030\004 \001(\0132\020.ImageProperties\022P" +
+      "\n\022verification_level\030\005 \001(\01624.bioid.servi" +
+      "ces.v1.PhotoVerifyResponse.AccuracyLevel" +
+      "\022\032\n\022verification_score\030\006 \001(\001\022\014\n\004live\030\007 \001" +
+      "(\010\022\026\n\016liveness_score\030\010 \001(\001\"d\n\rAccuracyLe" +
+      "vel\022\022\n\016NOT_RECOGNIZED\020\000\022\013\n\007LEVEL_1\020\001\022\013\n\007" +
+      "LEVEL_2\020\002\022\013\n\007LEVEL_3\020\003\022\013\n\007LEVEL_4\020\004\022\013\n\007L" +
+      "EVEL_5\020\0052\331\002\n\017BioIDWebService\022n\n\021Liveness" +
+      "Detection\022+.bioid.services.v1.LivenessDe" +
+      "tectionRequest\032,.bioid.services.v1.Liven" +
+      "essDetectionResponse\022x\n\026VideoLivenessDet" +
+      "ection\0220.bioid.services.v1.VideoLiveness" +
+      "DetectionRequest\032,.bioid.services.v1.Liv" +
+      "enessDetectionResponse\022\\\n\013PhotoVerify\022%." +
+      "bioid.services.v1.PhotoVerifyRequest\032&.b" +
+      "ioid.services.v1.PhotoVerifyResponseB%\n\022" +
+      "com.bioid.services\252\002\016BioID.Servicesb\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          com.bioid.services.Bwsmessages.getDescriptor(),
         });
     internal_static_bioid_services_v1_LivenessDetectionRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -12652,42 +6746,7 @@ public final class Bws {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_bioid_services_v1_PhotoVerifyResponse_descriptor,
         new java.lang.String[] { "Status", "Errors", "ImageProperties", "PhotoProperties", "VerificationLevel", "VerificationScore", "Live", "LivenessScore", });
-    internal_static_bioid_services_v1_JobError_descriptor =
-      getDescriptor().getMessageTypes().get(5);
-    internal_static_bioid_services_v1_JobError_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_bioid_services_v1_JobError_descriptor,
-        new java.lang.String[] { "ErrorCode", "Message", });
-    internal_static_bioid_services_v1_ImageData_descriptor =
-      getDescriptor().getMessageTypes().get(6);
-    internal_static_bioid_services_v1_ImageData_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_bioid_services_v1_ImageData_descriptor,
-        new java.lang.String[] { "Image", "Tags", });
-    internal_static_bioid_services_v1_ImageProperties_descriptor =
-      getDescriptor().getMessageTypes().get(7);
-    internal_static_bioid_services_v1_ImageProperties_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_bioid_services_v1_ImageProperties_descriptor,
-        new java.lang.String[] { "Rotated", "Faces", "QualityScore", "QualityAssessments", "FrameNumber", });
-    internal_static_bioid_services_v1_QualityAssessment_descriptor =
-      getDescriptor().getMessageTypes().get(8);
-    internal_static_bioid_services_v1_QualityAssessment_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_bioid_services_v1_QualityAssessment_descriptor,
-        new java.lang.String[] { "Check", "Score", "Message", });
-    internal_static_bioid_services_v1_Face_descriptor =
-      getDescriptor().getMessageTypes().get(9);
-    internal_static_bioid_services_v1_Face_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_bioid_services_v1_Face_descriptor,
-        new java.lang.String[] { "LeftEye", "RightEye", "TextureLivenessScore", "MotionLivenessScore", "MovementDirection", });
-    internal_static_bioid_services_v1_PointD_descriptor =
-      getDescriptor().getMessageTypes().get(10);
-    internal_static_bioid_services_v1_PointD_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_bioid_services_v1_PointD_descriptor,
-        new java.lang.String[] { "X", "Y", });
+    com.bioid.services.Bwsmessages.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

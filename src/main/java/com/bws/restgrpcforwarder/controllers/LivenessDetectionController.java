@@ -11,8 +11,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.bioid.services.Bws.ImageData;
+
 import com.bioid.services.Bws.LivenessDetectionRequest;
+import com.bioid.services.Bwsmessages.ImageData;
 import com.bws.restgrpcforwarder.datatypes.LivenessDetectionRequestJson;
 import com.bws.restgrpcforwarder.grpc.GrpcClientService;
 import com.bws.restgrpcforwarder.grpc.GrpcMetadataConverter;
