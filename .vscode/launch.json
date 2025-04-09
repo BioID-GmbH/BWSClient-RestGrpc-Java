@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-RestGrpcApplication<restgrpcforwarder>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.bws.restgrpcforwarder.RestGrpcApplication",
+            "projectName": "restgrpcforwarder",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
