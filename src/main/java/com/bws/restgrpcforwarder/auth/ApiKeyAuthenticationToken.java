@@ -8,15 +8,22 @@ import org.springframework.security.core.GrantedAuthority;
  * Authentication token for API key authentication.
  * This class represents an authentication token that holds an API key.
  */
-public class ApiKeyAuthenticationToken extends AbstractAuthenticationToken {
+public final class ApiKeyAuthenticationToken extends AbstractAuthenticationToken {
 
     private final String apiKey;
 
+
     /**
-     * Constructs an ApiKeyAuthenticationToken with the provided API key and authorities.
-     *
-     * @param apiKey the API key
-     * @param authorities the collection of granted authorities
+     * Constructor for unauthenticated tokens (e.g. on request)
+     */
+    public ApiKeyAuthenticationToken(String apiKey) {
+        super(null);
+        this.apiKey = apiKey;
+        setAuthenticated(false);
+    }
+
+    /**
+     * Constructor for authenticated tokens (e.g. after validation)
      */
     public ApiKeyAuthenticationToken(String apiKey, Collection<? extends GrantedAuthority> authorities) {
         super(authorities);
@@ -24,25 +31,9 @@ public class ApiKeyAuthenticationToken extends AbstractAuthenticationToken {
         setAuthenticated(true);
     }
 
-    /**
-     * Returns the credentials..
-     *
-     * @return null
-     */
     @Override
-    public Object getCredentials()
-    {
-        return null;
-    }
+    public Object getCredentials() { return null; }
 
-    /**
-     * Returns the principal, which is the API key.
-     *
-     * @return the API key
-     */
     @Override
-    public Object getPrincipal()
-    {
-        return apiKey;
-    }
+    public Object getPrincipal() { return apiKey; }
 }

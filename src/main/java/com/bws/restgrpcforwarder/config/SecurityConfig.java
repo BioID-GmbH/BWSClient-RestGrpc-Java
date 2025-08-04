@@ -15,6 +15,7 @@ import com.bws.restgrpcforwarder.auth.ApiKeyAuthFilter;
  * Configuration class for security settings.
  * This class sets up the security configuration for API key authentication in the application.
  */
+
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
@@ -32,7 +33,7 @@ public class SecurityConfig {
     private String authToken;
 
     /**
-     * Configures the security filter chain.
+     * Configures the security filter chain for API key authentication.
      *
      * @param http the HttpSecurity configuration
      * @return the configured SecurityFilterChain

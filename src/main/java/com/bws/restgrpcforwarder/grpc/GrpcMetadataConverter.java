@@ -7,13 +7,20 @@ import io.grpc.Metadata;
  * Utility class for converting gRPC metadata to HTTP headers.
  * This class provides a method to convert gRPC metadata to Spring's HttpHeaders.
  */
-public class GrpcMetadataConverter {
+/**
+ * Utility class for converting gRPC metadata to HTTP headers.
+ * Provides static methods only.
+ */
+public final class GrpcMetadataConverter {
+
+    // Private constructor to prevent instantiation
+    private GrpcMetadataConverter() {}
 
     /**
-     * Converts gRPC metadata to HTTP headers.
+     * Converts gRPC metadata to Spring HttpHeaders.
      *
-     * @param metadata the gRPC metadata
-     * @return the converted HTTP headers
+     * @param metadata gRPC metadata
+     * @return converted HttpHeaders
      */
     public static HttpHeaders convertMetadataToHttpHeaders(Metadata metadata) {
         HttpHeaders httpHeaders = new HttpHeaders();

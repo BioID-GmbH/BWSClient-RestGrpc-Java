@@ -1,6 +1,5 @@
 package com.bws.restgrpcforwarder.auth;
 
-import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.http.MediaType;
@@ -18,10 +17,11 @@ import java.io.PrintWriter;
  * Filter for API key authentication.
  * This class filters incoming requests and checks for a valid API key in the header.
  */
-public class ApiKeyAuthFilter extends GenericFilterBean {
 
-    private String headerName;
-    private String accessKey;
+public final class ApiKeyAuthFilter extends GenericFilterBean {
+
+    private final String headerName;
+    private final String accessKey;
 
     /**
      * Constructs an ApiKeyAuthFilter with the provided header name and API key.
@@ -44,26 +44,19 @@ public class ApiKeyAuthFilter extends GenericFilterBean {
      * @throws ServletException if a servlet error occurs
      */
     @Override
-    public void doFilter(ServletRequest request, ServletResponse response, FilterChain filterChain) throws IOException, ServletException
-    {
-        try
-        {
-            String apiKey = ((HttpServletRequest) request).getHeader(headerName);
-            if (apiKey == null || !apiKey.equals(accessKey))
-            {
-                throw new BadCredentialsException("Invalid API Key");
-            }
-            SecurityContextHolder.getContext().setAuthentication(new ApiKeyAuthenticationToken(apiKey, AuthorityUtils.NO_AUTHORITIES));
-        } catch (Exception exp)
-        {
+    public void doFilter(ServletRequest request, ServletResponse response, FilterChain filterChain) throws IOException, ServletException {
+        String apiKey = ((HttpServletRequest) request).getHeader(headerName);
+        if (apiKey == null || !apiKey.equals(accessKey)) {
             HttpServletResponse httpResponse = (HttpServletResponse) response;
             httpResponse.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
             httpResponse.setContentType(MediaType.APPLICATION_JSON_VALUE);
             PrintWriter writer = httpResponse.getWriter();
-            writer.print(exp.getMessage());
+            writer.print("{\"error\": \"Invalid API Key\"}");
             writer.flush();
             writer.close();
+            return;
         }
+        SecurityContextHolder.getContext().setAuthentication(new ApiKeyAuthenticationToken(apiKey, AuthorityUtils.NO_AUTHORITIES));
         filterChain.doFilter(request, response);
     }
 }

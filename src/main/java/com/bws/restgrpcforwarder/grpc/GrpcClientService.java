@@ -45,17 +45,20 @@ public class GrpcClientService {
      */
     public GrpcClientService(GrpcClientConfig appConfig) {
         try {
-            String jwtToken = JwtTokenProvider.generateToken(appConfig.clientId, appConfig.accessKey,
-                    appConfig.audience,
-                    appConfig.tokenExpirationTime);
+            String jwtToken = JwtTokenProvider.generateToken(
+                appConfig.getClientId(),
+                appConfig.getAccessKey(),
+                appConfig.getAudience(),
+                appConfig.getExpirationInMinutes()
+            );
 
-            channel = ManagedChannelBuilder.forTarget(appConfig.serviceEndpoint).useTransportSecurity().build();
+            channel = ManagedChannelBuilder.forTarget(appConfig.getEndpoint()).useTransportSecurity().build();
             CallCredentials jwtCallCredentials = new JwtCallCredetials(jwtToken);
             bwsClientAsync = BioIDWebServiceGrpc.newStub(channel).withCallCredentials(jwtCallCredentials);
 
         } catch (Exception e) {
-            logger.error("An error has occurred:", e);
-            e.printStackTrace();
+            logger.error("An error has occurred during gRPC client initialization:", e);
+            throw new RuntimeException("Failed to initialize GrpcClientService", e);
         }
     }
 
@@ -70,6 +73,9 @@ public class GrpcClientService {
     @Async
     public CompletableFuture<LivenessDetectionResult> livenessDetectionAsync(LivenessDetectionRequest livenessRequest,
             Metadata headers) {
+        if (bwsClientAsync == null) {
+            return CompletableFuture.failedFuture(new IllegalStateException("gRPC client not initialized"));
+        }
         try {
             AtomicReference<Metadata> responseHeaders = new AtomicReference<>();
             AtomicReference<Metadata> responseTrailers = new AtomicReference<>();
@@ -100,7 +106,6 @@ public class GrpcClientService {
             logger.error("An error has occurred:", e);
             return CompletableFuture.failedFuture(e);
         }
-
     }
 
     /**
@@ -114,6 +119,9 @@ public class GrpcClientService {
     @Async
     public CompletableFuture<PhotoVerifyResult> photoVerifyAsync(PhotoVerifyRequest photoverifyRequest,
             Metadata headers) {
+        if (bwsClientAsync == null) {
+            return CompletableFuture.failedFuture(new IllegalStateException("gRPC client not initialized"));
+        }
         try {
             AtomicReference<Metadata> responseHeaders = new AtomicReference<>();
             AtomicReference<Metadata> responseTrailers = new AtomicReference<>();
@@ -158,6 +166,9 @@ public class GrpcClientService {
     @Async
     public CompletableFuture<LivenessDetectionResult> videoLivenessDetectionAsync(
             VideoLivenessDetectionRequest videoLivenessRequest, Metadata headers) {
+        if (bwsClientAsync == null) {
+            return CompletableFuture.failedFuture(new IllegalStateException("gRPC client not initialized"));
+        }
         try {
             AtomicReference<Metadata> responseHeaders = new AtomicReference<>();
             AtomicReference<Metadata> responseTrailers = new AtomicReference<>();
@@ -190,7 +201,6 @@ public class GrpcClientService {
             logger.error("An error has occurred:", e);
             return CompletableFuture.failedFuture(e);
         }
-
     }
 
     /**
