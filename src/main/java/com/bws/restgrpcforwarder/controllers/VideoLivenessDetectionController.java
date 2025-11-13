@@ -14,11 +14,18 @@ import com.bioid.services.Bws.VideoLivenessDetectionRequest;
 import com.bws.restgrpcforwarder.datatypes.VideoLivenessDetectionRequestJson;
 import com.bws.restgrpcforwarder.grpc.GrpcClientService;
 import com.bws.restgrpcforwarder.grpc.GrpcMetadataConverter;
+import com.bws.restgrpcforwarder.utils.RequestResponseUtils;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.util.JsonFormat;
 import java.util.Base64;
 import io.grpc.Metadata;
 
+/**
+ * REST Controller for Video Liveness Detection operations
+ * 
+ * Provides endpoint for detecting liveness from video files
+ * Processes video data encoded in Base64 format
+ */
 @RestController
 @RequestMapping("videolivenessdetection")
 public class VideoLivenessDetectionController {
@@ -29,61 +36,56 @@ public class VideoLivenessDetectionController {
         grpcClient = bwsGrpcClient;
     }
 
+    /**
+     * Processes video liveness detection request
+     * 
+     * @param headers                       HTTP headers including optional
+     *                                      Reference-Number
+     * @param videoLivenessDetectionRequest JSON request with video data
+     * @return CompletableFuture with video liveness detection result
+     */
     @PostMapping()
     public CompletableFuture<ResponseEntity<?>> onPost(@RequestHeader HttpHeaders headers,
-            @RequestBody VideoLivenessDetectionRequestJson videoLivenessDetectionRequest)
-    {
-        // In this example, the input images are encoded in base64strings.
-        try
-        {
-            byte[] video = new byte[0];
+            @RequestBody VideoLivenessDetectionRequestJson videoLivenessDetectionRequest) {
+        try {
+            // Extract reference number using utility method
+            String referenceNumber = RequestResponseUtils.extractReferenceNumber(headers);
 
-            // Extract the optional request header 'Reference-Number'.
-            var referenceValue = headers.getFirst("Reference-Number");
-            var referenceHeaderValue = (referenceValue == null )? "" : referenceValue;
+            // In this example, the input images are encoded in base64strings.
+            // Decode video file from Base64
+            byte[] video = RequestResponseUtils.safeBase64Decode(
+                    videoLivenessDetectionRequest.getVideo(), "video file");
 
-            // Extract video file from request.
-            if (!videoLivenessDetectionRequest.getVideo().isEmpty())
-            {
-                // Convert video from base64string.
-                video = Base64.getDecoder().decode(videoLivenessDetectionRequest.getVideo());
+            // Validate that video data is present
+            if (video.length == 0) {
+                return RequestResponseUtils.createErrorResponse(
+                        "No video file provided", logger, "video liveness detection");
             }
 
-            // Verify if the request includes a video file.
-            if (video.length == 0)
-            {
-                logger.error("No video file provided.");
-                return CompletableFuture.completedFuture(ResponseEntity.badRequest().body("No video file provided."));
-            }
-
-            // Create VideoLIvenessDetection request and add an video file. 
+             // Create VideoLivenessDetection request with video data
             VideoLivenessDetectionRequest videoRequest = VideoLivenessDetectionRequest.newBuilder()
-            .setVideo(ByteString.copyFrom(video))
-            .build();
+                .setVideo(ByteString.copyFrom(video))
+                .build();
 
-            // Add optional reference number header
-            Metadata referenceHeader = new Metadata();
-            Metadata.Key<String> customHeaderKey = Metadata.Key.of("Reference-Number", Metadata.ASCII_STRING_MARSHALLER);
-            referenceHeader.put(customHeaderKey, referenceHeaderValue);
+            // Create gRPC metadata with reference number
+            Metadata referenceHeader = RequestResponseUtils.createReferenceHeader(referenceNumber);
 
-            // Call to bws videolivenessdetetction api via grpc client.
+            // Execute gRPC call
             var call = grpcClient.videoLivenessDetectionAsync(videoRequest, referenceHeader);
-            // Read out the videolivenessdetection api response.
-            var videoLivenessDetecionResponse = call.get();
+            var detectionResponse = call.get();
 
-            logger.info("Call to videoLivedetection API returned "+ videoLivenessDetecionResponse.getResponse().getStatus()+".");
-            
-            // Convert grpc metadata from the API response to
-            // {@link org.springframework.http.HttpHeaders}.
-            var httpresponseHeaders = GrpcMetadataConverter.convertMetadataToHttpHeaders(videoLivenessDetecionResponse.getMetadata());
-            var responseBody = JsonFormat.printer().print(videoLivenessDetecionResponse.getResponse());
+            logger.info("Video liveness detection API returned status: {}", 
+                detectionResponse.getResponse().getStatus());
 
-            return CompletableFuture.completedFuture(ResponseEntity.ok().headers(httpresponseHeaders).body(responseBody));
+            // Convert and return response
+            var httpHeaders = GrpcMetadataConverter.convertMetadataToHttpHeaders(detectionResponse.getMetadata());
+            var responseBody = JsonFormat.printer().print(detectionResponse.getResponse());
 
-        } catch (Exception ex)
-        {
-            logger.error("An error has occurred:", ex);
-            return CompletableFuture.completedFuture(ResponseEntity.badRequest().body("Error processing images: " + ex.getMessage()));
+            return RequestResponseUtils.createSuccessResponse(responseBody, httpHeaders);
+
+        } catch (Exception ex) {
+            return RequestResponseUtils.createErrorResponse(
+                "Error processing video: " + ex.getMessage(), logger, "video liveness detection");
         }
     }
 }

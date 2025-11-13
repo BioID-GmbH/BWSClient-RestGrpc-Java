@@ -27,34 +27,46 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.atomic.AtomicReference;
 
 /**
- * Service class for gRPC client operations.
- * This class provides operation methods for the different BWS APIs.
+ * gRPC Client Service for BioID Web Services
+ * 
+ * This service provides thread-safe asynchronous operations for:
+ * - Liveness Detection
+ * - Photo Verification
+ * - Video Liveness Detection
+ * 
+ * Features:
+ * - JWT authentication with call credentials
+ * - Thread-safe stub creation per request
+ * - Async processing with CompletableFuture
+ * - Proper connection management and cleanup
+ * - Header propagation for correlation IDs
  */
 @Service
 public class GrpcClientService {
 
-    private BioIDWebServiceGrpc.BioIDWebServiceStub bwsClientAsync;
-
     private ManagedChannel channel;
+    private final CallCredentials jwtCallCredentials;
     private static final Logger logger = LoggerFactory.getLogger(GrpcClientService.class);
 
     /**
-     * Constructs a GrpcClientService with the provided configuration.
-     *
-     * @param appConfig the gRPC client configuration
+     * Constructs a GrpcClientService with the provided configuration
+     * 
+     * @param appConfig the gRPC client configuration containing endpoint,
+     *                  credentials, and JWT settings
+     * @throws RuntimeException if gRPC client initialization fails
      */
     public GrpcClientService(GrpcClientConfig appConfig) {
         try {
+            // Generate JWT token for authentication
             String jwtToken = JwtTokenProvider.generateToken(
-                appConfig.getClientId(),
-                appConfig.getAccessKey(),
-                appConfig.getAudience(),
-                appConfig.getExpirationInMinutes()
-            );
+                    appConfig.getClientId(),
+                    appConfig.getAccessKey(),
+                    appConfig.getAudience(),
+                    appConfig.getExpirationInMinutes());
 
+            // Create managed channel with transport security
             channel = ManagedChannelBuilder.forTarget(appConfig.getEndpoint()).useTransportSecurity().build();
-            CallCredentials jwtCallCredentials = new JwtCallCredetials(jwtToken);
-            bwsClientAsync = BioIDWebServiceGrpc.newStub(channel).withCallCredentials(jwtCallCredentials);
+            jwtCallCredentials = new JwtCallCredetials(jwtToken);
 
         } catch (Exception e) {
             logger.error("An error has occurred during gRPC client initialization:", e);
@@ -63,29 +75,28 @@ public class GrpcClientService {
     }
 
     /**
-     * Performs an asynchronous livenessDetection.
-     *
-     * @param livenessRequest The livenessdetection request.
-     * @param headers         The http metadata headers.
-     * @return a CompletableFuture containing the livenessdetection api result with
-     *         grpc response metadata.
+     * Performs asynchronous liveness detection
+     * 
+     * @param livenessRequest The liveness detection request with image data
+     * @param headers         HTTP headers to forward (e.g., Reference-Number)
+     * @return CompletableFuture containing detection result with metadata
      */
     @Async
     public CompletableFuture<LivenessDetectionResult> livenessDetectionAsync(LivenessDetectionRequest livenessRequest,
             Metadata headers) {
-        if (bwsClientAsync == null) {
-            return CompletableFuture.failedFuture(new IllegalStateException("gRPC client not initialized"));
-        }
         try {
             AtomicReference<Metadata> responseHeaders = new AtomicReference<>();
             AtomicReference<Metadata> responseTrailers = new AtomicReference<>();
 
-            bwsClientAsync = bwsClientAsync.withInterceptors(new HeaderClientInterceptor(headers),
-                    MetadataUtils.newCaptureMetadataInterceptor(responseHeaders,
-                            responseTrailers));
+            // Create new stub instance for each call with required interceptors
+            var stub = BioIDWebServiceGrpc.newStub(channel)
+                    .withCallCredentials(jwtCallCredentials)
+                    .withInterceptors(
+                            new HeaderClientInterceptor(headers),
+                            MetadataUtils.newCaptureMetadataInterceptor(responseHeaders, responseTrailers));
 
             CompletableFuture<LivenessDetectionResult> livenessResult = new CompletableFuture<>();
-            bwsClientAsync.livenessDetection(livenessRequest, new StreamObserver<LivenessDetectionResponse>() {
+            stub.livenessDetection(livenessRequest, new StreamObserver<LivenessDetectionResponse>() {
                 @Override
                 public void onNext(LivenessDetectionResponse value) {
                     var apiResponse = new LivenessDetectionResult(value, responseHeaders.get());
@@ -109,30 +120,28 @@ public class GrpcClientService {
     }
 
     /**
-     * Performs an asynchronous photoverify.
-     *
-     * @param photoverifyRequest The photoverify request.
-     * @param headers            The http metadata headers.
-     * @return a CompletableFuture containing the photoverify api result with grpc
-     *         response metadata.
+     * Performs asynchronous photo verification
+     * 
+     * @param photoverifyRequest The photo verification request with ID photo and live images
+     * @param headers            HTTP headers to forward (e.g., Reference-Number)
+     * @return CompletableFuture containing verification result with metadata
      */
     @Async
     public CompletableFuture<PhotoVerifyResult> photoVerifyAsync(PhotoVerifyRequest photoverifyRequest,
             Metadata headers) {
-        if (bwsClientAsync == null) {
-            return CompletableFuture.failedFuture(new IllegalStateException("gRPC client not initialized"));
-        }
         try {
             AtomicReference<Metadata> responseHeaders = new AtomicReference<>();
             AtomicReference<Metadata> responseTrailers = new AtomicReference<>();
 
-            // Add an additional header to the grpc request.
-            bwsClientAsync = bwsClientAsync.withInterceptors(new HeaderClientInterceptor(headers),
-                    MetadataUtils.newCaptureMetadataInterceptor(responseHeaders, responseTrailers));
+            // Create new stub instance for each call
+            var stub = BioIDWebServiceGrpc.newStub(channel)
+                    .withCallCredentials(jwtCallCredentials)
+                    .withInterceptors(
+                            new HeaderClientInterceptor(headers),
+                            MetadataUtils.newCaptureMetadataInterceptor(responseHeaders, responseTrailers));
 
             CompletableFuture<PhotoVerifyResult> photoVerifyResult = new CompletableFuture<>();
-
-            bwsClientAsync.photoVerify(photoverifyRequest, new StreamObserver<PhotoVerifyResponse>() {
+            stub.photoVerify(photoverifyRequest, new StreamObserver<PhotoVerifyResponse>() {
                 @Override
                 public void onNext(PhotoVerifyResponse value) {
                     var apiResponse = new PhotoVerifyResult(value, responseHeaders.get());
@@ -156,30 +165,27 @@ public class GrpcClientService {
     }
 
     /**
-     * Performs an asynchronous videolivenessDetection.
-     *
-     * @param livenessRequest The videolivenessdetection request.
-     * @param headers         The http metadata headers.
-     * @return a CompletableFuture containing the videolivenessdetection api result
-     *         with grpc response metadata.
+     * Performs asynchronous video liveness detection
+     * 
+     * @param videoLivenessRequest The video liveness detection request with video data
+     * @param headers HTTP headers to forward (e.g., Reference-Number)
+     * @return CompletableFuture containing detection result with metadata
      */
     @Async
     public CompletableFuture<LivenessDetectionResult> videoLivenessDetectionAsync(
             VideoLivenessDetectionRequest videoLivenessRequest, Metadata headers) {
-        if (bwsClientAsync == null) {
-            return CompletableFuture.failedFuture(new IllegalStateException("gRPC client not initialized"));
-        }
         try {
             AtomicReference<Metadata> responseHeaders = new AtomicReference<>();
             AtomicReference<Metadata> responseTrailers = new AtomicReference<>();
 
-            // Add an additional header to the grpc request.
-            bwsClientAsync = bwsClientAsync.withInterceptors(new HeaderClientInterceptor(headers),
-                    MetadataUtils.newCaptureMetadataInterceptor(responseHeaders, responseTrailers));
+            var stub = BioIDWebServiceGrpc.newStub(channel)
+                    .withCallCredentials(jwtCallCredentials)
+                    .withInterceptors(
+                            new HeaderClientInterceptor(headers),
+                            MetadataUtils.newCaptureMetadataInterceptor(responseHeaders, responseTrailers));
 
             CompletableFuture<LivenessDetectionResult> videoLivenessResult = new CompletableFuture<>();
-
-            bwsClientAsync.videoLivenessDetection(videoLivenessRequest,
+            stub.videoLivenessDetection(videoLivenessRequest,
                     new StreamObserver<LivenessDetectionResponse>() {
                         @Override
                         public void onNext(LivenessDetectionResponse value) {
@@ -204,7 +210,8 @@ public class GrpcClientService {
     }
 
     /**
-     * Shuts down the gRPC channel.
+     * Shuts down the gRPC channel gracefully
+     * This method is called automatically when the application context is destroyed
      */
     @PreDestroy
     public void shutdownChannel() {
